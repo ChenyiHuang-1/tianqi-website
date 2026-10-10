@@ -1,0 +1,19 @@
+<!--
+title: UV 纹样图库 | 天琦材料
+desc: 按编号浏览已设计好的 UV 光刻纹样，每款均可询价、申请样品或定制。
+-->
+<div class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="{{home}}">首页</a> / UV 纹样图库</p>
+  <h1>UV 纹样图库</h1>
+  <p>已设计完成的 UV 纹样，每款都有固定编号。“现成纹样”表示设计已完成，不代表有现货。纹样会持续增加。</p>
+</div></div>
+<div class="wrap section">
+  <div class="filter-bar lib-bar" data-filter-target="grid">
+    {{pattern_filters}}
+    <div class="fgroup"><label class="label" for="q">按编号搜索</label><input class="search" id="q" inputmode="numeric" placeholder="例如 243"></div>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <ul class="pgrid" id="grid" data-page-size="48">{{pattern_grid}}</ul>
+  <div class="center"><button class="btn" type="button" id="more">加载更多</button></div>
+  <p class="notice small">屏幕、光线与观看角度会影响效果，最终以确认的样品或 demo 为准。</p>
+</div>

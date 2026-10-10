@@ -1,0 +1,70 @@
+{
+ "_note": "Past customers on About (from 天琦包装 PPT slide 12, logos supplied by Hailey 2026-10-10). Logos in public/assets/img/customers/<id>-en.webp and <id>-zh.webp; EN pages must not show Chinese, so a customer without an -en logo shows its English name as text. Set confirmed to false to hide the section.",
+ "confirmed": true,
+ "heading": {
+  "en": "Past customers",
+  "zh": "过往客户"
+ },
+ "intro": {
+  "en": "Brands whose packaging has used materials made by Tianqi.",
+  "zh": "以下品牌的包装曾使用天琦生产的材料。"
+ },
+ "customers": [
+  {
+   "en": "L'Oréal",
+   "zh": "欧莱雅",
+   "id": "loreal",
+   "logo_en": "customers/loreal-en",
+   "logo_zh": "customers/loreal-zh"
+  },
+  {
+   "en": "Moutai",
+   "zh": "茅台",
+   "id": "moutai",
+   "logo_en": "customers/moutai-en",
+   "logo_zh": "customers/moutai-zh"
+  },
+  {
+   "en": "Chando",
+   "zh": "自然堂",
+   "id": "chando",
+   "logo_en": "customers/chando-en",
+   "logo_zh": "customers/chando-zh"
+  },
+  {
+   "en": "Estée Lauder Companies",
+   "zh": "雅诗兰黛",
+   "id": "estee-lauder",
+   "logo_en": "customers/estee-lauder-en",
+   "logo_zh": "customers/estee-lauder-zh"
+  },
+  {
+   "en": "Beingmate",
+   "zh": "贝因美",
+   "id": "beingmate",
+   "logo_en": "",
+   "logo_zh": "customers/beingmate-zh"
+  },
+  {
+   "en": "Nice Group",
+   "zh": "纳爱斯集团",
+   "id": "nice-group",
+   "logo_en": "",
+   "logo_zh": "customers/nice-group-zh"
+  },
+  {
+   "en": "Jahwa",
+   "zh": "上海家化",
+   "id": "jahwa",
+   "logo_en": "customers/jahwa-en",
+   "logo_zh": "customers/jahwa-zh"
+  },
+  {
+   "en": "Proya",
+   "zh": "珀莱雅",
+   "id": "proya",
+   "logo_en": "customers/proya-en",
+   "logo_zh": "customers/proya-zh"
+  }
+ ]
+}

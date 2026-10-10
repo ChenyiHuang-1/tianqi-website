@@ -1,0 +1,30 @@
+[
+ {"id": "paper-paperboard", "image": "p-pet-plain-holographic-silver-board",
+  "name": {"en": "Paper & Paperboard", "zh": "纸材与卡纸"},
+  "intro": {"en": "Metallised, holographic and UV-patterned paper and paperboard for cartons, rigid boxes, cards and printed goods.", "zh": "用于彩盒、精品盒、卡牌和印刷品的金属、镭射与 UV 光刻纸材和卡纸。"},
+  "children": [
+   {"id": "uv-patterned-paper", "public": true, "name": {"en": "UV-Patterned Paper & Paperboard", "zh": "UV 光刻纸与卡纸"}, "desc": {"en": "Ready-designed UV patterns, chosen from the pattern library.", "zh": "已设计好的 UV 纹样，可在纹样图库中选款。"}},
+   {"id": "gold-silver-paperboard", "public": true, "name": {"en": "Gold & Silver Paperboard", "zh": "金银卡纸"}, "desc": {"en": "Bright and matte silver PET laminated board.", "zh": "PET 亮银、亚银等金银卡纸。"}},
+   {"id": "holographic-paperboard", "public": true, "name": {"en": "Holographic Paper & Paperboard", "zh": "镭射纸与卡纸"}, "desc": {"en": "Plain holographic, light-pillar and holographic transfer board.", "zh": "素面镭射、光柱、亚光光柱、镭射转移银卡等。"}},
+   {"id": "aluminium-foil-laminated", "public": true, "name": {"en": "Aluminium Foil Laminated Paper & Paperboard", "zh": "铝箔复合纸与卡纸"}, "desc": {"en": "Bright silver and coloured aluminium foil laminated paper.", "zh": "亮银及彩色铝箔复合纸。"}},
+   {"id": "other-laminated-coated", "public": false, "name": {"en": "Other Laminated & Coated Paper", "zh": "其他覆膜与涂布纸材"}, "desc": {"en": "Laminated white board, cast-coated high-gloss board.", "zh": "覆膜白卡、铸涂高光卡等。"}}
+  ]},
+ {"id": "films", "image": "p-holographic-film",
+  "name": {"en": "Films", "zh": "薄膜材料"},
+  "intro": {"en": "PET, holographic and UV-patterned films for laminating, labels and converting.", "zh": "用于复合、标签与后加工的 PET 膜、镭射膜和 UV 光刻膜。"},
+  "children": [
+   {"id": "pet-film", "public": true, "name": {"en": "PET Film", "zh": "PET 膜"}, "desc": {"en": "12 μm standard gloss and 16 μm high gloss.", "zh": "12μm 普亮、16μm 高亮。"}},
+   {"id": "metallised-pet-film", "public": false, "name": {"en": "Metallised PET Film", "zh": "镀铝 PET 膜"}, "desc": {"en": "Metallic-effect processed film.", "zh": "金属效果加工膜。"}},
+   {"id": "holographic-film", "public": true, "name": {"en": "Holographic Film", "zh": "镭射膜"}, "desc": {"en": "Holographic film sold on its own.", "zh": "可单独销售的镭射加工膜。"}},
+   {"id": "uv-patterned-film", "public": true, "name": {"en": "UV-Patterned Film", "zh": "UV 光刻纹样膜"}, "desc": {"en": "UV-patterned film, ready-made or custom.", "zh": "已加工光刻膜，现成或定制款。"}}
+  ]},
+ {"id": "finished-products", "image": "render/packaging-boxes",
+  "name": {"en": "Finished Products", "zh": "成品产品"},
+  "intro": {"en": "Boxes, cards, postcards and paper merchandise made with our materials, quoted to your design.", "zh": "使用我们材料制作的包装盒、卡牌、明信片与纸制文创，按您的设计报价。"},
+  "children": [
+   {"id": "packaging-boxes", "public": true, "image": "render/packaging-boxes", "image_is_render": true, "name": {"en": "Packaging Boxes", "zh": "包装盒"}, "desc": {"en": "Folding cartons and gift boxes in metallised or UV-patterned board.", "zh": "采用金银卡或 UV 光刻卡纸的彩盒与礼盒。"}},
+   {"id": "cards-mini-cards", "public": true, "image": "render/cards-mini-cards", "image_is_render": true, "name": {"en": "Cards & Mini Cards", "zh": "卡牌与小卡"}, "desc": {"en": "Collectible cards, game cards and mini cards.", "zh": "收藏卡、游戏卡及文创小卡。"}},
+   {"id": "postcards", "public": true, "image": "render/postcards", "image_is_render": true, "name": {"en": "Postcards", "zh": "明信片"}, "desc": {"en": "Standard and special-material postcards.", "zh": "常规及特种材料明信片。"}},
+   {"id": "paper-merchandise", "public": true, "image": "render/paper-merchandise", "image_is_render": true, "name": {"en": "Paper Merchandise", "zh": "其他纸制文创与周边"}, "desc": {"en": "Other paper goods on request.", "zh": "按需求承接其他纸制品。"}}
+  ]}
+]

@@ -1,0 +1,44 @@
+<!--
+title: 联系与询价 | 天琦材料
+desc: 材料询价、纹样询价、样品申请与定制需求。
+-->
+<div class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="{{home}}">{{t_nav_home}}</a> / {{t_nav_contact}}</p>
+  <h1>联系我们</h1>
+  <p>材料询价、纹样询价、样品申请与定制需求都可以在这里提交。不清楚规格也没关系，描述用途即可。</p>
+</div></div>
+<div class="wrap section">
+  <div class="inq">
+    <form class="inquiry" id="inquiry" novalidate data-endpoint="{{form_endpoint}}" data-files="{{form_files}}">
+      <fieldset class="full types"><legend class="label">您需要什么？</legend>
+        <label><input type="radio" name="inquiry_type" value="quote" checked> 材料询价</label>
+        <label><input type="radio" name="inquiry_type" value="pattern"> 纹样询价</label>
+        <label><input type="radio" name="inquiry_type" value="sample"> 样品申请</label>
+        <label><input type="radio" name="inquiry_type" value="custom"> 定制需求</label>
+      </fieldset>
+      <label>联系人 <em>必填</em><input id="f-name" name="name" autocomplete="name" required></label>
+      <label>邮箱 <em>必填</em><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label class="full">需求说明 <em>必填</em><textarea id="f-msg" name="message" required placeholder="您要做什么产品？如何印刷或使用？"></textarea></label>
+      <label>公司<input id="f-co" name="company" autocomplete="organization"></label>
+      <label>国家或地区<input id="f-country" name="country" autocomplete="country-name"></label>
+      <label class="full">产品或纹样编号<input id="f-codes" name="product_or_pattern" class="code" placeholder="从上一页自动带入，可修改"></label>
+      <label data-for="quote pattern sample custom">材料类型<select id="f-kind" name="material_type"><option value="">—</option><option>纸材/卡纸</option><option>膜材</option><option>成品</option><option>不确定</option></select></label>
+      <div class="qty" data-for="quote pattern custom"><label>数量<input id="f-qty" name="quantity" inputmode="decimal"></label><label>单位<select id="f-unit" name="unit"><option>张</option><option>千克</option><option>吨</option><option>米</option><option>个</option></select></label></div>
+      <label data-for="quote pattern custom">尺寸（mm）<input id="f-size" name="size"></label>
+      <label data-for="quote pattern custom">克重（g/m²）或厚度（μm）<input id="f-gsm" name="weight_or_thickness"></label>
+      <label data-for="quote pattern sample custom">用途<input id="f-use" name="end_use"></label>
+      <label data-for="quote pattern custom">期望交付日期<input id="f-date" name="delivery_date" type="date"></label>
+      <label class="check full" data-for="quote pattern custom"><input type="checkbox" id="f-sample" name="sample_needed" value="yes"> 需要样品</label>
+      <label class="full" data-files-only hidden>附件<input id="f-file" name="attachment" type="file"><span class="small">{{file_note}}</span></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-msg full" id="form-msg" aria-live="polite"></p>
+      <button class="btn primary full" type="submit">提交</button>
+      <p class="small full" id="form-off" hidden>在线表单尚未接通，目前无法从这里提交。</p>
+    </form>
+    <aside class="direct">
+      <p class="label">直接联系</p>
+      <p><b>{{legal_name}}</b><br>{{address}}</p>
+      {{contact_direct}}
+    </aside>
+  </div>
+</div>

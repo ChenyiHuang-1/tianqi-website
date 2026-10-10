@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.bad
+.DS_Store
+Thumbs.db
+# 纹样原图放在仓库外（如 E:\uv\标化）
+*.jpg
+*.jpeg
+*.pptx

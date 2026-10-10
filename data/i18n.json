@@ -1,0 +1,310 @@
+{
+ "nav_home": {
+  "en": "Home",
+  "zh": "首页"
+ },
+ "nav_products": {
+  "en": "Products",
+  "zh": "产品"
+ },
+ "nav_patterns": {
+  "en": "UV Pattern Library",
+  "zh": "UV 纹样图库"
+ },
+ "nav_custom": {
+  "en": "Customisation",
+  "zh": "定制服务"
+ },
+ "nav_about": {
+  "en": "About Us",
+  "zh": "关于我们"
+ },
+ "nav_contact": {
+  "en": "Contact",
+  "zh": "联系我们"
+ },
+ "quote": {
+  "en": "Request a Quote",
+  "zh": "询价"
+ },
+ "lang_other": {
+  "en": "中文",
+  "zh": "EN"
+ },
+ "lang_other_full": {
+  "en": "切换到中文",
+  "zh": "Switch to English"
+ },
+ "menu": {
+  "en": "Menu",
+  "zh": "菜单"
+ },
+ "all_products": {
+  "en": "All products",
+  "zh": "全部产品"
+ },
+ "skip": {
+  "en": "Skip to content",
+  "zh": "跳到正文"
+ },
+ "view_pattern": {
+  "en": "View Pattern",
+  "zh": "查看纹样"
+ },
+ "view_product": {
+  "en": "View details",
+  "zh": "查看详情"
+ },
+ "request_sample": {
+  "en": "Request a Sample",
+  "zh": "申请样品"
+ },
+ "browse_patterns": {
+  "en": "Browse UV Patterns",
+  "zh": "浏览 UV 纹样"
+ },
+ "customise_pattern": {
+  "en": "Customise This Pattern",
+  "zh": "定制此纹样"
+ },
+ "request_custom_quote": {
+  "en": "Request a Custom Quote",
+  "zh": "定制询价"
+ },
+ "structure": {
+  "en": "Material structure",
+  "zh": "材料结构"
+ },
+ "process": {
+  "en": "Process",
+  "zh": "加工方式"
+ },
+ "effect": {
+  "en": "Visual effect",
+  "zh": "视觉效果"
+ },
+ "specs": {
+  "en": "Specifications",
+  "zh": "规格"
+ },
+ "on_request": {
+  "en": "On request",
+  "zh": "请咨询"
+ },
+ "specs_on_request": {
+  "en": "Weight, size, supply form, MOQ and lead time are quoted on request.",
+  "zh": "克重、尺寸、供货形态、起订量与交期请询价。"
+ },
+ "pending_review": {
+  "en": "Details being confirmed. Contact us for the structure and specifications.",
+  "zh": "资料核对中，结构与规格请咨询。"
+ },
+ "photo_soon": {
+  "en": "Photo coming soon",
+  "zh": "图片待补充"
+ },
+ "pattern": {
+  "en": "Pattern",
+  "zh": "纹样"
+ },
+ "pattern_lib_sub": {
+  "en": "Ready-designed UV patterns",
+  "zh": "已设计的 UV 纹样"
+ },
+ "search_code": {
+  "en": "Search by number",
+  "zh": "按编号搜索"
+ },
+ "load_more": {
+  "en": "Load more",
+  "zh": "加载更多"
+ },
+ "showing": {
+  "en": "patterns",
+  "zh": "款纹样"
+ },
+ "all": {
+  "en": "All",
+  "zh": "全部"
+ },
+ "available_on": {
+  "en": "Available on",
+  "zh": "可用载体"
+ },
+ "carrier_paper": {
+  "en": "UV-patterned paper and paperboard",
+  "zh": "UV 光刻纸与卡纸"
+ },
+ "carrier_film": {
+  "en": "UV-patterned film",
+  "zh": "UV 光刻纹样膜"
+ },
+ "design_status": {
+  "en": "Status",
+  "zh": "状态"
+ },
+ "design_ready": {
+  "en": "Design ready. Production and lead time quoted per order.",
+  "zh": "设计已完成，生产与交期按订单报价。"
+ },
+ "angle_note": {
+  "en": "Screens, lighting and viewing angle change how the effect looks. The confirmed sample or demo is the final reference.",
+  "zh": "屏幕、光线与观看角度会影响效果，最终以确认的样品或 demo 为准。"
+ },
+ "reserved_note": {
+  "en": "This pattern can be used as a background with reserved areas for your artwork or text, or combined with other patterns. Reserved areas are a design arrangement, not cut-outs in the paper.",
+  "zh": "此纹样可作为背景，为您的图案或文字预留区域，也可与其他纹样组合。局部留白是设计排布，不是在纸上挖空。"
+ },
+ "more_views": {
+  "en": "More views",
+  "zh": "更多角度"
+ },
+ "prev": {
+  "en": "Previous",
+  "zh": "上一款"
+ },
+ "next": {
+  "en": "Next",
+  "zh": "下一款"
+ },
+ "related_patterns": {
+  "en": "Patterns for this material",
+  "zh": "适用纹样"
+ },
+ "related_products": {
+  "en": "Materials that carry this pattern",
+  "zh": "可承载此纹样的材料"
+ },
+ "in_category": {
+  "en": "In this category",
+  "zh": "本类产品"
+ },
+ "filter_colour": {
+  "en": "Colour",
+  "zh": "颜色"
+ },
+ "filter_surface": {
+  "en": "Surface",
+  "zh": "表面"
+ },
+ "filter_effect": {
+  "en": "Effect",
+  "zh": "效果"
+ },
+ "v_silver": {
+  "en": "Silver",
+  "zh": "银色"
+ },
+ "v_gold": {
+  "en": "Gold",
+  "zh": "金色"
+ },
+ "v_gloss": {
+  "en": "Gloss",
+  "zh": "亮面"
+ },
+ "v_matte": {
+  "en": "Matte",
+  "zh": "亚光"
+ },
+ "v_plain": {
+  "en": "Metallic",
+  "zh": "金属素面"
+ },
+ "v_holographic": {
+  "en": "Holographic",
+  "zh": "镭射"
+ },
+ "v_uv": {
+  "en": "UV pattern",
+  "zh": "UV 纹样"
+ },
+ "render_caption": {
+  "en": "Render for illustration. Photos of real products to follow.",
+  "zh": "效果图，仅供示意，后续更换为实拍产品图。"
+ },
+ "render_tag": {
+  "en": "Render",
+  "zh": "效果图"
+ },
+ "custom_quote_note": {
+  "en": "Made to your design. Tell us the format, size, quantity and material, and we will quote.",
+  "zh": "按您的设计制作。告诉我们款式、尺寸、数量与材料，我们为您报价。"
+ },
+ "uses_materials": {
+  "en": "Materials often used",
+  "zh": "常用材料"
+ },
+ "footer_products": {
+  "en": "Products",
+  "zh": "产品"
+ },
+ "footer_company": {
+  "en": "Company",
+  "zh": "公司"
+ },
+ "footer_contact": {
+  "en": "Contact",
+  "zh": "联系"
+ },
+ "rights": {
+  "en": "All rights reserved.",
+  "zh": "版权所有。"
+ },
+ "not_found": {
+  "en": "Page not found",
+  "zh": "页面不存在"
+ },
+ "filter_finish": {
+  "en": "Finish",
+  "zh": "光泽"
+ },
+ "filter_pattern": {
+  "en": "Pattern",
+  "zh": "图案"
+ },
+ "pv_silver": {
+  "en": "Silver",
+  "zh": "银色"
+ },
+ "pv_pearl": {
+  "en": "Pearl",
+  "zh": "珍珠彩"
+ },
+ "pv_holographic": {
+  "en": "Rainbow holographic",
+  "zh": "彩虹镭射"
+ },
+ "pv_geometric": {
+  "en": "Geometric",
+  "zh": "几何"
+ },
+ "pv_fluid": {
+  "en": "Fluid",
+  "zh": "流体"
+ },
+ "pv_texture": {
+  "en": "Texture",
+  "zh": "肌理"
+ },
+ "pv_lines": {
+  "en": "Lines & beams",
+  "zh": "线条光束"
+ },
+ "pv_motif": {
+  "en": "Motifs",
+  "zh": "主题图案"
+ },
+ "pv_subtle": {
+  "en": "Subtle",
+  "zh": "低调"
+ },
+ "pv_medium": {
+  "en": "Medium",
+  "zh": "适中"
+ },
+ "pv_bold": {
+  "en": "Bold",
+  "zh": "强烈"
+ }
+}

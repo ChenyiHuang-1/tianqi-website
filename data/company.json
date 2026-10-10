@@ -1,0 +1,162 @@
+{
+ "_note": "Company facts from 天琦包装(1).pptx. A fact is shown on the site only when \"confirmed\" is true. Certificates: set true only after checking the current certificate and its scope.",
+ "facts": [
+  {
+   "id": "years",
+   "value": "16",
+   "label": {
+    "en": "years in gold and silver paperboard",
+    "zh": "年金银卡纸生产经验"
+   },
+   "source": "PPT slide 4",
+   "confirmed": false
+  },
+  {
+   "id": "capacity",
+   "value": "40,000 t",
+   "label": {
+    "en": "annual capacity",
+    "zh": "年产能"
+   },
+   "source": "PPT slide 8; confirmed for the site by Hailey 2026-10-10",
+   "confirmed": true
+  },
+  {
+   "id": "machines",
+   "value": "100+",
+   "label": {
+    "en": "coating, metallising and embossing machines",
+    "zh": "台涂布、镀铝与模压设备"
+   },
+   "source": "PPT slide 8; confirmed for the site by Hailey 2026-10-10",
+   "confirmed": true
+  },
+  {
+   "id": "patents",
+   "value": "27",
+   "label": {
+    "en": "granted patents",
+    "zh": "项授权专利"
+   },
+   "source": "PPT slide 24; confirmed for the site by Hailey 2026-10-10",
+   "confirmed": true
+  }
+ ],
+ "certificates": [
+  {
+   "en": "ISO 9001 quality management",
+   "zh": "ISO9001 质量管理体系认证",
+   "source": "PPT slide 10",
+   "confirmed": false
+  },
+  {
+   "en": "FSC certification",
+   "zh": "FSC 森林管理体系认证",
+   "source": "PPT slide 10",
+   "confirmed": false
+  },
+  {
+   "en": "Work Safety Standardization, Level 3",
+   "zh": "安全生产标准化三级企业",
+   "source": "PPT slide 10",
+   "confirmed": false
+  },
+  {
+   "en": "National High-Tech Enterprise",
+   "zh": "国家高新技术企业",
+   "source": "PPT slide 10",
+   "confirmed": false
+  },
+  {
+   "en": "Zhejiang Science and Technology SME",
+   "zh": "浙江省科技型中小企业",
+   "source": "PPT slide 10",
+   "confirmed": false
+  },
+  {
+   "en": "Zhejiang Specialised and Innovative SME",
+   "zh": "浙江省专精特新中小企业",
+   "source": "PPT slide 4, 10",
+   "confirmed": false
+  }
+ ],
+ "equipment": [
+  {
+   "img": "eq-laser-embossing",
+   "en": "Laser embossing",
+   "zh": "镭射模压机"
+  },
+  {
+   "img": "eq-coater",
+   "en": "Coating",
+   "zh": "涂布机"
+  },
+  {
+   "img": "eq-vacuum-metallizer",
+   "en": "Vacuum metallising",
+   "zh": "真空镀铝机"
+  },
+  {
+   "img": "eq-cast-coater",
+   "en": "Cast coating",
+   "zh": "铸涂机"
+  },
+  {
+   "img": "eq-laminator",
+   "en": "High-speed laminating",
+   "zh": "高速复合机"
+  },
+  {
+   "img": "eq-slitter",
+   "en": "Slitting",
+   "zh": "分切机"
+  }
+ ],
+ "innovation": {
+  "_note": "R&D results from PPT slides 22-23. Shown as development work, not as products on sale.",
+  "products": [
+   {
+    "en": "Eco transfer bright silver board",
+    "zh": "环保型转移亮银卡纸"
+   },
+   {
+    "en": "Waterproof, moisture-resistant silver board",
+    "zh": "防水防潮银卡纸"
+   },
+   {
+    "en": "Grey-back plain holographic laminated silver board",
+    "zh": "灰底素面镭射复合银卡纸"
+   },
+   {
+    "en": "Waterproof, flame-retardant kraft board",
+    "zh": "防水抗阻燃牛皮卡纸"
+   },
+   {
+    "en": "Water-based coated gold and silver board",
+    "zh": "环保水性涂布金银卡纸"
+   },
+   {
+    "en": "Anti-static, anti-counterfeit gold and silver board for digital printing",
+    "zh": "高克重抗静电防伪数码印刷用金银卡纸"
+   }
+  ],
+  "technologies": [
+   {
+    "en": "Holographic anti-counterfeit paperboard printing",
+    "zh": "全息防伪印刷纸板印刷技术"
+   },
+   {
+    "en": "Laser holographic anti-counterfeit film",
+    "zh": "激光镭射防伪膜制备技术"
+   },
+   {
+    "en": "Holographic pattern layer coating",
+    "zh": "镭射图案层涂层设计及涂布技术"
+   },
+   {
+    "en": "Vacuum metallising and laminating of gold and silver board",
+    "zh": "金银卡纸真空镀铝/复合技术"
+   }
+  ]
+ }
+}

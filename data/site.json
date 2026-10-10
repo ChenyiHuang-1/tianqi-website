@@ -1,0 +1,102 @@
+{
+ "_note": "Site settings. Leave a value empty (\"\") when it is not confirmed; empty values are hidden on the site.",
+ "site_url": "https://tianqimaterials.com/",
+ "brand": "Tianqi Materials",
+ "legal_name": {
+  "en": "Zhejiang Tianqi Packaging Materials Co., Ltd.",
+  "zh": "浙江天琦包装材料股份有限公司"
+ },
+ "address": {
+  "en": "",
+  "zh": ""
+ },
+ "city": {
+  "en": "Zhejiang, China",
+  "zh": "中国浙江"
+ },
+ "email": "hancyih@gmail.com",
+ "phone": [
+  "+86 13588811688",
+  "+86 15868411688"
+ ],
+ "whatsapp": "+44 7894407310",
+ "form_endpoint": "https://formsubmit.co/ajax/hancyih@gmail.com",
+ "form_accepts_files": false,
+ "form_file_note": {
+  "en": "",
+  "zh": ""
+ },
+ "design_fee": {
+  "en": "around US$400",
+  "zh": "约人民币 2,000 元"
+ },
+ "hero_pattern": "181",
+ "featured_patterns": [
+  "181",
+  "243",
+  "285",
+  "127",
+  "114",
+  "205",
+  "155",
+  "266"
+ ],
+ "hero_bubbles": [
+  "pattern:181",
+  "p-pet-plain-holographic-silver-board",
+  "pattern:243",
+  "pattern:285",
+  "pattern:127",
+  "pattern:155",
+  "pattern:205",
+  "pattern:266",
+  "p-holographic-film",
+  "pattern:114",
+  "pattern:249",
+  "pattern:117",
+  "pattern:256",
+  "pattern:104",
+  "pattern:221",
+  "p-pet-bright-silver-board",
+  "pattern:167",
+  "pattern:242",
+  "pattern:160",
+  "pattern:150",
+  "pattern:284",
+  "pattern:289",
+  "p-aluminium-foil-paper",
+  "pattern:239",
+  "pattern:241",
+  "pattern:295",
+  "pattern:202",
+  "pattern:264",
+  "pattern:139",
+  "p-pet-matte-pillar-holographic-board",
+  "pattern:286",
+  "pattern:263",
+  "pattern:277",
+  "pattern:234",
+  "pattern:200",
+  "pattern:290",
+  "p-bright-silver-foil",
+  "pattern:292",
+  "pattern:141",
+  "pattern:300",
+  "pattern:111",
+  "pattern:178",
+  "pattern:108",
+  "p-plain-holographic-transfer-silver-board",
+  "pattern:169",
+  "pattern:280",
+  "pattern:253",
+  "pattern:272",
+  "pattern:210",
+  "pattern:279",
+  "p-pet-matte-silver-board",
+  "pattern:248",
+  "pattern:214",
+  "pattern:135",
+  "pattern:194",
+  "pattern:125"
+ ]
+}

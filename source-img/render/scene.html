@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+html,body{width:1600px;height:1200px;overflow:hidden}
+body{background:radial-gradient(70% 60% at 50% 38%,#f4f4f2 0%,#e3e3df 60%,#d3d3ce 100%);font-family:Inter,Arial,sans-serif}
+.stage{position:absolute;inset:0;perspective:2600px;perspective-origin:50% 30%}
+.floor{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(#0000,rgba(0,0,0,.04))}
+.tex{background-size:cover;background-position:center}
+.sheen::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 60%,rgba(255,255,255,.18) 78%,rgba(255,255,255,0) 100%);mix-blend-mode:screen}
+/* box */
+.box{position:absolute;transform-style:preserve-3d}
+.face{position:absolute;left:0;top:0;overflow:hidden}
+.shadow{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.35),rgba(0,0,0,0));filter:blur(8px)}
+.card{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 30px 50px rgba(0,0,0,.28),0 4px 10px rgba(0,0,0,.18)}
+.card .in{position:absolute;inset:0}
+.frame{position:absolute;inset:0;border:16px solid rgba(255,255,255,.0);border-radius:22px}
+.pc{position:absolute;background:#fbfaf7;box-shadow:0 26px 44px rgba(0,0,0,.25),0 3px 8px rgba(0,0,0,.15);overflow:hidden}
+</style></head><body><div class="stage" id="s"></div>
+<script>
+const T=id=>`url(tex/${id}.jpg)`;
+const s=document.getElementById('s');
+const q=new URLSearchParams(location.search).get('scene');
+function el(tag,cls,st,parent){const d=document.createElement(tag);d.className=cls||'';Object.assign(d.style,st||{});(parent||s).appendChild(d);return d}
+function box(x,y,w,h,d,rx,ry,front,side,top,lid){
+  const b=el('div','box',{left:x+'px',top:y+'px',width:w+'px',height:h+'px',transform:`rotateX(${rx}deg) rotateY(${ry}deg)`,transformStyle:'preserve-3d'});
+  const f=el('div','face tex sheen',{width:w+'px',height:h+'px',backgroundImage:T(front),transform:`translateZ(${d/2}px)`},b);
+  const sd=el('div','face tex',{left:(w-d)/2+'px',width:d+'px',height:h+'px',backgroundImage:T(side),transform:`rotateY(90deg) translateZ(${w/2}px)`},b);
+  el('div','',{position:'absolute',inset:0,background:'linear-gradient(90deg,rgba(0,0,0,.30),rgba(0,0,0,.14))'},sd);
+  const t=el('div','face tex',{top:(h-d)/2+'px',width:w+'px',height:d+'px',backgroundImage:T(top),transform:`rotateX(90deg) translateZ(${h/2}px)`},b);
+  el('div','',{position:'absolute',inset:0,background:'linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,.08))'},t);
+  if(lid){
+    el('div','',{position:'absolute',left:0,right:0,top:lid+'px',height:'3px',background:'rgba(0,0,0,.28)'},f);
+    el('div','',{position:'absolute',left:0,right:0,top:(lid+3)+'px',height:'2px',background:'rgba(255,255,255,.4)'},f);
+    el('div','',{position:'absolute',left:0,right:0,top:lid+'px',height:'3px',background:'rgba(0,0,0,.35)'},sd);
+  }
+  return b;
+}
+if(q==='box'){
+  el('div','shadow',{left:'330px',top:'930px',width:'760px',height:'120px'});
+  el('div','shadow',{left:'930px',top:'960px',width:'420px',height:'80px'});
+  box(470,360,500,600,300,-16,-34,'243','243','243',140);
+  box(1060,620,300,360,200,-16,-26,'155','155','155',0);
+}
+if(q==='cards'){
+  const ids=['181','285','205','127','266'];
+  ids.forEach((id,i)=>{
+    const a=(i-2)*13;
+    const c=el('div','card',{left:'620px',top:'330px',width:'360px',height:'504px',background:'#fff',transformOrigin:'50% 140%',transform:`rotateX(18deg) rotate(${a}deg) translateZ(${i*2}px)`});
+    el('div','in tex sheen',{inset:'14px',borderRadius:'12px',backgroundImage:T(id)},c);
+  });
+}
+if(q==='postcards'){
+  const P=(x,y,w,h,r,id)=>{const c=el('div','pc',{left:x+'px',top:y+'px',width:w+'px',height:h+'px',transform:`rotateX(32deg) rotate(${r}deg)`});return c};
+  // back side
+  const b=P(170,520,720,480,-9);
+  el('div','',{position:'absolute',left:'50%',top:'40px',bottom:'40px',width:'2px',background:'#d8d6cf'},b);
+  for(let i=0;i<4;i++)el('div','',{position:'absolute',left:'54%',right:'40px',top:(200+i*58)+'px',height:'2px',background:'#d8d6cf'},b);
+  const st=el('div','tex sheen',{position:'absolute',right:'40px',top:'40px',width:'96px',height:'120px',backgroundImage:T('285'),outline:'5px dashed #fbfaf7',outlineOffset:'-5px'},b);
+  const f1=P(740,280,720,480,7);el('div','tex sheen',{position:'absolute',inset:0,backgroundImage:T('181')},f1);
+  const f2=P(480,150,720,480,-3);el('div','tex sheen',{position:'absolute',inset:0,backgroundImage:T('243')},f2);
+  el('div','',{position:'absolute',inset:'26px',border:'2px solid rgba(255,255,255,.75)'},f2);
+}
+if(q==='merch'){
+  // notebook
+  const n=el('div','pc',{left:'360px',top:'240px',width:'560px',height:'760px',borderRadius:'6px 18px 18px 6px',transform:'rotateX(30deg) rotate(-8deg)'});
+  el('div','tex sheen',{position:'absolute',inset:0,backgroundImage:T('205')},n);
+  el('div','',{position:'absolute',left:0,top:0,bottom:0,width:'40px',background:'linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.05))'},n);
+  // bookmarks
+  ['266','250','127'].forEach((id,i)=>{
+    const m=el('div','pc',{left:(990+i*140)+'px',top:(330+i*40)+'px',width:'120px',height:'520px',borderRadius:'8px',transform:`rotateX(30deg) rotate(${6+i*5}deg)`});
+    el('div','tex sheen',{position:'absolute',inset:0,backgroundImage:T(id)},m);
+    el('div','',{position:'absolute',left:'48px',top:'28px',width:'24px',height:'24px',borderRadius:'50%',background:'#e3e3df',boxShadow:'inset 0 2px 4px rgba(0,0,0,.4)'},m);
+  });
+  // gift tag
+  const g=el('div','pc',{left:'160px',top:'820px',width:'260px',height:'160px',borderRadius:'10px 60px 60px 10px',transform:'rotateX(36deg) rotate(14deg)'});
+  el('div','tex sheen',{position:'absolute',inset:0,backgroundImage:T('285')},g);
+}
+</script></body></html>

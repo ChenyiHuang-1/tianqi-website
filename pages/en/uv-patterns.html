@@ -1,0 +1,19 @@
+<!--
+title: UV Pattern Library | Tianqi Materials
+desc: Browse ready-designed UV lithography patterns by number. Each pattern can be quoted, sampled or customised.
+-->
+<div class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="{{home}}">Home</a> / UV Pattern Library</p>
+  <h1>UV Pattern Library</h1>
+  <p>Ready-designed UV patterns, each with its own number. “Ready-designed” means the design is finished; it does not mean the material is in stock. New patterns are added regularly.</p>
+</div></div>
+<div class="wrap section">
+  <div class="filter-bar lib-bar" data-filter-target="grid">
+    {{pattern_filters}}
+    <div class="fgroup"><label class="label" for="q">Search by number</label><input class="search" id="q" inputmode="numeric" placeholder="e.g. 243"></div>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <ul class="pgrid" id="grid" data-page-size="48">{{pattern_grid}}</ul>
+  <div class="center"><button class="btn" type="button" id="more">Load more</button></div>
+  <p class="notice small">Screens, lighting and viewing angle change how the effect looks. The confirmed sample or demo is the final reference.</p>
+</div>

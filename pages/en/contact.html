@@ -1,0 +1,44 @@
+<!--
+title: Contact & Request a Quote | Tianqi Materials
+desc: Ask for a material quote, a pattern quote, a sample or a custom design.
+-->
+<div class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="{{home}}">{{t_nav_home}}</a> / {{t_nav_contact}}</p>
+  <h1>Contact us</h1>
+  <p>One form for material quotes, pattern quotes, sample requests and custom projects. You do not need to know the specification; describing the use is enough.</p>
+</div></div>
+<div class="wrap section">
+  <div class="inq">
+    <form class="inquiry" id="inquiry" novalidate data-endpoint="{{form_endpoint}}" data-files="{{form_files}}">
+      <fieldset class="full types"><legend class="label">What do you need?</legend>
+        <label><input type="radio" name="inquiry_type" value="quote" checked> Material quote</label>
+        <label><input type="radio" name="inquiry_type" value="pattern"> Pattern quote</label>
+        <label><input type="radio" name="inquiry_type" value="sample"> Sample request</label>
+        <label><input type="radio" name="inquiry_type" value="custom"> Customisation</label>
+      </fieldset>
+      <label>Name <em>Required</em><input id="f-name" name="name" autocomplete="name" required></label>
+      <label>Email <em>Required</em><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label class="full">Your requirement <em>Required</em><textarea id="f-msg" name="message" required placeholder="What are you making, and how will it be printed or used?"></textarea></label>
+      <label>Company<input id="f-co" name="company" autocomplete="organization"></label>
+      <label>Country or region<input id="f-country" name="country" autocomplete="country-name"></label>
+      <label class="full">Product or pattern numbers<input id="f-codes" name="product_or_pattern" class="code" placeholder="Filled in from the page you came from; you can edit it"></label>
+      <label data-for="quote pattern sample custom">Material type<select id="f-kind" name="material_type"><option value="">—</option><option>Paper / paperboard</option><option>Film</option><option>Finished product</option><option>Not sure</option></select></label>
+      <div class="qty" data-for="quote pattern custom"><label>Quantity<input id="f-qty" name="quantity" inputmode="decimal"></label><label>Unit<select id="f-unit" name="unit"><option>sheets</option><option>kg</option><option>tonnes</option><option>metres</option><option>pieces</option></select></label></div>
+      <label data-for="quote pattern custom">Size (mm)<input id="f-size" name="size"></label>
+      <label data-for="quote pattern custom">Weight (g/m²) or thickness (μm)<input id="f-gsm" name="weight_or_thickness"></label>
+      <label data-for="quote pattern sample custom">End use<input id="f-use" name="end_use"></label>
+      <label data-for="quote pattern custom">Wanted delivery date<input id="f-date" name="delivery_date" type="date"></label>
+      <label class="check full" data-for="quote pattern custom"><input type="checkbox" id="f-sample" name="sample_needed" value="yes"> I would like a sample</label>
+      <label class="full" data-files-only hidden>Attachment<input id="f-file" name="attachment" type="file"><span class="small">{{file_note}}</span></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-msg full" id="form-msg" aria-live="polite"></p>
+      <button class="btn primary full" type="submit">Send</button>
+      <p class="small full" id="form-off" hidden>The online form is not connected yet, so nothing can be sent from it.</p>
+    </form>
+    <aside class="direct">
+      <p class="label">Direct contact</p>
+      <p><b>{{legal_name}}</b><br>{{address}}</p>
+      {{contact_direct}}
+    </aside>
+  </div>
+</div>
