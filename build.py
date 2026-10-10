@@ -171,6 +171,9 @@ def contact_href(lang, **q):
 
 # ------------------------------------------------------------------ page shell
 BASE = (HERE / "templates/base.html").read_text(encoding="utf-8")
+# version tag for CSS/JS links, so browsers fetch the new file after each change
+import hashlib
+ASSET_V = hashlib.md5(b"".join((PUB / f).read_bytes() for f in ("assets/css/site.css", "assets/js/site.js"))).hexdigest()[:8]
 
 
 def fill(tpl, vals):
@@ -187,7 +190,7 @@ def shell(lang, path, section, title, desc, body, og_image=None):
         drop.append(f'<div class="drop-col"><a class="drop-head" href="{url(lang, "products/" + c["id"] + "/")}">{e(L(c["name"], lang))}</a>{subs}</div>')
     contact_lines = "".join(f'<span class="ct">{lab}: {contact_link(k)}</span>' for k, lab in
                             (("whatsapp", "WhatsApp"), ("email", "Email"), ("phone", "Tel")) if SITE.get(k))
-    v.update(lang=lang, html_lang="zh-Hans" if lang == "zh" else "en", other_lang=other, section=section,
+    v.update(asset_v=ASSET_V, lang=lang, html_lang="zh-Hans" if lang == "zh" else "en", other_lang=other, section=section,
              title=e(title), desc=e(desc), body=body, year=datetime.date.today().year,
              canonical=SITE["site_url"].rstrip("/") + url(lang, path),
              href_en=SITE["site_url"].rstrip("/") + url("en", path), href_zh=SITE["site_url"].rstrip("/") + url("zh", path),
