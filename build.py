@@ -125,7 +125,7 @@ def picture(ref, alt, lang, cls="", kind="thumb"):
 
 def pattern_card(p, lang, button=False):
     pid = p["id"]
-    href = url(lang, f"uv-patterns/{pid}/")
+    href = url(lang, f"holographic-patterns/{pid}/")
     tags = p.get("tags_verified") or {}
     data = " ".join(f'data-{k}="{e(v)}"' for k, v in tags.items())
     btn = f'<a class="btn small-btn" href="{href}">{t("view_pattern", lang)}</a>' if button else ""
@@ -192,7 +192,7 @@ def shell(lang, path, section, title, desc, body, og_image=None):
              canonical=SITE["site_url"].rstrip("/") + url(lang, path),
              href_en=SITE["site_url"].rstrip("/") + url("en", path), href_zh=SITE["site_url"].rstrip("/") + url("zh", path),
              href_other=url(other, path), href_en_rel=url("en", path), href_zh_rel=url("zh", path), og_image=SITE["site_url"].rstrip("/") + (og_image or "/img/hero.webp"),
-             home=url(lang), u_products=url(lang, "products/"), u_patterns=url(lang, "uv-patterns/"),
+             home=url(lang), u_products=url(lang, "products/"), u_patterns=url(lang, "holographic-patterns/"),
              u_custom=url(lang, "customisation/"), u_about=url(lang, "about/"), u_contact=url(lang, "contact/"),
              nav_drop="".join(drop), legal_name=e(L(SITE["legal_name"], lang)), city=e(L(SITE["city"], lang)),
              contact_lines=contact_lines,
@@ -222,7 +222,7 @@ def page_body(lang, name, extra):
     m = re.match(r"\s*<!--(.*?)-->\s*", src, re.S)
     meta = dict(l.split(":", 1) for l in m.group(1).strip().splitlines())
     v = {f"t_{k}": T[k][lang] for k in T}
-    v.update(extra, home=url(lang), u_products=url(lang, "products/"), u_patterns=url(lang, "uv-patterns/"),
+    v.update(extra, home=url(lang), u_products=url(lang, "products/"), u_patterns=url(lang, "holographic-patterns/"),
              u_custom=url(lang, "customisation/"), u_about=url(lang, "about/"), u_contact=url(lang, "contact/"),
              design_fee=L(SITE["design_fee"], lang))
     return fill(meta["title"].strip(), v), fill(meta["desc"].strip(), v), fill(src[m.end():], v)
@@ -392,8 +392,8 @@ def build_category(c, lang):
                 inner = (f'<div class="sub-show"><figure class="render-fig"><img src="{img_src(ch["image"])}" alt="{e(L(ch["name"], lang))}" '
                          f'loading="lazy" width="1200" height="900">{cap}</figure>{inner}</div>')
         extra = ""
-        if ch["id"] == "uv-patterned-paper":
-            extra = f'<a class="btn" href="{url(lang, "uv-patterns/")}">{t("browse_patterns", lang)}</a>'
+        if ch["id"] == "patterned-holographic-paperboard":
+            extra = f'<a class="btn" href="{url(lang, "holographic-patterns/")}">{t("browse_patterns", lang)}</a>'
         secs.append(f'<section class="sub" id="{ch["id"]}"><div class="sub-head"><div><h2>{e(L(ch["name"], lang))}</h2>'
                     f'<p>{e(L(ch["desc"], lang))}</p></div>{extra}</div>{inner}</section>')
     allp = public_products(c["id"])
@@ -423,14 +423,14 @@ def build_product(pr, lang):
     btns = [f'<a class="btn primary" href="{contact_href(lang, type="quote", product=pr["slug"])}">{t("quote", lang)}</a>',
             f'<a class="btn" href="{contact_href(lang, type="sample", product=pr["slug"])}">{t("request_sample", lang)}</a>']
     if pr.get("uv"):
-        btns += [f'<a class="btn" href="{url(lang, "uv-patterns/")}">{t("browse_patterns", lang)}</a>',
+        btns += [f'<a class="btn" href="{url(lang, "holographic-patterns/")}">{t("browse_patterns", lang)}</a>',
                  f'<a class="btn" href="{contact_href(lang, type="custom", product=pr["slug"])}">{t("customise_pattern", lang)}</a>']
     note = f'<p class="notice small">{t("pending_review", lang)}</p>' if pr["status"] == "pending-review" else ""
     related = ""
     if pr.get("uv"):
         ids = SITE["featured_patterns"][:8]
         related = (f'<section class="section"><div class="sec-head"><h2>{t("related_patterns", lang)}</h2>'
-                   f'<a class="btn" href="{url(lang, "uv-patterns/")}">{t("browse_patterns", lang)}</a></div>'
+                   f'<a class="btn" href="{url(lang, "holographic-patterns/")}">{t("browse_patterns", lang)}</a></div>'
                    f'<ul class="pgrid">{"".join(pattern_card(p, lang) for p in PATTERNS if p["id"] in ids)}</ul></section>')
     siblings = [p for p in public_products(pr["category"], pr["sub"]) if p is not pr]
     sib = ""
@@ -466,7 +466,7 @@ def build_pattern(p, i, lang):
     carrier_products = [pr for pr in PRODUCTS if pr.get("uv") and
                         (("paper" in p["carriers"] and pr["category"] == "paper-paperboard") or ("film" in p["carriers"] and pr["category"] == "films"))]
     body = (f'<div class="wrap section"><p class="crumbs dark"><a href="{url(lang)}">{t("nav_home", lang)}</a> / '
-            f'<a href="{url(lang, "uv-patterns/")}">{t("nav_patterns", lang)}</a> / {pid}</p>'
+            f'<a href="{url(lang, "holographic-patterns/")}">{t("nav_patterns", lang)}</a> / {pid}</p>'
             f'<div class="detail"><div class="gallery"><img class="main" id="main-view" src="{vs[0]}" alt="{t("pattern", lang)} {pid}">{thumbs}</div>'
             f'<div class="dinfo"><p class="label">{t("nav_patterns", lang)}</p><h1>{t("pattern", lang)} <span class="code">{pid}</span></h1>'
             f'{"<div class=tags>" + tag_html + "</div>" if tag_html else ""}'
@@ -476,14 +476,14 @@ def build_pattern(p, i, lang):
             f'<a class="btn" href="{contact_href(lang, type="sample", pattern=pid)}">{t("request_sample", lang)}</a>'
             f'<a class="btn" href="{contact_href(lang, type="custom", pattern=pid)}">{t("customise_pattern", lang)}</a></div>'
             f'<p class="notice small">{t("reserved_note", lang)}</p><p class="small">{t("angle_note", lang)}</p>'
-            f'<div class="pager"><a href="{url(lang, "uv-patterns/" + prev["id"] + "/")}">← {t("prev", lang)} {prev["id"]}</a>'
-            f'<a href="{url(lang, "uv-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} →</a></div></div></div>'
+            f'<div class="pager"><a href="{url(lang, "holographic-patterns/" + prev["id"] + "/")}">← {t("prev", lang)} {prev["id"]}</a>'
+            f'<a href="{url(lang, "holographic-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} →</a></div></div></div>'
             f'<section class="section"><div class="sec-head"><h2>{t("related_products", lang)}</h2></div>'
             f'<div class="cards four">{"".join(product_card(pr, lang) for pr in carrier_products)}</div></section></div>')
-    title = f'{t("pattern", lang)} {pid} | UV Pattern Library | Tianqi Materials'
-    desc = (f"UV pattern {pid}, design ready. Request a quote, a sample or a custom version." if lang == "en"
+    title = f'{t("pattern", lang)} {pid} | Holographic Patterns | Tianqi Materials'
+    desc = (f"Holographic pattern {pid} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version." if lang == "en"
             else f"UV 纹样 {pid}，设计已完成。可询价、申请样品或定制。")
-    write(lang, f"uv-patterns/{pid}/", "uv-patterns", title, desc, body, og_image=vs[0])
+    write(lang, f"holographic-patterns/{pid}/", "holographic-patterns", title, desc, body, og_image=vs[0])
 
 
 PATTERN_TAGS = {"finish": ["silver", "pearl", "holographic"],
@@ -539,7 +539,7 @@ def main():
                       form_endpoint=e(SITE["form_endpoint"]), form_files="1" if SITE["form_accepts_files"] else "",
                       file_note=e(L(SITE["form_file_note"], lang)), address=e(L(SITE["address"], lang) or L(SITE["city"], lang)),
                       legal_name=e(L(SITE["legal_name"], lang)), email_js=e(SITE["email"]))
-        for name, path, section in (("home", "", "home"), ("products", "products/", "products"), ("uv-patterns", "uv-patterns/", "uv-patterns"),
+        for name, path, section in (("home", "", "home"), ("products", "products/", "products"), ("holographic-patterns", "holographic-patterns/", "holographic-patterns"),
                                     ("customisation", "customisation/", "customisation"), ("about", "about/", "about"), ("contact", "contact/", "contact")):
             title, desc, body = page_body(lang, name, common)
             write(lang, path, section, title, desc, body)

@@ -1,17 +1,17 @@
 [
  {
-  "slug": "uv-patterned-paperboard",
+  "slug": "patterned-holographic-paperboard",
   "category": "paper-paperboard",
-  "sub": "uv-patterned-paper",
+  "sub": "patterned-holographic-paperboard",
   "status": "current",
   "uv": true,
   "image": "pattern:181",
   "name": {
-   "en": "UV-Patterned Paperboard",
+   "en": "Patterned Holographic Paperboard",
    "zh": "UV 光刻卡纸"
   },
   "summary": {
-   "en": "Paperboard with a ready-designed UV pattern. Choose a pattern from the library or start a custom design.",
+   "en": "Holographic paperboard with a ready-made pattern. Choose from 200+ patterns in the library or start a custom design.",
    "zh": "带已设计 UV 纹样的卡纸。可从纹样图库选款，也可定制专属图案。"
   },
   "structure": null,
@@ -37,7 +37,7 @@
   "image": "p-pet-bright-silver-board",
   "original_zh": "PET亮银卡",
   "name": {
-   "en": "PET Bright Silver Paperboard",
+   "en": "Bright Silver Metallized Paperboard",
    "zh": "PET 亮银卡"
   },
   "summary": {
@@ -69,7 +69,7 @@
   "image": "p-pet-matte-silver-board",
   "original_zh": "PET亚银卡",
   "name": {
-   "en": "PET Matte Silver Paperboard",
+   "en": "Matte Silver Metallized Paperboard",
    "zh": "PET 亚银卡"
   },
   "summary": {
@@ -101,7 +101,7 @@
   "image": "p-pet-transfer-silver-board",
   "original_zh": "PET转移银卡",
   "name": {
-   "en": "PET Transfer Silver Board",
+   "en": "Transfer Metallized Silver Paperboard",
    "zh": "PET转移银卡"
   },
   "summary": {
@@ -129,7 +129,7 @@
   "image": "p-plain-holographic-transfer-silver-board",
   "original_zh": "素面镭射转移银卡",
   "name": {
-   "en": "Plain Holographic Transfer Silver Board",
+   "en": "Holographic Transfer Paperboard",
    "zh": "素面镭射转移银卡"
   },
   "summary": {
@@ -160,7 +160,7 @@
   "image": "p-pet-plain-holographic-silver-board",
   "original_zh": "PET素面镭射银卡",
   "name": {
-   "en": "PET Plain Holographic Silver Board",
+   "en": "Rainbow Holographic Laminated Paperboard",
    "zh": "PET 素面镭射银卡"
   },
   "summary": {
@@ -192,7 +192,7 @@
   "image": "p-pet-matte-pillar-holographic-board",
   "original_zh": "PET亚光光柱镭射银卡",
   "name": {
-   "en": "PET Matte Light-Pillar Holographic Silver Board",
+   "en": "Matte Light-Pillar Holographic Paperboard",
    "zh": "PET 亚光光柱镭射银卡"
   },
   "summary": {
@@ -224,7 +224,7 @@
   "image": "p-aluminium-foil-paper",
   "original_zh": "铝箔纸",
   "name": {
-   "en": "Aluminium Foil Laminated Paper",
+   "en": "Coloured Foil Laminated Paper",
    "zh": "铝箔纸"
   },
   "summary": {
@@ -255,7 +255,7 @@
   "image": "p-bright-silver-foil",
   "original_zh": "亮银铝箔",
   "name": {
-   "en": "Bright Silver Aluminium Foil Paper",
+   "en": "Bright Silver Foil Laminated Paper",
    "zh": "亮银铝箔"
   },
   "summary": {
@@ -348,18 +348,18 @@
   "source": "PPT slide 6, 8"
  },
  {
-  "slug": "uv-patterned-film",
+  "slug": "patterned-holographic-film",
   "category": "films",
-  "sub": "uv-patterned-film",
+  "sub": "patterned-holographic-film",
   "status": "current",
   "uv": true,
   "image": "pattern:245",
   "name": {
-   "en": "UV-Patterned Film",
+   "en": "Patterned Holographic Film",
    "zh": "UV 光刻纹样膜"
   },
   "summary": {
-   "en": "Film with a UV pattern, ready-made or custom. Film availability is confirmed per pattern.",
+   "en": "Film with a holographic pattern, ready-made or custom. Film availability is confirmed per pattern.",
    "zh": "带 UV 纹样的膜材，现成或定制。是否可供膜按纹样确认。"
   },
   "structure": null,

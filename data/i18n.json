@@ -8,7 +8,7 @@
   "zh": "产品"
  },
  "nav_patterns": {
-  "en": "UV Pattern Library",
+  "en": "Holographic Patterns",
   "zh": "UV 纹样图库"
  },
  "nav_custom": {
@@ -60,7 +60,7 @@
   "zh": "申请样品"
  },
  "browse_patterns": {
-  "en": "Browse UV Patterns",
+  "en": "Browse Holographic Patterns",
   "zh": "浏览 UV 纹样"
  },
  "customise_pattern": {
@@ -108,7 +108,7 @@
   "zh": "纹样"
  },
  "pattern_lib_sub": {
-  "en": "Ready-designed UV patterns",
+  "en": "Ready-made holographic patterns",
   "zh": "已设计的 UV 纹样"
  },
  "search_code": {
@@ -132,11 +132,11 @@
   "zh": "可用载体"
  },
  "carrier_paper": {
-  "en": "UV-patterned paper and paperboard",
+  "en": "Patterned holographic paperboard",
   "zh": "UV 光刻纸与卡纸"
  },
  "carrier_film": {
-  "en": "UV-patterned film",
+  "en": "Patterned holographic film",
   "zh": "UV 光刻纹样膜"
  },
  "design_status": {
@@ -216,7 +216,7 @@
   "zh": "镭射"
  },
  "v_uv": {
-  "en": "UV pattern",
+  "en": "Patterned holographic",
   "zh": "UV 纹样"
  },
  "render_caption": {

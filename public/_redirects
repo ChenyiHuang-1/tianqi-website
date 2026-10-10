@@ -1,0 +1,6 @@
+/uv-patterns/* /holographic-patterns/:splat 301
+/zh/uv-patterns/* /zh/holographic-patterns/:splat 301
+/products/uv-patterned-paperboard/* /products/patterned-holographic-paperboard/ 301
+/products/uv-patterned-film/* /products/patterned-holographic-film/ 301
+/zh/products/uv-patterned-paperboard/* /zh/products/patterned-holographic-paperboard/ 301
+/zh/products/uv-patterned-film/* /zh/products/patterned-holographic-film/ 301
