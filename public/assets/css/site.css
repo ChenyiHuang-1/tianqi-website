@@ -414,3 +414,12 @@ form.inquiry label em{justify-self:start}
 .foot-grid span.ct{display:block;padding:2px 0}
 .foot-grid span.ct a{display:inline;padding:0}
 .framed.full,.framed-fig.full img{aspect-ratio:auto;height:auto}
+
+/* product directory bar (category + product pages) */
+.cat-nav{position:sticky;top:var(--head-h,68px);z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+.cat-nav .wrap{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.cat-nav a{flex:none;font-size:14px;text-decoration:none;color:var(--ink);padding:6px 14px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.cat-nav a:hover{border-color:var(--rule)}
+.cat-nav a[aria-current]{background:var(--ink);color:#fff}
+.cat-nav a.all{color:var(--muted);margin-right:6px}
+.dinfo{top:132px}

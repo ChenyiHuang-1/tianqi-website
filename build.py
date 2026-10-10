@@ -367,6 +367,15 @@ def filters_for(products, lang):
     return f'<div class="filter-bar" data-filter-target="prod-grid">{"".join(groups)}</div>' if groups else ""
 
 
+def cat_nav(lang, current):
+    """Sticky product directory: back to the overview, or switch category."""
+    links = [f'<a class="all" href="{url(lang, "products/")}">← {t("all_products", lang)}</a>']
+    for c in CATS:
+        cur = ' aria-current="page"' if c["id"] == current else ""
+        links.append(f'<a href="{url(lang, "products/" + c["id"] + "/")}"{cur}>{e(L(c["name"], lang))}</a>')
+    return f'<nav class="cat-nav"><div class="wrap">{"".join(links)}</div></nav>'
+
+
 def build_category(c, lang):
     secs = []
     for ch in c["children"]:
@@ -391,7 +400,7 @@ def build_category(c, lang):
     jump = "".join(f'<a href="#{ch["id"]}">{e(L(ch["name"], lang))}</a>' for ch in c["children"] if sub_visible(c, ch))
     body = (f'<div class="page-head"><div class="wrap"><p class="crumbs"><a href="{url(lang)}">{t("nav_home", lang)}</a> / '
             f'<a href="{url(lang, "products/")}">{t("nav_products", lang)}</a></p><h1>{e(L(c["name"], lang))}</h1>'
-            f'<p>{e(L(c["intro"], lang))}</p><nav class="jump">{jump}</nav></div></div>'
+            f'<p>{e(L(c["intro"], lang))}</p><nav class="jump">{jump}</nav></div></div>{cat_nav(lang, c["id"])}'
             f'<div class="wrap section">{filters_for(allp, lang)}<div id="prod-grid">{"".join(secs)}</div></div>')
     name = L(c["name"], lang)
     write(lang, f"products/{c['id']}/", "products", f"{name} | Tianqi Materials", L(c["intro"], lang), body)
@@ -428,7 +437,7 @@ def build_product(pr, lang):
     if siblings:
         sib = (f'<section class="section"><div class="sec-head"><h2>{t("in_category", lang)}</h2></div>'
                f'<div class="cards four">{"".join(product_card(p, lang) for p in siblings)}</div></section>')
-    body = (f'<div class="wrap section"><p class="crumbs dark"><a href="{url(lang)}">{t("nav_home", lang)}</a> / '
+    body = (cat_nav(lang, cat["id"]) + f'<div class="wrap section"><p class="crumbs dark"><a href="{url(lang)}">{t("nav_home", lang)}</a> / '
             f'<a href="{url(lang, "products/")}">{t("nav_products", lang)}</a> / <a href="{url(lang, "products/" + cat["id"] + "/")}">{e(L(cat["name"], lang))}</a> / '
             f'<a href="{url(lang, "products/" + cat["id"] + "/")}#{sub["id"]}">{e(L(sub["name"], lang))}</a></p>'
             f'<div class="detail"><div class="gallery">{picture(pr["image"], name, lang, "main", "full")}</div>'
