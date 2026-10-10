@@ -367,6 +367,16 @@ def filters_for(products, lang):
     return f'<div class="filter-bar" data-filter-target="prod-grid">{"".join(groups)}</div>' if groups else ""
 
 
+def custom_block(c, lang):
+    items = c.get("custom") or []
+    if not items:
+        return ""
+    cells = "".join(f'<div class="opt"><h3>{e(L(x["title"], lang))}</h3><p>{e(L(x["text"], lang))}</p></div>' for x in items)
+    return (f'<section class="custom-opts"><div class="sec-head"><div><p class="label">{t("custom_head", lang)}</p>'
+            f'<p>{t("custom_intro", lang)}</p></div><a class="btn" href="{contact_href(lang, type="custom", product=c["id"])}">{t("custom_cta", lang)}</a></div>'
+            f'<div class="opts">{cells}</div></section>')
+
+
 def cat_nav(lang, current):
     """Sticky product directory: back to the overview, or switch category."""
     links = [f'<a class="all" href="{url(lang, "products/")}">← {t("all_products", lang)}</a>']
@@ -401,7 +411,7 @@ def build_category(c, lang):
     body = (f'<div class="page-head"><div class="wrap"><p class="crumbs"><a href="{url(lang)}">{t("nav_home", lang)}</a> / '
             f'<a href="{url(lang, "products/")}">{t("nav_products", lang)}</a></p><h1>{e(L(c["name"], lang))}</h1>'
             f'<p>{e(L(c["intro"], lang))}</p><nav class="jump">{jump}</nav></div></div>{cat_nav(lang, c["id"])}'
-            f'<div class="wrap section">{filters_for(allp, lang)}<div id="prod-grid">{"".join(secs)}</div></div>')
+            f'<div class="wrap section">{custom_block(c, lang)}{filters_for(allp, lang)}<div id="prod-grid">{"".join(secs)}</div></div>')
     name = L(c["name"], lang)
     write(lang, f"products/{c['id']}/", "products", f"{name} | Tianqi Materials", L(c["intro"], lang), body)
 

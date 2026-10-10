@@ -306,5 +306,17 @@
  "pv_bold": {
   "en": "Bold",
   "zh": "强烈"
+ },
+ "custom_head": {
+  "en": "Made to your specification",
+  "zh": "可按需定制"
+ },
+ "custom_intro": {
+  "en": "Tell us what you need and we will match the material, weight and finish.",
+  "zh": "告诉我们您的需求，我们为您匹配材料、克重与工艺。"
+ },
+ "custom_cta": {
+  "en": "Discuss a custom order",
+  "zh": "咨询定制"
  }
 }

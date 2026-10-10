@@ -423,3 +423,14 @@ form.inquiry label em{justify-self:start}
 .cat-nav a[aria-current]{background:var(--ink);color:#fff}
 .cat-nav a.all{color:var(--muted);margin-right:6px}
 .dinfo{top:132px}
+
+/* category customisation options */
+.custom-opts{background:var(--tint,#f6f6f4);border-radius:14px;padding:28px 28px 30px;margin-bottom:44px}
+.custom-opts .sec-head{margin-bottom:18px;align-items:center}
+.custom-opts .sec-head p{margin:0}
+.opts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.opts .opt{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:16px}
+.opts h3{font-size:15px;margin:0 0 6px}
+.opts p{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0}
+@media (max-width:1100px){.opts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.opts{grid-template-columns:1fr 1fr}.custom-opts{padding:20px}}

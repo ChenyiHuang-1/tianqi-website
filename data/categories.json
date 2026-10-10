@@ -71,6 +71,58 @@
      "zh": "覆膜白卡、铸涂高光卡等。"
     }
    }
+  ],
+  "custom": [
+   {
+    "title": {
+     "en": "Base board & weight",
+     "zh": "底纸与克重"
+    },
+    "text": {
+     "en": "Choose the paperboard grade and weight (g/m²) that suits your box, card or label.",
+     "zh": "按您的盒型、卡片或标签用途选择卡纸种类与克重。"
+    }
+   },
+   {
+    "title": {
+     "en": "Surface effect",
+     "zh": "表面效果"
+    },
+    "text": {
+     "en": "Bright silver, matte silver, gold, rainbow holographic, light-pillar or a holographic pattern.",
+     "zh": "亮银、亚银、金色、彩虹镭射、光柱，或选一款镭射纹样。"
+    }
+   },
+   {
+    "title": {
+     "en": "Processing",
+     "zh": "加工工艺"
+    },
+    "text": {
+     "en": "Coating, vacuum metallizing, laser embossing, cast coating, laminating and slitting, all in house.",
+     "zh": "涂布、真空镀铝、镭射模压、铸涂、复合与分切，均在厂内完成。"
+    }
+   },
+   {
+    "title": {
+     "en": "Combined finishes",
+     "zh": "多工艺叠加"
+    },
+    "text": {
+     "en": "Layer several effects on one sheet: holographic plus pattern, matte plus gloss, or reserved areas for your logo and print.",
+     "zh": "同一张材料上叠加多种效果：镭射加纹样、亚光加亮面，或为 logo 和印刷预留区域。"
+    }
+   },
+   {
+    "title": {
+     "en": "Size & format",
+     "zh": "规格与包装"
+    },
+    "text": {
+     "en": "Roll width, slit size and packing to your order.",
+     "zh": "卷宽、分切尺寸与包装方式按订单定制。"
+    }
+   }
   ]
  },
  {
@@ -131,6 +183,58 @@
     "desc": {
      "en": "Patterned holographic film, ready-made or custom.",
      "zh": "已加工光刻膜，现成或定制款。"
+    }
+   }
+  ],
+  "custom": [
+   {
+    "title": {
+     "en": "Thickness",
+     "zh": "厚度"
+    },
+    "text": {
+     "en": "PET film in 12 μm and 16 μm; tell us if you need another gauge.",
+     "zh": "PET 膜有 12μm 与 16μm，其他厚度可咨询。"
+    }
+   },
+   {
+    "title": {
+     "en": "Effect",
+     "zh": "效果"
+    },
+    "text": {
+     "en": "Clear, rainbow holographic, a ready-made holographic pattern, or your own design.",
+     "zh": "透明、彩虹镭射、现成镭射纹样，或您自己的图案。"
+    }
+   },
+   {
+    "title": {
+     "en": "Processing",
+     "zh": "加工工艺"
+    },
+    "text": {
+     "en": "Laser embossing, metallizing and coating on our own lines.",
+     "zh": "镭射模压、镀铝与涂布，在自有生产线完成。"
+    }
+   },
+   {
+    "title": {
+     "en": "Combined finishes",
+     "zh": "多工艺叠加"
+    },
+    "text": {
+     "en": "Combine a pattern with plain areas, or several effects in one film.",
+     "zh": "纹样与素面区域组合，或在一张膜上叠加多种效果。"
+    }
+   },
+   {
+    "title": {
+     "en": "Width & roll",
+     "zh": "宽度与卷长"
+    },
+    "text": {
+     "en": "Slit width, roll length and core size to your order.",
+     "zh": "分切宽度、卷长与纸芯规格按订单定制。"
     }
    }
   ]
@@ -201,6 +305,58 @@
     "desc": {
      "en": "Other paper goods on request.",
      "zh": "按需求承接其他纸制品。"
+    }
+   }
+  ],
+  "custom": [
+   {
+    "title": {
+     "en": "Format & size",
+     "zh": "款式与尺寸"
+    },
+    "text": {
+     "en": "Box style, card size and product shape to your design.",
+     "zh": "盒型、卡片尺寸与产品形状按您的设计制作。"
+    }
+   },
+   {
+    "title": {
+     "en": "Material & weight",
+     "zh": "材料与克重"
+    },
+    "text": {
+     "en": "Any of our holographic, metallized or foil laminated boards, in the weight you need.",
+     "zh": "可选我们的镭射、镀铝或铝箔复合卡纸，克重按需选择。"
+    }
+   },
+   {
+    "title": {
+     "en": "Combined finishes",
+     "zh": "多工艺叠加"
+    },
+    "text": {
+     "en": "Holographic, pattern and matte areas on one piece, with reserved areas for your artwork.",
+     "zh": "同一件产品上组合镭射、纹样与亚光区域，并为您的图案预留位置。"
+    }
+   },
+   {
+    "title": {
+     "en": "Your artwork",
+     "zh": "您的图案"
+    },
+    "text": {
+     "en": "Send your logo or design; we prepare the file and a demo for approval.",
+     "zh": "发来 logo 或设计稿，我们制作文件并出 demo 给您确认。"
+    }
+   },
+   {
+    "title": {
+     "en": "Quantity & packing",
+     "zh": "数量与包装"
+    },
+    "text": {
+     "en": "Quoted per project by quantity and packing.",
+     "zh": "按数量与包装方式逐项目报价。"
     }
    }
   ]
