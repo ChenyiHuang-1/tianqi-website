@@ -155,3 +155,25 @@
       .finally(function () { btn.disabled = false; });
   });
 })();
+
+// ---- home pattern carousel: arrows, dots, swipe (native scroll), auto-advance paused on hover/focus
+(function () {
+  document.querySelectorAll("[data-carousel]").forEach(function (c) {
+    var track = c.querySelector(".car-track"), pages = c.querySelectorAll(".car-page"), dots = c.querySelectorAll(".car-dot");
+    var n = pages.length, cur = 0, hold = false;
+    function mark() {
+      cur = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach(function (d, i) { d.setAttribute("aria-current", i === cur ? "true" : "false"); });
+    }
+    function go(i) { track.scrollTo({ left: ((i + n) % n) * track.clientWidth }); }
+    c.querySelector(".prev").addEventListener("click", function () { go(cur - 1); });
+    c.querySelector(".next").addEventListener("click", function () { go(cur + 1); });
+    dots.forEach(function (d, i) { d.addEventListener("click", function () { go(i); }); });
+    track.addEventListener("scroll", function () { window.requestAnimationFrame(mark); });
+    ["mouseenter", "focusin", "touchstart"].forEach(function (ev) { c.addEventListener(ev, function () { hold = true; }, { passive: true }); });
+    ["mouseleave", "focusout"].forEach(function (ev) { c.addEventListener(ev, function () { hold = false; }); });
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!still) setInterval(function () { if (!hold && !document.hidden) go(cur + 1); }, 6000);
+    mark();
+  });
+})();

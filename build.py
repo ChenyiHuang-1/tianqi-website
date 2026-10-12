@@ -123,6 +123,37 @@ def picture(ref, alt, lang, cls="", kind="thumb"):
     return f'<img class="{cls}" src="{s}" alt="{e(alt)}" loading="lazy">'
 
 
+def chunks(xs, n):
+    return [xs[i:i + n] for i in range(0, len(xs), n) if len(xs[i:i + n]) == n]
+
+
+def carousel_extra(featured, total=24):
+    """More patterns for the home carousel: round-robin across pattern types so each page mixes styles."""
+    seen = {p["id"] for p in featured}
+    groups = {}
+    for p in PATTERNS:
+        tv = p.get("tags_verified") or {}
+        if p["id"] not in seen and tv.get("effect") == "bold":
+            groups.setdefault((p.get("tags_verified") or {}).get("pattern", ""), []).append(p)
+    pools = [g[::max(1, len(g) // 8)] for g in groups.values()]
+    out = []
+    while len(out) < total and any(pools):
+        for g in pools:
+            if g and len(out) < total:
+                out.append(g.pop(0))
+    return out
+
+
+def pattern_carousel(slides, lang):
+    pages = "".join(f'<ul class="pgrid featured car-page" aria-label="{i + 1} / {len(slides)}">'
+                    + "".join(pattern_card(p, lang, True) for p in sl) + "</ul>" for i, sl in enumerate(slides))
+    dots = "".join(f'<button type="button" class="car-dot" aria-label="{i + 1}"></button>' for i in range(len(slides)))
+    return (f'<div class="pcar" data-carousel><div class="car-track">{pages}</div>'
+            f'<div class="car-nav"><button type="button" class="car-btn prev" aria-label="{t("prev", lang)}">&#8592;</button>'
+            f'<div class="car-dots">{dots}</div>'
+            f'<button type="button" class="car-btn next" aria-label="{t("next", lang)}">&#8594;</button></div></div>')
+
+
 def pattern_card(p, lang, button=False):
     pid = p["id"]
     href = url(lang, f"holographic-patterns/{pid}/")
@@ -541,9 +572,10 @@ def main():
 
     for lang in LANGS:
         featured = [p for p in PATTERNS if p["id"] in SITE["featured_patterns"]]
+        slides = [featured] + [g for g in chunks(carousel_extra(featured), 8)]
         common = dict(cat_cards=category_cards(lang), facts=facts_html(lang), stats=stats_html(lang), customers=customers_html(lang), bubbles=bubbles_html(), certs=certs_html(lang),
                       equipment=equipment_html(lang), equipment4=equipment_html(lang, 4),
-                      featured_patterns='<ul class="pgrid featured">' + "".join(pattern_card(p, lang, True) for p in featured) + "</ul>",
+                      featured_patterns=pattern_carousel(slides, lang),
                       innovation_products="".join(f"<li>{e(L(x, lang))}</li>" for x in COMPANY["innovation"]["products"]),
                       innovation_tech="".join(f"<li>{e(L(x, lang))}</li>" for x in COMPANY["innovation"]["technologies"]),
                       pattern_grid="".join(pattern_card(p, lang) for p in PATTERNS), pattern_filters=pattern_filters(lang),
