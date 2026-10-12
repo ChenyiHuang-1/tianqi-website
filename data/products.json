@@ -8,16 +8,16 @@
   "image": "pattern:181",
   "name": {
    "en": "Patterned Holographic Paperboard",
-   "zh": "UV 光刻卡纸"
+   "zh": "光刻卡纸"
   },
   "summary": {
    "en": "Holographic paperboard with a ready-made pattern. Choose from 200+ patterns in the library or start a custom design.",
-   "zh": "带已设计 UV 纹样的卡纸。可从纹样图库选款，也可定制专属图案。"
+   "zh": "带已设计光刻纹样的卡纸。可从纹样图库选款，也可定制专属图案。"
   },
   "structure": null,
   "process": {
    "en": "UV lithography. Two routes are used: the pattern is made on PET film and then laminated to board, or PET film and board are laminated first and the surface is UV-patterned. The route for each order is confirmed with you.",
-   "zh": "UV 光刻。有两种路线：先在 PET 膜上制作纹样再复合到卡纸；或先复合 PET 膜与卡纸再做表面 UV 光刻。每个订单的路线与您确认。"
+   "zh": "光刻。有两种路线：先在 PET 膜上制作纹样再复合到卡纸；或先复合 PET 膜与卡纸再做表面光刻。每个订单的路线与您确认。"
   },
   "effect": {
    "en": "Patterned light effects that change with viewing angle.",
@@ -356,16 +356,16 @@
   "image": "pattern:245",
   "name": {
    "en": "Patterned Holographic Film",
-   "zh": "UV 光刻纹样膜"
+   "zh": "光刻纹样膜"
   },
   "summary": {
    "en": "Film with a holographic pattern, ready-made or custom. Film availability is confirmed per pattern.",
-   "zh": "带 UV 纹样的膜材，现成或定制。是否可供膜按纹样确认。"
+   "zh": "带光刻纹样的膜材，现成或定制。是否可供膜按纹样确认。"
   },
   "structure": null,
   "process": {
    "en": "UV lithography on PET film",
-   "zh": "PET 膜上 UV 光刻"
+   "zh": "PET 膜上光刻"
   },
   "effect": {
    "en": "Patterned light effects",

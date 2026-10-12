@@ -495,7 +495,7 @@ def build_pattern(p, i, lang):
             f'<div class="cards four">{"".join(product_card(pr, lang) for pr in carrier_products)}</div></section></div>')
     title = f'{t("pattern", lang)} {pid} | Holographic Patterns | Tianqi Materials'
     desc = (f"Holographic pattern {pid} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version." if lang == "en"
-            else f"UV 纹样 {pid}，设计已完成。可询价、申请样品或定制。")
+            else f"光刻纹样 {pid}，设计已完成。可询价、申请样品或定制。")
     write(lang, f"holographic-patterns/{pid}/", "holographic-patterns", title, desc, body, og_image=vs[0])
 
 

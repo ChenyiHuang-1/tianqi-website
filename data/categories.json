@@ -8,7 +8,7 @@
   },
   "intro": {
    "en": "Holographic, metallized silver and foil laminated paperboard for luxury packaging, folding cartons, rigid boxes, cards and labels.",
-   "zh": "用于彩盒、精品盒、卡牌和印刷品的金属、镭射与 UV 光刻纸材和卡纸。"
+   "zh": "用于彩盒、精品盒、卡牌和印刷品的金属、镭射与光刻纸材和卡纸。"
   },
   "children": [
    {
@@ -16,11 +16,11 @@
     "public": true,
     "name": {
      "en": "Patterned Holographic Paperboard",
-     "zh": "UV 光刻纸与卡纸"
+     "zh": "光刻纸与卡纸"
     },
     "desc": {
      "en": "200+ ready-made holographic patterns, chosen from the pattern library.",
-     "zh": "已设计好的 UV 纹样，可在纹样图库中选款。"
+     "zh": "已设计好的光刻纹样，可在纹样图库中选款。"
     }
    },
    {
@@ -134,7 +134,7 @@
   },
   "intro": {
    "en": "PET film, holographic film and patterned holographic film for laminating, label converting and packaging.",
-   "zh": "用于复合、标签与后加工的 PET 膜、镭射膜和 UV 光刻膜。"
+   "zh": "用于复合、标签与后加工的 PET 膜、镭射膜和光刻膜。"
   },
   "children": [
    {
@@ -178,7 +178,7 @@
     "public": true,
     "name": {
      "en": "Patterned Holographic Film",
-     "zh": "UV 光刻纹样膜"
+     "zh": "光刻纹样膜"
     },
     "desc": {
      "en": "Patterned holographic film, ready-made or custom.",
@@ -262,7 +262,7 @@
     },
     "desc": {
      "en": "Folding cartons and gift boxes in metallized or holographic paperboard.",
-     "zh": "采用金银卡或 UV 光刻卡纸的彩盒与礼盒。"
+     "zh": "采用金银卡或光刻卡纸的彩盒与礼盒。"
     }
    },
    {
