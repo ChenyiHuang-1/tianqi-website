@@ -434,3 +434,4 @@ form.inquiry label em{justify-self:start}
 .opts p{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0}
 @media (max-width:1100px){.opts{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:640px){.opts{grid-template-columns:1fr 1fr}.custom-opts{padding:20px}}
+.cimg img[src*="/c-"]{object-fit:cover;padding:0}
