@@ -66,7 +66,7 @@ python -m http.server 8000
 **公司数据和证书**：`company.json` 里每一项都有 `confirmed`，只有改成 `true` 才会出现在网站上。证书请核对当前有效期和适用范围后再改。
 
 **联系方式**：都在 `data/site.json` 里：`email`、`phone`、`whatsapp`、`address`。填写后自动出现在联系页和页脚，留空则不显示。邮箱会生成点开即写邮件的链接，WhatsApp 会生成 wa.me 对话链接，电话会生成可直接拨打的链接。`phone` 可以写多个号码，例如 `["+86 13588811688", "+86 15868411688"]`。
-目前用的是个人邮箱 hancyih@gmail.com 和 WhatsApp +44 7894407310。以后换成域名邮箱（如 sales@tianqimaterials.com）时，改两处：`email` 改成新邮箱；`form_endpoint` 改成 `https://formsubmit.co/ajax/新邮箱`。然后重新运行 `python build.py`。换完后在正式网站上提交一次测试询价，并在新邮箱里点击 FormSubmit 的激活链接。
+目前用的邮箱是 tianqi.materials@gmail.com 和 WhatsApp +44 7894407310。以后换成域名邮箱（如 sales@tianqimaterials.com）时，改两处：`email` 改成新邮箱；`form_endpoint` 改成 `https://formsubmit.co/ajax/新邮箱`。然后重新运行 `python build.py`。换完后在正式网站上提交一次测试询价，并在新邮箱里点击 FormSubmit 的激活链接。
 
 **询价表单**：表单需要一个真实的接收服务（例如 Formspree、Web3Forms，或自建的 Cloudflare Worker）。目前已接 FormSubmit（`form_endpoint` 为 `https://formsubmit.co/ajax/邮箱`，免注册，首次提交后需在邮箱里点激活链接）。换其他服务时，把服务给的地址填进 `site.json` 的 `form_endpoint`。没填时提交按钮是灰的，并提示表单尚未接通，不会假装提交成功。若服务支持附件，把 `form_accepts_files` 改为 `true`，并在 `form_file_note` 写清格式和大小限制。上线前请自己提交一次，确认邮箱真的收到。
 
