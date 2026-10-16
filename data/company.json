@@ -49,19 +49,19 @@
    "source": "Certificate image from Hailey 2026-10-16",
    "confirmed": true,
    "detail": {
-    "en": "FSC Chain of Custody, certified by SAI Global. Covers packaging paper, coated paperboard and metallized paperboard (FSC 100%, FSC Mix, FSC Recycled). Valid to 15 June 2027.",
-    "zh": "FSC 产销监管链（CoC）认证，发证机构：SAI Global。覆盖包装用纸、涂布卡纸与镀铝卡纸（FSC 100%、FSC Mix、FSC Recycled），有效期至 2027 年 6 月 15 日。"
+    "en": "Chain of Custody · SAI Global · valid to 15 Jun 2027",
+    "zh": "产销监管链 · SAI Global · 有效期至 2027.6.15"
    },
    "img": "cert-fsc"
   },
   {
    "en": "ISO 9001:2015 certification",
-   "zh": "ISO 9001:2015 质量管理体系认证",
+   "zh": "ISO 9001:2015 认证",
    "source": "Certificate image from Hailey 2026-10-16",
    "confirmed": true,
    "detail": {
-    "en": "Quality management system certified by WIT Assessment.",
-    "zh": "质量管理体系认证，发证机构：万泰认证。"
+    "en": "Quality management · WIT Assessment",
+    "zh": "质量管理体系 · 万泰认证"
    },
    "img": "cert-iso9001"
   },
