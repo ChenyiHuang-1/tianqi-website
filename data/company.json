@@ -52,7 +52,8 @@
     "en": "Chain of Custody · SAI Global · valid to 15 Jun 2027",
     "zh": "产销监管链 · SAI Global · 有效期至 2027.6.15"
    },
-   "img": "cert-fsc"
+   "img": "cert-fsc",
+   "short": "FSC"
   },
   {
    "en": "ISO 9001:2015 certification",
@@ -63,7 +64,8 @@
     "en": "Quality management · WIT Assessment",
     "zh": "质量管理体系 · 万泰认证"
    },
-   "img": "cert-iso9001"
+   "img": "cert-iso9001",
+   "short": "ISO 9001"
   },
   {
    "en": "Work Safety Standardization, Level 3",

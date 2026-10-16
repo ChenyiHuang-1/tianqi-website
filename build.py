@@ -263,11 +263,18 @@ def page_body(lang, name, extra):
 
 
 # ------------------------------------------------------------------ generated pages
-def facts_html(lang):
+def facts_html(lang, with_certs=False):
     fs = [f for f in COMPANY["facts"] if f["confirmed"]]
     if not fs:
         return ""
-    return '<div class="facts">' + "".join(f'<div><strong>{e(f["value"])}</strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs) + "</div>"
+    cells = "".join(f'<div><strong>{e(f["value"])}</strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs)
+    cs = [c for c in COMPANY["certificates"] if c["confirmed"] and c.get("img")] if with_certs else []
+    if cs:
+        # home factory block: certificates fill the cell next to patents (Hailey 2026-10-16)
+        thumbs = "".join(f'<a href="/assets/img/{c["img"]}.webp"><img src="/assets/img/{c["img"]}.webp" alt="{e(L(c, lang))}" loading="lazy"></a>' for c in cs)
+        names = " · ".join(e(c["short"]) for c in cs)
+        cells += f'<div class="fact-certs"><div><strong>{names}</strong><span>{"certifications" if lang == "en" else "资质认证"}</span></div><p class="ct-thumbs">{thumbs}</p></div>'
+    return '<div class="facts">' + cells + "</div>"
 
 
 def stats_html(lang):
@@ -580,7 +587,7 @@ def main():
     for lang in LANGS:
         featured = [p for p in PATTERNS if p["id"] in SITE["featured_patterns"]]
         slides = [featured] + [g for g in chunks(carousel_extra(featured), 8)]
-        common = dict(cat_cards=category_cards(lang), facts=facts_html(lang), stats=stats_html(lang), customers=customers_html(lang), bubbles=bubbles_html(), certs=certs_html(lang),
+        common = dict(cat_cards=category_cards(lang), facts=facts_html(lang), facts_certs=facts_html(lang, True), stats=stats_html(lang), customers=customers_html(lang), bubbles=bubbles_html(), certs=certs_html(lang),
                       equipment=equipment_html(lang), equipment4=equipment_html(lang, 4),
                       featured_patterns=pattern_carousel(slides, lang),
                       innovation_products="".join(f"<li>{e(L(x, lang))}</li>" for x in COMPANY["innovation"]["products"]),

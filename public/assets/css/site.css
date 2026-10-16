@@ -454,3 +454,10 @@ form.inquiry label em{justify-self:start}
 .cert-img{flex:0 0 40px}
 .cert-img img{width:40px;height:auto;display:block;border:1px solid var(--rule)}
 @media (max-width:520px){.certs{grid-template-columns:1fr}}
+.facts .fact-certs{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.fact-certs strong{font-size:22px}
+.fact-certs .ct-thumbs{margin:0;display:flex;gap:6px}
+.fact-certs .ct-thumbs img{width:30px;height:auto;display:block;border:1px solid var(--rule)}
+.facts .fact-certs>div{padding:0;background:none;flex:1 1 0;min-width:0}
+.facts .fact-certs strong{font-size:20px;white-space:nowrap;line-height:1.6}
+@media (max-width:520px){.facts .fact-certs{flex-wrap:wrap;align-items:flex-start}.facts .fact-certs>div{flex-basis:100%}.facts .fact-certs strong{font-size:18px}}
