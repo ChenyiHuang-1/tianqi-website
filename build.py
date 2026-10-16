@@ -364,8 +364,15 @@ def certs_html(lang):
     cs = [c for c in COMPANY["certificates"] if c["confirmed"]]
     if not cs:
         return ""
-    head = "Certificates" if lang == "en" else "资质认证"
-    return f'<h3 class="mini-head">{head}</h3><ul class="chips-static">' + "".join(f"<li>{e(L(c, lang))}</li>" for c in cs) + "</ul>"
+    head = "Certifications" if lang == "en" else "资质认证"
+    cells = []
+    for c in cs:
+        # certificate scans carry Chinese text, so only the ZH pages show them
+        img = (f'<a class="cert-img" href="/assets/img/{c["img"]}.webp"><img src="/assets/img/{c["img"]}.webp" alt="{e(L(c, lang))}" loading="lazy"></a>'
+               if c.get("img") and lang == "zh" else "")
+        detail = f'<p>{e(L(c["detail"], lang))}</p>' if c.get("detail") else ""
+        cells.append(f'<li class="cert">{img}<div><h4>{e(L(c, lang))}</h4>{detail}</div></li>')
+    return f'<h3 class="mini-head">{head}</h3><ul class="certs">' + "".join(cells) + "</ul>"
 
 
 def equipment_html(lang, n=6):

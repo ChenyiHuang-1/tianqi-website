@@ -446,3 +446,10 @@ form.inquiry label em{justify-self:start}
 .car-dots{display:flex;gap:8px}
 .car-dot{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:#c9c9c4;cursor:pointer}
 .car-dot[aria-current="true"]{background:var(--ink,#111);width:22px;border-radius:5px}
+/* certifications */
+.certs{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.cert{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.cert h4{margin:0 0 4px;font-size:15px}
+.cert p{margin:0;font-size:13.5px;color:var(--muted,#555);line-height:1.5}
+.cert-img{flex:0 0 78px}
+.cert-img img{width:78px;height:auto;display:block;border:1px solid var(--rule)}
