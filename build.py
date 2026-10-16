@@ -367,9 +367,9 @@ def certs_html(lang):
     head = "Certifications" if lang == "en" else "资质认证"
     cells = []
     for c in cs:
-        # certificate scans carry Chinese text, so only the ZH pages show them
+        # full certificate scans on both languages (Hailey 2026-10-16: show unedited, like the factory gate photo)
         img = (f'<a class="cert-img" href="/assets/img/{c["img"]}.webp"><img src="/assets/img/{c["img"]}.webp" alt="{e(L(c, lang))}" loading="lazy"></a>'
-               if c.get("img") and lang == "zh" else "")
+               if c.get("img") else "")
         detail = f'<p>{e(L(c["detail"], lang))}</p>' if c.get("detail") else ""
         cells.append(f'<li class="cert">{img}<div><h4>{e(L(c, lang))}</h4>{detail}</div></li>')
     return f'<h3 class="mini-head">{head}</h3><ul class="certs">' + "".join(cells) + "</ul>"
