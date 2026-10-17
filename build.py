@@ -619,10 +619,29 @@ def main():
                                      + "".join(f"<url><loc>{base}{u}</loc><lastmod>{today}</lastmod></url>" for u in BUILT) + "</urlset>", encoding="utf-8")
     (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
     print(f"Built {len(BUILT)} pages ({len(PATTERNS)} patterns, {len(PRODUCTS)} products, 2 languages) into {PUB}")
+    version_images()
     check_english()
 
 
 CJK = re.compile(r"[\u3000-\u303f\u3400-\u9fff\uf900-\ufaff\uff00-\uffef]+")
+
+
+def version_images():
+    """Add ?v=<content hash> to image links, so a replaced photo shows at once despite the long /img cache."""
+    import hashlib, re
+    pat = re.compile(r'((?:src|href)=")([^"?#:]+\.(?:webp|png|jpe?g|svg))"')
+    cache = {}
+    for h in PUB.rglob("*.html"):
+        def tag(m, d=h.parent):
+            link = m.group(2)
+            f = PUB / link.lstrip("/") if link.startswith("/") else (d / link).resolve()
+            if f not in cache:
+                cache[f] = hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.is_file() else None
+            return f'{m.group(1)}{link}?v={cache[f]}"' if cache[f] else m.group(0)
+        text = h.read_text(encoding="utf-8")
+        new = pat.sub(tag, text)
+        if new != text:
+            h.write_text(new, encoding="utf-8")
 
 
 def check_english():
