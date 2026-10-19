@@ -593,7 +593,7 @@ def build_product(pr, lang):
             f'<a href="{url(lang, "products/" + cat["id"] + "/")}#{sub["id"]}">{e(L(sub["name"], lang))}</a></p>'
             f'<div class="detail"><div class="gallery">{picture(pr["image"], name, lang, "main", "full")}</div>'
             f'<div class="dinfo"><p class="label">{e(L(sub["name"], lang))}</p><h1>{e(name)}</h1>'
-            ''
+            + (f'<p class="dsub">{e(L(pr["subtitle"], lang))}</p>' if pr.get("subtitle") else "") +
             f'<p class="lead">{e(L(pr["summary"], lang))}</p>{note}'
             f'<table class="spec">{spec_rows(pr, lang)}</table><p class="small">{t("specs_on_request", lang)}</p>'
             f'<div class="btns">{"".join(btns)}</div></div></div></div>'

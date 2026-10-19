@@ -214,6 +214,7 @@ a.cimg:hover img{transform:scale(1.03)}
 .dinfo .label{margin:0}
 .dinfo h1{font-size:clamp(28px,3.2vw,40px)}
 .dinfo .orig{color:var(--muted);margin-top:-8px}
+.dinfo .dsub{margin-top:-8px;font-size:16px;font-weight:600;color:var(--ink,#111)}
 .dinfo .lead{font-size:17px;color:var(--muted)}
 .dinfo .btns{margin-top:4px}
 .dinfo .notice{font-size:14px}

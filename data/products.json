@@ -16,7 +16,7 @@
   },
   "structure": null,
   "process": {
-   "en": "UV lithography. Two routes are used: the pattern is made on PET film and then laminated to board, or PET film and board are laminated first and the surface is UV-patterned. The route for each order is confirmed with you.",
+   "en": "Lithography. Two routes are used: the pattern is made on PET film and then laminated to board, or PET film and board are laminated first and the pattern is made on the surface. The route for each order is confirmed with you.",
    "zh": "光刻。有两种路线：先在 PET 膜上制作纹样再复合到卡纸；或先复合 PET 膜与卡纸再做表面光刻。每个订单的路线与您确认。"
   },
   "effect": {
@@ -26,8 +26,43 @@
   "attrs": {
    "effect": "uv"
   },
-  "specs": [],
-  "source": "User brief 2026-10-10"
+  "specs": [
+   {
+    "label": {
+     "en": "Registration",
+     "zh": "对位"
+    },
+    "value": {
+     "en": "Patterns can be placed in register with your print.",
+     "zh": "纹样可与印刷图案精确对位。"
+    }
+   },
+   {
+    "label": {
+     "en": "Anti-counterfeiting",
+     "zh": "防伪"
+    },
+    "value": {
+     "en": "High-precision lithography can add micro-text and security codes to the pattern.",
+     "zh": "高精度光刻可在纹样中加工微缩文字与防伪码。"
+    }
+   },
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "User brief 2026-10-10",
+  "subtitle": {
+   "en": "For folding cartons, rigid boxes, cards and labels",
+   "zh": "适用于彩盒、精品盒、卡牌与标签"
+  }
  },
  {
   "slug": "pet-bright-silver-board",
@@ -41,16 +76,16 @@
    "zh": "PET 亮银卡"
   },
   "summary": {
-   "en": "Mirror-bright silver board with PET lamination.",
-   "zh": "PET 复合镜面亮银卡纸。"
+   "en": "Mirror-bright silver board, PET laminated or aluminium foil laminated.",
+   "zh": "镜面亮银卡纸，PET 复合或铝箔复合均可。"
   },
   "structure": {
-   "en": "PET laminated paperboard",
-   "zh": "PET 复合卡纸"
+   "en": "PET laminated or aluminium foil laminated paperboard (both available)",
+   "zh": "PET 复合或铝箔复合卡纸，两种工艺均可"
   },
   "process": null,
   "effect": {
-   "en": "Bright silver, gloss",
+   "en": "Bright silver, high-gloss mirror finish",
    "zh": "亮银，亮面"
   },
   "attrs": {
@@ -58,8 +93,23 @@
    "surface": "gloss",
    "effect": "plain"
   },
-  "specs": [],
-  "source": "PPT slide 6"
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "PPT slide 6",
+  "subtitle": {
+   "en": "High-gloss mirror silver for cartons and labels",
+   "zh": "镜面高光银，适用于彩盒与标签"
+  }
  },
  {
   "slug": "pet-matte-silver-board",
@@ -73,12 +123,12 @@
    "zh": "PET 亚银卡"
   },
   "summary": {
-   "en": "Matte silver board with PET lamination.",
-   "zh": "PET 复合亚光银卡纸。"
+   "en": "Matte silver board, PET laminated or aluminium foil laminated.",
+   "zh": "亚光银卡纸，PET 复合或铝箔复合均可。"
   },
   "structure": {
-   "en": "PET laminated paperboard",
-   "zh": "PET 复合卡纸"
+   "en": "PET laminated or aluminium foil laminated paperboard (both available)",
+   "zh": "PET 复合或铝箔复合卡纸，两种工艺均可"
   },
   "process": null,
   "effect": {
@@ -90,8 +140,23 @@
    "surface": "matte",
    "effect": "plain"
   },
-  "specs": [],
-  "source": "PPT slide 6"
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "PPT slide 6",
+  "subtitle": {
+   "en": "Soft matte silver for premium cartons and boxes",
+   "zh": "柔和亚光银，适用于高档彩盒与礼盒"
+  }
  },
  {
   "slug": "pet-transfer-silver-board",
@@ -117,7 +182,18 @@
   "attrs": {
    "colour": "silver"
   },
-  "specs": [],
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
   "source": "PPT slide 6",
   "internal_note": "Structure not confirmed. Do not describe until checked."
  },
@@ -142,15 +218,30 @@
    "zh": "镭射转移"
   },
   "effect": {
-   "en": "Plain (seamless) rainbow holographic",
+   "en": "Plain (seamless) iridescent rainbow holographic",
    "zh": "素面彩虹镭射"
   },
   "attrs": {
    "colour": "silver",
    "effect": "holographic"
   },
-  "specs": [],
-  "source": "PPT slide 6"
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "PPT slide 6",
+  "subtitle": {
+   "en": "All-over rainbow holographic board for cartons and labels",
+   "zh": "满版彩虹镭射卡纸，适用于彩盒与标签"
+  }
  },
  {
   "slug": "pet-plain-holographic-silver-board",
@@ -160,20 +251,20 @@
   "image": "p-pet-plain-holographic-silver-board",
   "original_zh": "PET素面镭射银卡",
   "name": {
-   "en": "Rainbow Holographic Laminated Paperboard",
+   "en": "Rainbow Holographic Silver Paperboard",
    "zh": "PET 素面镭射银卡"
   },
   "summary": {
-   "en": "PET laminated silver board with a plain rainbow holographic effect.",
-   "zh": "PET 复合的素面镭射银卡纸。"
+   "en": "Silver board with a plain iridescent rainbow holographic effect, PET laminated or aluminium foil laminated.",
+   "zh": "素面彩虹镭射银卡纸，PET 复合或铝箔复合均可。"
   },
   "structure": {
-   "en": "PET laminated paperboard",
-   "zh": "PET 复合卡纸"
+   "en": "PET laminated or aluminium foil laminated paperboard (both available)",
+   "zh": "PET 复合或铝箔复合卡纸，两种工艺均可"
   },
   "process": null,
   "effect": {
-   "en": "Plain rainbow holographic",
+   "en": "Plain iridescent rainbow holographic",
    "zh": "素面彩虹镭射"
   },
   "attrs": {
@@ -181,8 +272,23 @@
    "surface": "gloss",
    "effect": "holographic"
   },
-  "specs": [],
-  "source": "PPT slide 6"
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "PPT slide 6",
+  "subtitle": {
+   "en": "Iridescent rainbow finish for cartons, boxes and cards",
+   "zh": "彩虹镭射效果，适用于彩盒、礼盒与卡牌"
+  }
  },
  {
   "slug": "pet-matte-pillar-holographic-board",
@@ -213,8 +319,23 @@
    "surface": "matte",
    "effect": "holographic"
   },
-  "specs": [],
-  "source": "PPT slide 6"
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "PPT slide 6",
+  "subtitle": {
+   "en": "Matte silver with light-pillar (light beam) holographic effect",
+   "zh": "亚光银底配光柱镭射效果"
+  }
  },
  {
   "slug": "aluminium-foil-paper",
@@ -244,8 +365,23 @@
    "colour": "gold",
    "effect": "plain"
   },
-  "specs": [],
-  "source": "PPT slide 6"
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "PPT slide 6",
+  "subtitle": {
+   "en": "Gold and coloured metallic finishes for cartons and wraps",
+   "zh": "金色及彩色金属效果，适用于彩盒与包装纸"
+  }
  },
  {
   "slug": "bright-silver-aluminium-foil",
@@ -276,8 +412,23 @@
    "surface": "gloss",
    "effect": "plain"
   },
-  "specs": [],
-  "source": "PPT slide 6"
+  "specs": [
+   {
+    "label": {
+     "en": "Converting",
+     "zh": "后加工"
+    },
+    "value": {
+     "en": "Good folding and die-cutting performance; suitable for hot stamping and lamination.",
+     "zh": "折盒、压痕、模切表现良好，适合烫金、覆膜等后加工。"
+    }
+   }
+  ],
+  "source": "PPT slide 6",
+  "subtitle": {
+   "en": "High-gloss silver foil for cartons and wraps",
+   "zh": "高光银色铝箔，适用于彩盒与包装纸"
+  }
  },
  {
   "slug": "pet-film",
@@ -315,7 +466,11 @@
     }
    }
   ],
-  "source": "User brief 2026-10-10"
+  "source": "User brief 2026-10-10",
+  "subtitle": {
+   "en": "Clear PET Film, 12 / 16 μm",
+   "zh": "透明 PET 膜，12 / 16μm"
+  }
  },
  {
   "slug": "holographic-film",
@@ -329,7 +484,7 @@
    "zh": "镭射膜"
   },
   "summary": {
-   "en": "Holographic film in a range of stock effects.",
+   "en": "Holographic film with iridescent rainbow effects, in a range of stock designs.",
    "zh": "多种现有镭射效果的镭射膜。"
   },
   "structure": null,
@@ -345,7 +500,11 @@
    "effect": "holographic"
   },
   "specs": [],
-  "source": "PPT slide 6, 8"
+  "source": "PPT slide 6, 8",
+  "subtitle": {
+   "en": "For lamination and label converting",
+   "zh": "适用于复合与标签加工"
+  }
  },
  {
   "slug": "patterned-holographic-film",
@@ -364,7 +523,7 @@
   },
   "structure": null,
   "process": {
-   "en": "UV lithography on PET film",
+   "en": "Lithography on PET film",
    "zh": "PET 膜上光刻"
   },
   "effect": {
@@ -374,7 +533,32 @@
   "attrs": {
    "effect": "uv"
   },
-  "specs": [],
-  "source": "User brief 2026-10-10"
+  "specs": [
+   {
+    "label": {
+     "en": "Registration",
+     "zh": "对位"
+    },
+    "value": {
+     "en": "Patterns can be placed in register with your print.",
+     "zh": "纹样可与印刷图案精确对位。"
+    }
+   },
+   {
+    "label": {
+     "en": "Anti-counterfeiting",
+     "zh": "防伪"
+    },
+    "value": {
+     "en": "High-precision lithography can add micro-text and security codes to the pattern.",
+     "zh": "高精度光刻可在纹样中加工微缩文字与防伪码。"
+    }
+   }
+  ],
+  "source": "User brief 2026-10-10",
+  "subtitle": {
+   "en": "Ready-made or custom patterns, for lamination and labels",
+   "zh": "现成或定制纹样，适用于复合与标签"
+  }
  }
 ]
