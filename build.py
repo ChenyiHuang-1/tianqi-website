@@ -611,11 +611,8 @@ def build_pattern(p, i, lang):
         thumbs = '<div class="views">' + "".join(
             f'<button type="button" data-view="{v}" aria-label="{t("more_views", lang)} {n + 1}"><img src="{v}" alt="" loading="lazy"></button>'
             for n, v in enumerate(vs)) + "</div>"
-    carriers = "".join(f"<li>{t('carrier_' + c, lang)}</li>" for c in p["carriers"])
     tags = p.get("tags_verified") or {}
     tag_html = "".join(f'<span class="tag">{t("pv_" + v, lang)}</span>' for v in tags.values())
-    carrier_products = [pr for pr in PRODUCTS if pr.get("uv") and
-                        (("paper" in p["carriers"] and pr["category"] == "paper-paperboard") or ("film" in p["carriers"] and pr["category"] == "films"))]
     sims = similar_patterns(p)
     similar = ""
     if sims:
@@ -627,29 +624,24 @@ def build_pattern(p, i, lang):
             f'<div class="detail"><div class="gallery"><img class="main" id="main-view" src="{vs[0]}" alt="{e(pattern_alt(p, lang))}">{thumbs}</div>'
             f'<div class="dinfo"><p class="label">{t("nav_patterns", lang)}</p><h1>{t("pattern", lang)} <span class="code">{pid}</span></h1>'
             f'{"<div class=tags>" + tag_html + "</div>" if tag_html else ""}'
-            f'<table class="spec"><tr><th>{t("available_on", lang)}</th><td><ul class="plain">{carriers}</ul></td></tr>'
-            f'<tr><th>{t("design_status", lang)}</th><td>{t("design_ready", lang)}</td></tr></table>'
+            f'<table class="spec"><tr><th>{t("design_status", lang)}</th><td>{t("design_ready", lang)}</td></tr></table>'
             f'<div class="btns"><a class="btn primary" href="{contact_href(lang, type="pattern", pattern=pid)}">{t("quote", lang)}</a>'
             f'<a class="btn" href="{contact_href(lang, type="sample", pattern=pid)}">{t("request_sample", lang)}</a>'
             f'<a class="btn" href="{contact_href(lang, type="custom", pattern=pid)}">{t("customise_pattern", lang)}</a></div>'
             f'<p class="notice small">{t("reserved_note", lang)}</p><p class="small">{t("angle_note", lang)}</p>'
             f'<div class="pager"><a href="{url(lang, "holographic-patterns/" + prev["id"] + "/")}">← {t("prev", lang)} {prev["id"]}</a>'
             f'<a href="{url(lang, "holographic-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} →</a></div></div></div>'
-            f'{similar}'
-            f'<section class="section"><div class="sec-head"><h2>{t("related_products", lang)}</h2></div>'
-            f'<div class="cards four">{"".join(product_card(pr, lang) for pr in carrier_products)}</div></section></div>')
+            f'{similar}</div>')
     kind = pattern_kind(p, lang)
     effect = PATTERN_WORDS[lang].get(tags.get("effect"), "")
-    on = " and ".join(t("carrier_" + c, "en").lower() for c in p["carriers"]) or "holographic paperboard and film"
-    on_zh = "、".join(t("carrier_" + c, "zh") for c in p["carriers"]) or "光刻卡纸与膜"
     if lang == "en":
         title = f"Pattern {pid}: {kind} | Tianqi Materials" if kind else f"Pattern {pid} | Holographic Patterns | Tianqi Materials"
-        desc = (f"{kind} {pid}" + (f" with {effect} effect" if effect else "") + f", available as {on}. "
+        desc = (f"{kind} {pid}" + (f" with {effect} effect" if effect else "") + ". "
                 "Design ready: request a quote, a sample or a custom version.") if kind else (
                 f"Holographic pattern {pid} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version.")
     else:
         title = f"纹样 {pid}｜{kind}｜天琦材料" if kind else f"纹样 {pid}｜光刻纹样｜天琦材料"
-        desc = (f"{kind} {pid}" + (f"，效果{effect}" if effect else "") + f"，可做{on_zh}。设计已完成，可询价、申请样品或定制。") if kind else (
+        desc = (f"{kind} {pid}" + (f"，效果{effect}" if effect else "") + "。设计已完成，可询价、申请样品或定制。") if kind else (
                 f"光刻纹样 {pid}，设计已完成。可询价、申请样品或定制。")
     write(lang, f"holographic-patterns/{pid}/", "holographic-patterns", title, desc, body, og_image=vs[0])
 
