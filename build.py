@@ -154,6 +154,47 @@ def pattern_carousel(slides, lang):
             f'<button type="button" class="car-btn next" aria-label="{t("next", lang)}">&#8594;</button></div></div>')
 
 
+# Words used to describe a pattern from its tags, in titles, descriptions and image text.
+PATTERN_WORDS = {
+    "en": {"silver": "Silver", "pearl": "Pearl", "holographic": "Rainbow", "geometric": "Geometric", "fluid": "Fluid",
+           "texture": "Texture", "lines": "Light-Beam", "motif": "Motif",
+           "subtle": "a subtle", "medium": "a medium", "bold": "a bold"},
+    "zh": {"silver": "银色", "pearl": "珍珠彩", "holographic": "彩虹", "geometric": "几何", "fluid": "流体",
+           "texture": "肌理", "lines": "线条光束", "motif": "主题图案",
+           "subtle": "低调", "medium": "适中", "bold": "强烈"},
+}
+
+
+def pattern_kind(p, lang):
+    """'Pearl Texture Holographic Pattern' / '珍珠彩肌理光刻纹样', or '' when the pattern has no tags."""
+    tv = p.get("tags_verified") or {}
+    w = PATTERN_WORDS[lang]
+    words = [w[tv[k]] for k in ("finish", "pattern") if tv.get(k) in w]
+    if not words:
+        return ""
+    return " ".join(words) + " Holographic Pattern" if lang == "en" else "".join(words) + "光刻纹样"
+
+
+def pattern_alt(p, lang):
+    kind = pattern_kind(p, lang)
+    name = f'{t("pattern", lang)} {p["id"]}'
+    if not kind:
+        return name
+    return f"{name}, {kind.lower()}" if lang == "en" else f"{name}，{kind}"
+
+
+def similar_patterns(p, n=7):
+    """Patterns with the same pattern type (same finish first), nearest numbers first."""
+    tv = p.get("tags_verified") or {}
+    if not tv.get("pattern"):
+        return []
+    same = [q for q in PATTERNS if q is not p and (q.get("tags_verified") or {}).get("pattern") == tv["pattern"]]
+    num = int(p["id"]) if p["id"].isdigit() else 0
+    same.sort(key=lambda q: ((q.get("tags_verified") or {}).get("finish") != tv.get("finish"),
+                             abs((int(q["id"]) if q["id"].isdigit() else 0) - num)))
+    return same[:n]
+
+
 def pattern_card(p, lang, button=False):
     pid = p["id"]
     href = url(lang, f"holographic-patterns/{pid}/")
@@ -161,7 +202,7 @@ def pattern_card(p, lang, button=False):
     data = " ".join(f'data-{k}="{e(v)}"' for k, v in tags.items())
     btn = f'<a class="btn small-btn" href="{href}">{t("view_pattern", lang)}</a>' if button else ""
     return (f'<li class="pcard" data-id="{pid}" {data}><a class="pimg" href="{href}">'
-            f'<img loading="lazy" src="/img/patterns/thumb/{pid}.webp" alt="{t("pattern", lang)} {pid}" width="{THUMB_W}" height="{THUMB_H}"></a>'
+            f'<img loading="lazy" src="/img/patterns/thumb/{pid}.webp" alt="{e(pattern_alt(p, lang))}" width="{THUMB_W}" height="{THUMB_H}"></a>'
             f'<div class="pmeta"><a href="{href}"><span class="code">{t("pattern", lang) + " " if button else ""}{pid}</span></a>{btn}</div></li>')
 
 
@@ -211,6 +252,58 @@ def fill(tpl, vals):
     return re.sub(r"\{\{(\w+)\}\}", lambda m: str(vals[m.group(1)]) if m.group(1) in vals else m.group(0), tpl)
 
 
+def ld_script(data):
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
+def organization_ld(lang):
+    base = SITE["site_url"].rstrip("/")
+    org = {"@context": "https://schema.org", "@type": "Organization", "@id": base + "/#org",
+           "name": SITE["brand"] if lang == "en" else "天琦材料", "legalName": L(SITE["legal_name"], lang),
+           "url": base + url(lang), "logo": base + "/assets/img/logo.png",
+           "address": {"@type": "PostalAddress", "addressRegion": "Zhejiang", "addressCountry": "CN"}}
+    if SITE.get("email"):
+        org["email"] = SITE["email"]
+    phones = SITE.get("phone") or []
+    if phones:
+        org["telephone"] = phones[0] if isinstance(phones, list) else phones
+    return org
+
+
+def crumb_names(lang, path):
+    """Readable name for each step of a page path, for the breadcrumb data."""
+    names = {"products": t("nav_products", lang), "holographic-patterns": t("nav_patterns", lang),
+             "customisation": t("nav_custom", lang), "about": t("nav_about", lang), "contact": t("nav_contact", lang)}
+    names.update({c["id"]: L(c["name"], lang) for c in CATS})
+    names.update({pr["slug"]: L(pr["name"], lang) for pr in PRODUCTS})
+    parts = [x for x in path.split("/") if x]
+    out = []
+    for i, x in enumerate(parts):
+        if parts[0] == "holographic-patterns" and i == 1:
+            out.append((f'{t("pattern", lang)} {x}', parts[:i + 1]))
+        elif x in names:
+            out.append((names[x], parts[:i + 1]))
+    return out
+
+
+def page_ld(lang, path):
+    base = SITE["site_url"].rstrip("/")
+    blocks = []
+    if not path:
+        blocks.append(organization_ld(lang))
+        blocks.append({"@context": "https://schema.org", "@type": "WebSite", "url": base + url(lang),
+                       "name": SITE["brand"] if lang == "en" else "天琦材料", "inLanguage": "zh-Hans" if lang == "zh" else "en",
+                       "publisher": {"@id": base + "/#org"}})
+    elif path == "about/":
+        blocks.append(organization_ld(lang))
+    crumbs = crumb_names(lang, path)
+    if crumbs:
+        items = [(t("nav_home", lang), base + url(lang))] + [(n, base + url(lang, "/".join(ps) + "/")) for n, ps in crumbs]
+        blocks.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]})
+    return "\n".join(ld_script(b) for b in blocks)
+
+
 def shell(lang, path, section, title, desc, body, og_image=None):
     other = "zh" if lang == "en" else "en"
     v = {f"t_{k}": T[k][lang] for k in T}
@@ -222,7 +315,7 @@ def shell(lang, path, section, title, desc, body, og_image=None):
     contact_lines = "".join(f'<span class="ct">{lab}: {contact_link(k)}</span>' for k, lab in
                             (("whatsapp", "WhatsApp"), ("email", "Email"), ("phone", "Tel")) if SITE.get(k))
     v.update(asset_v=ASSET_V, lang=lang, html_lang="zh-Hans" if lang == "zh" else "en", other_lang=other, section=section,
-             title=e(title), desc=e(desc), body=body, year=datetime.date.today().year,
+             title=e(title), desc=e(desc), body=body, jsonld=page_ld(lang, path), og_locale="zh_CN" if lang == "zh" else "en_US", year=datetime.date.today().year,
              canonical=SITE["site_url"].rstrip("/") + url(lang, path),
              href_en=SITE["site_url"].rstrip("/") + url("en", path), href_zh=SITE["site_url"].rstrip("/") + url("zh", path),
              href_other=url(other, path), href_en_rel=url("en", path), href_zh_rel=url("zh", path), og_image=SITE["site_url"].rstrip("/") + (og_image or "/img/hero.webp"),
@@ -523,9 +616,15 @@ def build_pattern(p, i, lang):
     tag_html = "".join(f'<span class="tag">{t("pv_" + v, lang)}</span>' for v in tags.values())
     carrier_products = [pr for pr in PRODUCTS if pr.get("uv") and
                         (("paper" in p["carriers"] and pr["category"] == "paper-paperboard") or ("film" in p["carriers"] and pr["category"] == "films"))]
+    sims = similar_patterns(p)
+    similar = ""
+    if sims:
+        similar = (f'<section class="section"><div class="sec-head"><h2>{"Similar patterns" if lang == "en" else "同类纹样"}</h2>'
+                   f'<a class="btn" href="{url(lang, "holographic-patterns/")}">{t("browse_patterns", lang)}</a></div>'
+                   f'<ul class="pgrid">{"".join(pattern_card(q, lang) for q in sims)}</ul></section>')
     body = (f'<div class="wrap section"><p class="crumbs dark"><a href="{url(lang)}">{t("nav_home", lang)}</a> / '
             f'<a href="{url(lang, "holographic-patterns/")}">{t("nav_patterns", lang)}</a> / {pid}</p>'
-            f'<div class="detail"><div class="gallery"><img class="main" id="main-view" src="{vs[0]}" alt="{t("pattern", lang)} {pid}">{thumbs}</div>'
+            f'<div class="detail"><div class="gallery"><img class="main" id="main-view" src="{vs[0]}" alt="{e(pattern_alt(p, lang))}">{thumbs}</div>'
             f'<div class="dinfo"><p class="label">{t("nav_patterns", lang)}</p><h1>{t("pattern", lang)} <span class="code">{pid}</span></h1>'
             f'{"<div class=tags>" + tag_html + "</div>" if tag_html else ""}'
             f'<table class="spec"><tr><th>{t("available_on", lang)}</th><td><ul class="plain">{carriers}</ul></td></tr>'
@@ -536,11 +635,22 @@ def build_pattern(p, i, lang):
             f'<p class="notice small">{t("reserved_note", lang)}</p><p class="small">{t("angle_note", lang)}</p>'
             f'<div class="pager"><a href="{url(lang, "holographic-patterns/" + prev["id"] + "/")}">← {t("prev", lang)} {prev["id"]}</a>'
             f'<a href="{url(lang, "holographic-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} →</a></div></div></div>'
+            f'{similar}'
             f'<section class="section"><div class="sec-head"><h2>{t("related_products", lang)}</h2></div>'
             f'<div class="cards four">{"".join(product_card(pr, lang) for pr in carrier_products)}</div></section></div>')
-    title = f'{t("pattern", lang)} {pid} | Holographic Patterns | Tianqi Materials'
-    desc = (f"Holographic pattern {pid} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version." if lang == "en"
-            else f"光刻纹样 {pid}，设计已完成。可询价、申请样品或定制。")
+    kind = pattern_kind(p, lang)
+    effect = PATTERN_WORDS[lang].get(tags.get("effect"), "")
+    on = " and ".join(t("carrier_" + c, "en").lower() for c in p["carriers"]) or "holographic paperboard and film"
+    on_zh = "、".join(t("carrier_" + c, "zh") for c in p["carriers"]) or "光刻卡纸与膜"
+    if lang == "en":
+        title = f"Pattern {pid}: {kind} | Tianqi Materials" if kind else f"Pattern {pid} | Holographic Patterns | Tianqi Materials"
+        desc = (f"{kind} {pid}" + (f" with {effect} effect" if effect else "") + f", available as {on}. "
+                "Design ready: request a quote, a sample or a custom version.") if kind else (
+                f"Holographic pattern {pid} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version.")
+    else:
+        title = f"纹样 {pid}｜{kind}｜天琦材料" if kind else f"纹样 {pid}｜光刻纹样｜天琦材料"
+        desc = (f"{kind} {pid}" + (f"，效果{effect}" if effect else "") + f"，可做{on_zh}。设计已完成，可询价、申请样品或定制。") if kind else (
+                f"光刻纹样 {pid}，设计已完成。可询价、申请样品或定制。")
     write(lang, f"holographic-patterns/{pid}/", "holographic-patterns", title, desc, body, og_image=vs[0])
 
 
