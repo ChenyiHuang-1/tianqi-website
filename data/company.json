@@ -25,7 +25,7 @@
    "id": "machines",
    "value": "100+",
    "label": {
-    "en": "coating, metallising and embossing machines",
+    "en": "coating, metallizing and embossing machines",
     "zh": "台涂布、镀铝与模压设备"
    },
    "source": "PPT slide 8; confirmed for the site by Hailey 2026-10-10",
@@ -105,7 +105,7 @@
   },
   {
    "img": "eq-vacuum-metallizer",
-   "en": "Vacuum metallising",
+   "en": "Vacuum metallizing",
    "zh": "真空镀铝机"
   },
   {
@@ -166,7 +166,7 @@
     "zh": "镭射图案层涂层设计及涂布技术"
    },
    {
-    "en": "Vacuum metallising and laminating of gold and silver board",
+    "en": "Vacuum metallizing and laminating of gold and silver board",
     "zh": "金银卡纸真空镀铝/复合技术"
    }
   ]
