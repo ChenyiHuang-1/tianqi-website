@@ -4,11 +4,21 @@
   "image": "c-holographic-paperboard",
   "name": {
    "en": "Holographic & Metallized Paperboard",
-   "zh": "纸材与卡纸"
+   "zh": "纸材与卡纸",
+   "ja": "ホログラム板紙・蒸着板紙",
+   "fr": "Carton holographique et métallisé",
+   "es": "Cartón holográfico y metalizado",
+   "ko": "홀로그램 및 금은 증착 판지",
+   "ar": "الكرتون الهولوغرافي والمُمعدَن"
   },
   "intro": {
    "en": "Holographic, metallized silver and foil laminated paperboard for luxury packaging, folding cartons, rigid boxes, cards and labels.",
-   "zh": "用于彩盒、精品盒、卡牌和印刷品的金属、镭射与光刻纸材和卡纸。"
+   "zh": "用于彩盒、精品盒、卡牌和印刷品的金属、镭射与光刻纸材和卡纸。",
+   "ja": "高級パッケージ、折り箱、貼り箱、カード、ラベル向けのホログラム板紙、シルバー蒸着板紙、アルミ箔貼り合わせ板紙。",
+   "fr": "Carton holographique, carton métallisé argent et carton contrecollé aluminium pour l'emballage de luxe, les étuis pliants, les coffrets rigides, les cartes et les étiquettes.",
+   "es": "Cartón holográfico, cartón metalizado plata y cartón laminado con aluminio para envases de lujo, estuches plegables, cajas rígidas, tarjetas y etiquetas.",
+   "ko": "고급 패키지, 접지 상자(폴딩 카톤), 하드 박스, 카드 및 라벨용 홀로그램 판지, 은색 증착 판지, 알루미늄 호일 합지 판지.",
+   "ar": "كرتون هولوغرافي وكرتون فضي مُمعدَن وكرتون مُصفَّح برقائق الألومنيوم للتغليف الفاخر والعلب الكرتونية القابلة للطي والعلب الصلبة والبطاقات والملصقات."
   },
   "children": [
    {
@@ -16,11 +26,21 @@
     "public": true,
     "name": {
      "en": "Patterned Holographic Paperboard",
-     "zh": "光刻纸与卡纸"
+     "zh": "光刻纸与卡纸",
+     "ja": "柄入りホログラム板紙",
+     "fr": "Carton holographique à motifs",
+     "es": "Cartón holográfico con diseño",
+     "ko": "패턴 홀로그램 판지",
+     "ar": "كرتون هولوغرافي منقوش"
     },
     "desc": {
      "en": "200+ ready-made holographic patterns from the library, or your own custom holographic logo.",
-     "zh": "200+ 款现成光刻纹样可在图库中选款，也可定制专属 logo 图案。"
+     "zh": "200+ 款现成光刻纹样可在图库中选款，也可定制专属 logo 图案。",
+     "ja": "ライブラリの200種類以上の既製ホログラム柄、またはオリジナルのホログラムロゴに対応。",
+     "fr": "Plus de 200 motifs holographiques prêts à l'emploi issus de notre bibliothèque, ou votre propre logo holographique sur mesure.",
+     "es": "Más de 200 diseños holográficos listos para usar de nuestra biblioteca, o su propio logotipo holográfico personalizado.",
+     "ko": "라이브러리의 200개 이상 기성 홀로그램 패턴 또는 귀사 전용 맞춤 홀로그램 로고.",
+     "ar": "أكثر من 200 نقشة هولوغرافية جاهزة من المكتبة، أو شعارك الهولوغرافي المخصّص."
     }
    },
    {
@@ -28,11 +48,21 @@
     "public": true,
     "name": {
      "en": "Metallized Silver & Gold Paperboard",
-     "zh": "金银卡纸"
+     "zh": "金银卡纸",
+     "ja": "金銀蒸着板紙",
+     "fr": "Carton métallisé argent et or",
+     "es": "Cartón metalizado plata y oro",
+     "ko": "금은 증착 판지",
+     "ar": "كرتون مُمعدَن فضي وذهبي"
     },
     "desc": {
      "en": "Bright and matte silver PET laminated paperboard.",
-     "zh": "PET 亮银、亚银等金银卡纸。"
+     "zh": "PET 亮银、亚银等金银卡纸。",
+     "ja": "光沢シルバー・マットシルバーのPET貼り合わせ板紙。",
+     "fr": "Carton argent brillant et mat contrecollé PET.",
+     "es": "Cartón plata brillante y mate laminado con PET.",
+     "ko": "유광 및 무광 은색 PET 합지 판지.",
+     "ar": "كرتون فضي لامع ومطفي مُصفَّح بفيلم PET."
     }
    },
    {
@@ -40,11 +70,21 @@
     "public": true,
     "name": {
      "en": "Rainbow Holographic Paperboard",
-     "zh": "镭射纸与卡纸"
+     "zh": "镭射纸与卡纸",
+     "ja": "レインボーホログラム板紙",
+     "fr": "Carton holographique arc-en-ciel",
+     "es": "Cartón holográfico arcoíris",
+     "ko": "레인보우 홀로그램 판지",
+     "ar": "كرتون هولوغرافي قزحي"
     },
     "desc": {
      "en": "Plain rainbow, light-pillar and holographic transfer paperboard.",
-     "zh": "素面镭射、光柱、亚光光柱、镭射转移银卡等。"
+     "zh": "素面镭射、光柱、亚光光柱、镭射转移银卡等。",
+     "ja": "無地レインボー、光柱（ライトピラー）、ホログラム転写板紙。",
+     "fr": "Carton arc-en-ciel uni, à colonnes lumineuses et holographique par transfert.",
+     "es": "Cartón arcoíris liso, de columna de luz y holográfico por transferencia.",
+     "ko": "무지 레인보우, 라이트 필러 및 홀로그램 전사 판지.",
+     "ar": "كرتون قزحي سادة وكرتون أعمدة الضوء وكرتون هولوغرافي بالنقل."
     }
    },
    {
@@ -52,11 +92,21 @@
     "public": true,
     "name": {
      "en": "Foil Laminated Paperboard",
-     "zh": "铝箔复合纸与卡纸"
+     "zh": "铝箔复合纸与卡纸",
+     "ja": "アルミ箔貼り合わせ板紙",
+     "fr": "Carton contrecollé aluminium",
+     "es": "Cartón laminado con aluminio",
+     "ko": "알루미늄 호일 합지 판지",
+     "ar": "كرتون مُصفَّح برقائق الألومنيوم"
     },
     "desc": {
      "en": "Bright silver and coloured aluminium foil laminated paper and board.",
-     "zh": "亮银及彩色铝箔复合纸。"
+     "zh": "亮银及彩色铝箔复合纸。",
+     "ja": "光沢シルバーおよびカラーのアルミ箔貼り合わせ紙・板紙。",
+     "fr": "Papier et carton contrecollés aluminium argent brillant et couleur.",
+     "es": "Papel y cartón laminados con aluminio plata brillante y de colores.",
+     "ko": "유광 은색 및 컬러 알루미늄 호일 합지 종이와 판지.",
+     "ar": "ورق وكرتون مُصفَّح برقائق الألومنيوم الفضية اللامعة والملوّنة."
     }
    },
    {
@@ -64,11 +114,21 @@
     "public": false,
     "name": {
      "en": "Other Laminated & Coated Paper",
-     "zh": "其他覆膜与涂布纸材"
+     "zh": "其他覆膜与涂布纸材",
+     "ja": "その他の貼り合わせ紙・塗工紙",
+     "fr": "Autres papiers contrecollés et couchés",
+     "es": "Otros papeles laminados y estucados",
+     "ko": "기타 합지 및 코팅지",
+     "ar": "أنواع أخرى من الورق المُصفَّح والمطلي"
     },
     "desc": {
      "en": "Laminated white board, cast-coated high-gloss board.",
-     "zh": "覆膜白卡、铸涂高光卡等。"
+     "zh": "覆膜白卡、铸涂高光卡等。",
+     "ja": "貼り合わせ白板紙、キャストコート高光沢板紙。",
+     "fr": "Carton blanc contrecollé, carton couché coulé haute brillance.",
+     "es": "Cartón blanco laminado, cartón estucado cast de alto brillo.",
+     "ko": "합지 백판지, 캐스트 코팅 고광택 판지.",
+     "ar": "كرتون أبيض مُصفَّح، وكرتون عالي اللمعان مطلي بالصب."
     }
    }
   ],
@@ -76,51 +136,101 @@
    {
     "title": {
      "en": "Base board & weight",
-     "zh": "底纸与克重"
+     "zh": "底纸与克重",
+     "ja": "原紙と坪量",
+     "fr": "Support et grammage",
+     "es": "Cartón base y gramaje",
+     "ko": "원지 및 평량",
+     "ar": "الكرتون الأساسي والوزن"
     },
     "text": {
      "en": "Choose the paperboard grade and weight (g/m²) that suits your box, card or label.",
-     "zh": "按您的盒型、卡片或标签用途选择卡纸种类与克重。"
+     "zh": "按您的盒型、卡片或标签用途选择卡纸种类与克重。",
+     "ja": "箱、カード、ラベルに適した板紙の銘柄と坪量（g/m²）をお選びいただけます。",
+     "fr": "Choisissez la qualité de carton et le grammage (g/m²) adaptés à votre boîte, carte ou étiquette.",
+     "es": "Elija la calidad de cartón y el gramaje (g/m²) que mejor se adapten a su caja, tarjeta o etiqueta.",
+     "ko": "상자, 카드 또는 라벨에 맞는 판지 등급과 평량(g/m²)을 선택하십시오.",
+     "ar": "اختر درجة الكرتون ووزنه (g/m²) بما يناسب علبتك أو بطاقتك أو ملصقك."
     }
    },
    {
     "title": {
      "en": "Surface effect",
-     "zh": "表面效果"
+     "zh": "表面效果",
+     "ja": "表面効果",
+     "fr": "Effet de surface",
+     "es": "Efecto de superficie",
+     "ko": "표면 효과",
+     "ar": "تأثير السطح"
     },
     "text": {
      "en": "Bright silver, matte silver, gold, rainbow holographic, light-pillar or a holographic pattern.",
-     "zh": "亮银、亚银、金色、彩虹镭射、光柱，或选一款镭射纹样。"
+     "zh": "亮银、亚银、金色、彩虹镭射、光柱，或选一款镭射纹样。",
+     "ja": "光沢シルバー、マットシルバー、ゴールド、レインボーホログラム、光柱（ライトピラー）、またはホログラム柄。",
+     "fr": "Argent brillant, argent mat, or, holographique arc-en-ciel, colonnes lumineuses ou motif holographique.",
+     "es": "Plata brillante, plata mate, oro, holográfico arcoíris, columna de luz o un diseño holográfico.",
+     "ko": "유광 은색, 무광 은색, 금색, 레인보우 홀로그램, 라이트 필러 또는 홀로그램 패턴.",
+     "ar": "فضي لامع، فضي مطفي، ذهبي، هولوغرافي قزحي، أعمدة الضوء، أو نقشة هولوغرافية."
     }
    },
    {
     "title": {
      "en": "Processing",
-     "zh": "加工工艺"
+     "zh": "加工工艺",
+     "ja": "加工",
+     "fr": "Transformation",
+     "es": "Procesos",
+     "ko": "가공",
+     "ar": "المعالجة"
     },
     "text": {
      "en": "Coating, vacuum metallizing, laser embossing, cast coating, laminating and slitting, all in house.",
-     "zh": "涂布、真空镀铝、镭射模压、铸涂、复合与分切，均在厂内完成。"
+     "zh": "涂布、真空镀铝、镭射模压、铸涂、复合与分切，均在厂内完成。",
+     "ja": "塗工、真空蒸着、レーザーエンボス、キャストコート、ラミネート、スリットまで、すべて自社で行います。",
+     "fr": "Enduction, métallisation sous vide, embossage laser, couchage coulé, contrecollage et refendage, entièrement réalisés en interne.",
+     "es": "Recubrimiento, metalizado al vacío, gofrado láser, estucado cast, laminado y corte longitudinal, todo en nuestra planta.",
+     "ko": "코팅, 진공 증착, 레이저 엠보싱, 캐스트 코팅, 합지, 슬리팅까지 모두 자체 공장에서 진행합니다.",
+     "ar": "الطلاء والتمعدن بالتفريغ والنقش بالليزر والطلاء بالصب والتصفيح والقطع الطولي، جميعها داخل مصنعنا."
     }
    },
    {
     "title": {
      "en": "Combined finishes",
-     "zh": "多工艺叠加"
+     "zh": "多工艺叠加",
+     "ja": "複合仕上げ",
+     "fr": "Finitions combinées",
+     "es": "Acabados combinados",
+     "ko": "복합 마감",
+     "ar": "لمسات نهائية مدمجة"
     },
     "text": {
      "en": "Layer several effects on one sheet: holographic plus pattern, matte plus gloss, or reserved areas for your logo and print.",
-     "zh": "同一张材料上叠加多种效果：镭射加纹样、亚光加亮面，或为 logo 和印刷预留区域。"
+     "zh": "同一张材料上叠加多种效果：镭射加纹样、亚光加亮面，或为 logo 和印刷预留区域。",
+     "ja": "1枚に複数の効果を重ねられます：ホログラムと柄、マットとグロス、またはロゴや印刷用の空きエリア。",
+     "fr": "Superposez plusieurs effets sur une même feuille : holographique et motif, mat et brillant, ou zones réservées à votre logo et à votre impression.",
+     "es": "Combine varios efectos en una misma hoja: holográfico más diseño, mate más brillo, o áreas reservadas para su logotipo e impresión.",
+     "ko": "한 장에 여러 효과를 겹칠 수 있습니다: 홀로그램과 패턴, 무광과 유광, 또는 로고와 인쇄를 위한 여백 영역.",
+     "ar": "اجمع عدة تأثيرات على ورقة واحدة: هولوغرافي مع نقشة، أو مطفي مع لامع، أو مساحات محجوزة لشعارك وطباعتك."
     }
    },
    {
     "title": {
      "en": "Size & format",
-     "zh": "规格与包装"
+     "zh": "规格与包装",
+     "ja": "サイズと形態",
+     "fr": "Format et présentation",
+     "es": "Tamaño y formato",
+     "ko": "규격 및 형태",
+     "ar": "المقاس والشكل"
     },
     "text": {
      "en": "Roll width, slit size and packing to your order.",
-     "zh": "卷宽、分切尺寸与包装方式按订单定制。"
+     "zh": "卷宽、分切尺寸与包装方式按订单定制。",
+     "ja": "ロール幅、スリットサイズ、梱包はご注文に合わせます。",
+     "fr": "Laize de bobine, format de refente et emballage selon votre commande.",
+     "es": "Ancho de bobina, medida de corte y embalaje según su pedido.",
+     "ko": "롤 폭, 슬리팅 규격, 포장을 주문에 맞춰 드립니다.",
+     "ar": "عرض اللفة ومقاس القطع والتعبئة وفق طلبك."
     }
    }
   ]
@@ -130,11 +240,21 @@
   "image": "c-holographic-film",
   "name": {
    "en": "Holographic & PET Films",
-   "zh": "薄膜材料"
+   "zh": "薄膜材料",
+   "ja": "ホログラムフィルム・PETフィルム",
+   "fr": "Films holographiques et PET",
+   "es": "Películas holográficas y de PET",
+   "ko": "홀로그램 필름 및 PET 필름",
+   "ar": "الأفلام الهولوغرافية وأفلام PET"
   },
   "intro": {
    "en": "PET film, holographic film and patterned holographic film for laminating, label converting and packaging.",
-   "zh": "用于复合、标签与后加工的 PET 膜、镭射膜和光刻膜。"
+   "zh": "用于复合、标签与后加工的 PET 膜、镭射膜和光刻膜。",
+   "ja": "ラミネート、ラベル加工、パッケージ向けのPETフィルム、ホログラムフィルム、柄入りホログラムフィルム。",
+   "fr": "Film PET, film holographique et film holographique à motifs pour le contrecollage, la transformation d'étiquettes et l'emballage.",
+   "es": "Película PET, película holográfica y película holográfica con diseño para laminado, transformación de etiquetas y envases.",
+   "ko": "합지, 라벨 가공 및 포장용 PET 필름, 홀로그램 필름, 패턴 홀로그램 필름.",
+   "ar": "فيلم PET وفيلم هولوغرافي وفيلم هولوغرافي منقوش للتصفيح وتحويل الملصقات والتغليف."
   },
   "children": [
    {
@@ -142,11 +262,21 @@
     "public": true,
     "name": {
      "en": "PET Film",
-     "zh": "PET 膜"
+     "zh": "PET 膜",
+     "ja": "PETフィルム",
+     "fr": "Film PET",
+     "es": "Película PET",
+     "ko": "PET 필름",
+     "ar": "فيلم PET"
     },
     "desc": {
      "en": "12 μm standard gloss and 16 μm high gloss.",
-     "zh": "12μm 普亮、16μm 高亮。"
+     "zh": "12μm 普亮、16μm 高亮。",
+     "ja": "12 μm 標準光沢、16 μm 高光沢。",
+     "fr": "12 μm brillance standard et 16 μm haute brillance.",
+     "es": "12 μm brillo estándar y 16 μm alto brillo.",
+     "ko": "12 μm 일반 광택 및 16 μm 고광택.",
+     "ar": "12 μm بلمعان قياسي و16 μm بلمعان عالٍ."
     }
    },
    {
@@ -154,11 +284,21 @@
     "public": false,
     "name": {
      "en": "Metallized PET Film",
-     "zh": "镀铝 PET 膜"
+     "zh": "镀铝 PET 膜",
+     "ja": "蒸着PETフィルム",
+     "fr": "Film PET métallisé",
+     "es": "Película PET metalizada",
+     "ko": "증착 PET 필름",
+     "ar": "فيلم PET مُمعدَن"
     },
     "desc": {
      "en": "Metallic-effect processed film.",
-     "zh": "金属效果加工膜。"
+     "zh": "金属效果加工膜。",
+     "ja": "メタリック調に加工したフィルム。",
+     "fr": "Film traité à effet métallique.",
+     "es": "Película procesada con efecto metálico.",
+     "ko": "메탈릭 효과 가공 필름.",
+     "ar": "فيلم مُعالَج بتأثير معدني."
     }
    },
    {
@@ -166,11 +306,21 @@
     "public": true,
     "name": {
      "en": "Holographic Film",
-     "zh": "镭射膜"
+     "zh": "镭射膜",
+     "ja": "ホログラムフィルム",
+     "fr": "Film holographique",
+     "es": "Película holográfica",
+     "ko": "홀로그램 필름",
+     "ar": "فيلم هولوغرافي"
     },
     "desc": {
      "en": "Holographic film supplied on its own, for converters and laminators.",
-     "zh": "可单独销售的镭射加工膜。"
+     "zh": "可单独销售的镭射加工膜。",
+     "ja": "加工会社・ラミネート会社向けに、ホログラムフィルム単体で供給します。",
+     "fr": "Film holographique livré seul, pour les transformateurs et les contrecolleurs.",
+     "es": "Película holográfica suministrada por separado, para transformadores y laminadores.",
+     "ko": "가공업체 및 합지업체용 홀로그램 필름 단독 공급.",
+     "ar": "فيلم هولوغرافي يُورَّد منفردًا لشركات التحويل والتصفيح."
     }
    },
    {
@@ -178,11 +328,21 @@
     "public": true,
     "name": {
      "en": "Patterned Holographic Film",
-     "zh": "光刻纹样膜"
+     "zh": "光刻纹样膜",
+     "ja": "柄入りホログラムフィルム",
+     "fr": "Film holographique à motifs",
+     "es": "Película holográfica con diseño",
+     "ko": "패턴 홀로그램 필름",
+     "ar": "فيلم هولوغرافي منقوش"
     },
     "desc": {
      "en": "Patterned holographic film, ready-made or custom.",
-     "zh": "已加工光刻膜，现成或定制款。"
+     "zh": "已加工光刻膜，现成或定制款。",
+     "ja": "柄入りホログラムフィルム（既製柄またはカスタム）。",
+     "fr": "Film holographique à motifs, prêt à l'emploi ou sur mesure.",
+     "es": "Película holográfica con diseño, lista para usar o personalizada.",
+     "ko": "기성 또는 맞춤 패턴 홀로그램 필름.",
+     "ar": "فيلم هولوغرافي منقوش، جاهز أو حسب الطلب."
     }
    }
   ],
@@ -190,51 +350,101 @@
    {
     "title": {
      "en": "Thickness",
-     "zh": "厚度"
+     "zh": "厚度",
+     "ja": "厚み",
+     "fr": "Épaisseur",
+     "es": "Espesor",
+     "ko": "두께",
+     "ar": "السماكة"
     },
     "text": {
      "en": "PET film in 12 μm and 16 μm; tell us if you need another gauge.",
-     "zh": "PET 膜有 12μm 与 16μm，其他厚度可咨询。"
+     "zh": "PET 膜有 12μm 与 16μm，其他厚度可咨询。",
+     "ja": "PETフィルムは12 μmと16 μm。その他の厚みが必要な場合はご相談ください。",
+     "fr": "Film PET en 12 μm et 16 μm ; indiquez-nous si vous avez besoin d'une autre épaisseur.",
+     "es": "Película PET en 12 μm y 16 μm; indíquenos si necesita otro calibre.",
+     "ko": "PET 필름은 12 μm 및 16 μm로 공급합니다. 다른 두께가 필요하시면 알려 주십시오.",
+     "ar": "فيلم PET بسماكة 12 μm و16 μm؛ أخبرنا إذا كنت تحتاج سماكة أخرى."
     }
    },
    {
     "title": {
      "en": "Effect",
-     "zh": "效果"
+     "zh": "效果",
+     "ja": "効果",
+     "fr": "Effet",
+     "es": "Efecto",
+     "ko": "효과",
+     "ar": "التأثير"
     },
     "text": {
      "en": "Clear, rainbow holographic, a ready-made holographic pattern, or your own design.",
-     "zh": "透明、彩虹镭射、现成镭射纹样，或您自己的图案。"
+     "zh": "透明、彩虹镭射、现成镭射纹样，或您自己的图案。",
+     "ja": "透明、レインボーホログラム、既製ホログラム柄、またはお客様のオリジナルデザイン。",
+     "fr": "Transparent, holographique arc-en-ciel, motif holographique prêt à l'emploi ou votre propre design.",
+     "es": "Transparente, holográfico arcoíris, un diseño holográfico listo para usar o su propio diseño.",
+     "ko": "투명, 레인보우 홀로그램, 기성 홀로그램 패턴 또는 귀사 디자인.",
+     "ar": "شفاف، هولوغرافي قزحي، نقشة هولوغرافية جاهزة، أو تصميمك الخاص."
     }
    },
    {
     "title": {
      "en": "Processing",
-     "zh": "加工工艺"
+     "zh": "加工工艺",
+     "ja": "加工",
+     "fr": "Transformation",
+     "es": "Procesos",
+     "ko": "가공",
+     "ar": "المعالجة"
     },
     "text": {
      "en": "Laser embossing, metallizing and coating on our own lines.",
-     "zh": "镭射模压、镀铝与涂布，在自有生产线完成。"
+     "zh": "镭射模压、镀铝与涂布，在自有生产线完成。",
+     "ja": "レーザーエンボス、蒸着、塗工を自社ラインで行います。",
+     "fr": "Embossage laser, métallisation et enduction sur nos propres lignes.",
+     "es": "Gofrado láser, metalizado y recubrimiento en nuestras propias líneas.",
+     "ko": "자체 라인에서 레이저 엠보싱, 증착, 코팅을 진행합니다.",
+     "ar": "النقش بالليزر والتمعدن والطلاء على خطوط إنتاجنا الخاصة."
     }
    },
    {
     "title": {
      "en": "Combined finishes",
-     "zh": "多工艺叠加"
+     "zh": "多工艺叠加",
+     "ja": "複合仕上げ",
+     "fr": "Finitions combinées",
+     "es": "Acabados combinados",
+     "ko": "복합 마감",
+     "ar": "لمسات نهائية مدمجة"
     },
     "text": {
      "en": "Combine a pattern with plain areas, or several effects in one film.",
-     "zh": "纹样与素面区域组合，或在一张膜上叠加多种效果。"
+     "zh": "纹样与素面区域组合，或在一张膜上叠加多种效果。",
+     "ja": "柄と無地部分の組み合わせや、1本のフィルムに複数の効果を組み合わせられます。",
+     "fr": "Associez un motif à des zones unies, ou plusieurs effets dans un même film.",
+     "es": "Combine un diseño con áreas lisas, o varios efectos en una misma película.",
+     "ko": "패턴과 무지 영역을 조합하거나 한 필름에 여러 효과를 적용할 수 있습니다.",
+     "ar": "ادمج نقشة مع مساحات سادة، أو عدة تأثيرات في فيلم واحد."
     }
    },
    {
     "title": {
      "en": "Width & roll",
-     "zh": "宽度与卷长"
+     "zh": "宽度与卷长",
+     "ja": "幅とロール",
+     "fr": "Laize et bobine",
+     "es": "Ancho y bobina",
+     "ko": "폭 및 롤",
+     "ar": "العرض واللفة"
     },
     "text": {
      "en": "Slit width, roll length and core size to your order.",
-     "zh": "分切宽度、卷长与纸芯规格按订单定制。"
+     "zh": "分切宽度、卷长与纸芯规格按订单定制。",
+     "ja": "スリット幅、巻長、コアサイズはご注文に合わせます。",
+     "fr": "Laize de refente, longueur de bobine et diamètre de mandrin selon votre commande.",
+     "es": "Ancho de corte, longitud de bobina y diámetro del mandril según su pedido.",
+     "ko": "슬리팅 폭, 롤 길이, 지관 규격을 주문에 맞춰 드립니다.",
+     "ar": "عرض القطع وطول اللفة ومقاس البكرة وفق طلبك."
     }
    }
   ]
@@ -244,11 +454,21 @@
   "image": "render/packaging-boxes",
   "name": {
    "en": "Packaging & Printed Products",
-   "zh": "成品产品"
+   "zh": "成品产品",
+   "ja": "パッケージ・印刷製品",
+   "fr": "Emballages et produits imprimés",
+   "es": "Envases y productos impresos",
+   "ko": "포장재 및 인쇄 완제품",
+   "ar": "منتجات التغليف والمطبوعات"
   },
   "intro": {
    "en": "Boxes, cards, postcards and paper merchandise made with our materials, quoted to your design.",
-   "zh": "使用我们材料制作的包装盒、卡牌、明信片与纸制文创，按您的设计报价。"
+   "zh": "使用我们材料制作的包装盒、卡牌、明信片与纸制文创，按您的设计报价。",
+   "ja": "当社素材で製作する箱、カード、ポストカード、紙製グッズ。お客様のデザインに合わせてお見積りします。",
+   "fr": "Boîtes, cartes, cartes postales et articles en papier fabriqués avec nos matériaux, chiffrés selon votre design.",
+   "es": "Cajas, tarjetas, postales y artículos de papel fabricados con nuestros materiales, cotizados según su diseño.",
+   "ko": "당사 소재로 제작하는 상자, 카드, 엽서 및 지류 상품을 귀사 디자인에 맞춰 견적해 드립니다.",
+   "ar": "علب وبطاقات وبطاقات بريدية ومنتجات ورقية مصنوعة من موادنا، مع عرض سعر وفق تصميمك."
   },
   "children": [
    {
@@ -258,11 +478,21 @@
     "image_is_render": true,
     "name": {
      "en": "Packaging Boxes",
-     "zh": "包装盒"
+     "zh": "包装盒",
+     "ja": "パッケージ箱",
+     "fr": "Boîtes d'emballage",
+     "es": "Cajas de embalaje",
+     "ko": "포장 상자",
+     "ar": "علب التغليف"
     },
     "desc": {
      "en": "Folding cartons and gift boxes in metallized or holographic paperboard.",
-     "zh": "采用金银卡或光刻卡纸的彩盒与礼盒。"
+     "zh": "采用金银卡或光刻卡纸的彩盒与礼盒。",
+     "ja": "蒸着板紙またはホログラム板紙を使った折り箱・ギフトボックス。",
+     "fr": "Étuis pliants et coffrets cadeaux en carton métallisé ou holographique.",
+     "es": "Estuches plegables y cajas de regalo en cartón metalizado u holográfico.",
+     "ko": "증착 판지 또는 홀로그램 판지로 만든 접지 상자 및 선물 상자.",
+     "ar": "علب كرتونية قابلة للطي وعلب هدايا من الكرتون المُمعدَن أو الهولوغرافي."
     }
    },
    {
@@ -272,11 +502,21 @@
     "image_is_render": true,
     "name": {
      "en": "Cards & Mini Cards",
-     "zh": "卡牌与小卡"
+     "zh": "卡牌与小卡",
+     "ja": "カード・ミニカード",
+     "fr": "Cartes et mini-cartes",
+     "es": "Tarjetas y minitarjetas",
+     "ko": "카드 및 미니 카드",
+     "ar": "البطاقات والبطاقات الصغيرة"
     },
     "desc": {
      "en": "Collectible cards, game cards and mini cards.",
-     "zh": "收藏卡、游戏卡及文创小卡。"
+     "zh": "收藏卡、游戏卡及文创小卡。",
+     "ja": "コレクションカード、ゲームカード、ミニカード。",
+     "fr": "Cartes à collectionner, cartes de jeu et mini-cartes.",
+     "es": "Tarjetas coleccionables, cartas de juego y minitarjetas.",
+     "ko": "컬렉션 카드, 게임 카드 및 미니 카드.",
+     "ar": "بطاقات مقتنيات وبطاقات ألعاب وبطاقات صغيرة."
     }
    },
    {
@@ -286,11 +526,21 @@
     "image_is_render": true,
     "name": {
      "en": "Postcards",
-     "zh": "明信片"
+     "zh": "明信片",
+     "ja": "ポストカード",
+     "fr": "Cartes postales",
+     "es": "Postales",
+     "ko": "엽서",
+     "ar": "البطاقات البريدية"
     },
     "desc": {
      "en": "Standard and special-material postcards.",
-     "zh": "常规及特种材料明信片。"
+     "zh": "常规及特种材料明信片。",
+     "ja": "標準品および特殊素材のポストカード。",
+     "fr": "Cartes postales standard et en matériaux spéciaux.",
+     "es": "Postales estándar y en materiales especiales.",
+     "ko": "일반 엽서 및 특수 소재 엽서.",
+     "ar": "بطاقات بريدية قياسية ومن مواد خاصة."
     }
    },
    {
@@ -300,11 +550,21 @@
     "image_is_render": true,
     "name": {
      "en": "Paper Merchandise",
-     "zh": "其他纸制文创与周边"
+     "zh": "其他纸制文创与周边",
+     "ja": "紙製グッズ",
+     "fr": "Articles en papier",
+     "es": "Artículos de papel",
+     "ko": "지류 상품",
+     "ar": "المنتجات الورقية"
     },
     "desc": {
      "en": "Other paper goods on request.",
-     "zh": "按需求承接其他纸制品。"
+     "zh": "按需求承接其他纸制品。",
+     "ja": "その他の紙製品もご相談に応じます。",
+     "fr": "Autres articles en papier sur demande.",
+     "es": "Otros artículos de papel bajo pedido.",
+     "ko": "기타 지류 제품은 문의 시 제작합니다.",
+     "ar": "منتجات ورقية أخرى عند الطلب."
     }
    }
   ],
@@ -312,51 +572,101 @@
    {
     "title": {
      "en": "Format & size",
-     "zh": "款式与尺寸"
+     "zh": "款式与尺寸",
+     "ja": "形状とサイズ",
+     "fr": "Type et format",
+     "es": "Formato y tamaño",
+     "ko": "형태 및 규격",
+     "ar": "الشكل والمقاس"
     },
     "text": {
      "en": "Box style, card size and product shape to your design.",
-     "zh": "盒型、卡片尺寸与产品形状按您的设计制作。"
+     "zh": "盒型、卡片尺寸与产品形状按您的设计制作。",
+     "ja": "箱の形式、カードのサイズ、製品形状はお客様のデザインに合わせます。",
+     "fr": "Modèle de boîte, format de carte et forme du produit selon votre design.",
+     "es": "Estilo de caja, tamaño de tarjeta y forma del producto según su diseño.",
+     "ko": "상자 형태, 카드 규격, 제품 모양을 귀사 디자인에 맞춰 드립니다.",
+     "ar": "طراز العلبة ومقاس البطاقة وشكل المنتج وفق تصميمك."
     }
    },
    {
     "title": {
      "en": "Material & weight",
-     "zh": "材料与克重"
+     "zh": "材料与克重",
+     "ja": "素材と坪量",
+     "fr": "Matériau et grammage",
+     "es": "Material y gramaje",
+     "ko": "소재 및 평량",
+     "ar": "المادة والوزن"
     },
     "text": {
      "en": "Any of our holographic, metallized or foil laminated boards, in the weight you need.",
-     "zh": "可选我们的镭射、镀铝或铝箔复合卡纸，克重按需选择。"
+     "zh": "可选我们的镭射、镀铝或铝箔复合卡纸，克重按需选择。",
+     "ja": "当社のホログラム板紙、蒸着板紙、アルミ箔貼り合わせ板紙から、必要な坪量でお選びいただけます。",
+     "fr": "Tous nos cartons holographiques, métallisés ou contrecollés aluminium, dans le grammage dont vous avez besoin.",
+     "es": "Cualquiera de nuestros cartones holográficos, metalizados o laminados con aluminio, en el gramaje que necesite.",
+     "ko": "당사의 홀로그램 판지, 증착 판지, 알루미늄 호일 합지 판지 중 원하시는 평량으로 선택할 수 있습니다.",
+     "ar": "أي نوع من الكرتون الهولوغرافي أو المُمعدَن أو المُصفَّح برقائق الألومنيوم لدينا، بالوزن الذي تحتاجه."
     }
    },
    {
     "title": {
      "en": "Combined finishes",
-     "zh": "多工艺叠加"
+     "zh": "多工艺叠加",
+     "ja": "複合仕上げ",
+     "fr": "Finitions combinées",
+     "es": "Acabados combinados",
+     "ko": "복합 마감",
+     "ar": "لمسات نهائية مدمجة"
     },
     "text": {
      "en": "Holographic, pattern and matte areas on one piece, with reserved areas for your artwork.",
-     "zh": "同一件产品上组合镭射、纹样与亚光区域，并为您的图案预留位置。"
+     "zh": "同一件产品上组合镭射、纹样与亚光区域，并为您的图案预留位置。",
+     "ja": "1点にホログラム、柄、マットの各エリアを配置し、アートワーク用の空きエリアも設けられます。",
+     "fr": "Zones holographiques, à motif et mates sur une même pièce, avec des zones réservées à votre visuel.",
+     "es": "Áreas holográficas, con diseño y mate en una misma pieza, con áreas reservadas para su arte.",
+     "ko": "한 제품에 홀로그램, 패턴, 무광 영역을 함께 적용하고 아트워크를 위한 여백 영역을 둘 수 있습니다.",
+     "ar": "مساحات هولوغرافية ومنقوشة ومطفية على قطعة واحدة، مع مساحات محجوزة لتصميمك."
     }
    },
    {
     "title": {
      "en": "Your artwork",
-     "zh": "您的图案"
+     "zh": "您的图案",
+     "ja": "お客様のアートワーク",
+     "fr": "Votre visuel",
+     "es": "Su arte",
+     "ko": "귀사 아트워크",
+     "ar": "تصميمك"
     },
     "text": {
      "en": "Send your logo or design; we prepare the file and a demo for approval.",
-     "zh": "发来 logo 或设计稿，我们制作文件并出 demo 给您确认。"
+     "zh": "发来 logo 或设计稿，我们制作文件并出 demo 给您确认。",
+     "ja": "ロゴやデザインをお送りください。データとデモを作成し、ご承認いただきます。",
+     "fr": "Envoyez votre logo ou votre design ; nous préparons le fichier et une maquette pour validation.",
+     "es": "Envíenos su logotipo o diseño; preparamos el archivo y una demo para su aprobación.",
+     "ko": "로고나 디자인을 보내 주시면 파일과 승인용 데모를 준비해 드립니다.",
+     "ar": "أرسل شعارك أو تصميمك؛ نُعِدّ الملف ونموذجًا لاعتماده."
     }
    },
    {
     "title": {
      "en": "Quantity & packing",
-     "zh": "数量与包装"
+     "zh": "数量与包装",
+     "ja": "数量と梱包",
+     "fr": "Quantité et emballage",
+     "es": "Cantidad y embalaje",
+     "ko": "수량 및 포장",
+     "ar": "الكمية والتعبئة"
     },
     "text": {
      "en": "Quoted per project by quantity and packing.",
-     "zh": "按数量与包装方式逐项目报价。"
+     "zh": "按数量与包装方式逐项目报价。",
+     "ja": "数量と梱包に応じて案件ごとにお見積りします。",
+     "fr": "Devis établi par projet selon la quantité et l'emballage.",
+     "es": "Cotizado por proyecto según cantidad y embalaje.",
+     "ko": "프로젝트별로 수량과 포장에 따라 견적을 드립니다.",
+     "ar": "يُحدَّد السعر لكل مشروع حسب الكمية والتعبئة."
     }
    }
   ]

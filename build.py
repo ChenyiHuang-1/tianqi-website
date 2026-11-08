@@ -208,7 +208,7 @@ def product_card(pr, lang):
     attrs = " ".join(f'data-{k}="{e(v)}"' for k, v in pr.get("attrs", {}).items())
     return (f'<article class="card prod" {attrs}><a class="cimg" href="{href}">{picture(pr["image"], L(pr["name"], lang), lang)}</a>'
             f'<div class="cbody"><h3><a href="{href}">{e(L(pr["name"], lang))}</a></h3><p>{e(L(pr["summary"], lang))}</p>'
-            f'<a class="more-link" href="{href}">{t("view_product", lang)} →</a></div></article>')
+            f'<a class="more-link" href="{href}">{t("view_product", lang)} <span class="arr">→</span></a></div></article>')
 
 
 def public_products(cat=None, sub=None):
@@ -372,7 +372,7 @@ def facts_html(lang, with_certs=False):
     fs = [f for f in COMPANY["facts"] if f["confirmed"]]
     if not fs:
         return ""
-    cells = "".join(f'<div><strong>{e(f["value"])}</strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs)
+    cells = "".join(f'<div><strong><bdi>{e(f["value"])}</bdi></strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs)
     cs = [c for c in COMPANY["certificates"] if c["confirmed"] and c.get("img")] if with_certs else []
     if cs:
         # home factory block: certificates fill the cell next to patents (Hailey 2026-10-16)
@@ -388,7 +388,7 @@ def stats_html(lang):
     if not fs:
         return ""
     return ('<section class="stats"><div class="wrap stats-in">' + "".join(
-        f'<div><strong>{e(f["value"])}</strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs) + "</div></section>")
+        f'<div><strong><bdi>{e(f["value"])}</bdi></strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs) + "</div></section>")
 
 
 # Hero bubbles: x, y (% of hero), size (px), drift (px), duration (s). Fixed so builds are stable.
@@ -501,7 +501,7 @@ def category_cards(lang):
         tag = f'<span class="rtag">{t("render_tag", lang)}</span>' if c["image"].startswith("render/") else ""
         out.append(f'<article class="card cat"><a class="cimg" href="{href}">{picture(c["image"], L(c["name"], lang), lang)}{tag}</a>'
                    f'<div class="cbody"><h3><a href="{href}">{e(L(c["name"], lang))}</a></h3><p>{e(L(c["intro"], lang))}</p>'
-                   f'<ul class="sublist">{subs}</ul><a class="more-link" href="{href}">{t("view_product", lang)} →</a></div></article>')
+                   f'<ul class="sublist">{subs}</ul><a class="more-link" href="{href}">{t("view_product", lang)} <span class="arr">→</span></a></div></article>')
     return '<div class="cards three">' + "".join(out) + "</div>"
 
 
@@ -532,7 +532,7 @@ def custom_block(c, lang):
 
 def cat_nav(lang, current):
     """Sticky product directory: back to the overview, or switch category."""
-    links = [f'<a class="all" href="{url(lang, "products/")}">← {t("all_products", lang)}</a>']
+    links = [f'<a class="all" href="{url(lang, "products/")}"><span class="arr">←</span> {t("all_products", lang)}</a>']
     for c in CATS:
         cur = ' aria-current="page"' if c["id"] == current else ""
         links.append(f'<a href="{url(lang, "products/" + c["id"] + "/")}"{cur}>{e(L(c["name"], lang))}</a>')
@@ -641,8 +641,8 @@ def build_pattern(p, i, lang):
             f'<a class="btn" href="{contact_href(lang, type="sample", pattern=pid)}">{t("request_sample", lang)}</a>'
             f'<a class="btn" href="{contact_href(lang, type="custom", pattern=pid)}">{t("customise_pattern", lang)}</a></div>'
             f'<p class="notice small">{t("reserved_note", lang)}</p><p class="small">{t("angle_note", lang)}</p>'
-            f'<div class="pager"><a href="{url(lang, "holographic-patterns/" + prev["id"] + "/")}">← {t("prev", lang)} {prev["id"]}</a>'
-            f'<a href="{url(lang, "holographic-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} →</a></div></div></div>'
+            f'<div class="pager"><a href="{url(lang, "holographic-patterns/" + prev["id"] + "/")}"><span class="arr">←</span> {t("prev", lang)} {prev["id"]}</a>'
+            f'<a href="{url(lang, "holographic-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} <span class="arr">→</span></a></div></div></div>'
             f'{similar}</div>')
     kind = pattern_kind(p, lang)
     effect = tags.get("effect")

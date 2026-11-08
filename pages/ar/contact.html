@@ -1,0 +1,44 @@
+<!--
+title: اتصل بنا واطلب عرض سعر | Tianqi Materials
+desc: اطلب عرض سعر للمواد أو للنقشات، أو عيّنة، أو تصميمًا مخصّصًا.
+-->
+<div class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="{{home}}">{{t_nav_home}}</a> / {{t_nav_contact}}</p>
+  <h1>اتصل بنا</h1>
+  <p>نموذج واحد لطلبات أسعار المواد والنقشات وطلبات العيّنات والمشاريع المخصّصة. لا تحتاج إلى معرفة المواصفات؛ يكفي أن تصف الاستخدام.</p>
+</div></div>
+<div class="wrap section">
+  <div class="inq">
+    <form class="inquiry" id="inquiry" novalidate data-endpoint="{{form_endpoint}}" data-files="{{form_files}}">
+      <fieldset class="full types"><legend class="label">ماذا تحتاج؟</legend>
+        <label><input type="radio" name="inquiry_type" value="quote" checked> عرض سعر للمواد</label>
+        <label><input type="radio" name="inquiry_type" value="pattern"> عرض سعر لنقشة</label>
+        <label><input type="radio" name="inquiry_type" value="sample"> طلب عيّنة</label>
+        <label><input type="radio" name="inquiry_type" value="custom"> تصميم حسب الطلب</label>
+      </fieldset>
+      <label>الاسم <em>مطلوب</em><input id="f-name" name="name" autocomplete="name" required></label>
+      <label>البريد الإلكتروني <em>مطلوب</em><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label class="full">متطلباتك <em>مطلوب</em><textarea id="f-msg" name="message" required placeholder="ماذا تصنع، وكيف ستتم طباعته أو استخدامه؟"></textarea></label>
+      <label>الشركة<input id="f-co" name="company" autocomplete="organization"></label>
+      <label>الدولة أو المنطقة<input id="f-country" name="country" autocomplete="country-name"></label>
+      <label class="full">أرقام المنتجات أو النقشات<input id="f-codes" name="product_or_pattern" class="code" placeholder="يُملأ تلقائيًا من الصفحة التي جئت منها؛ ويمكنك تعديله"></label>
+      <label data-for="quote pattern sample custom">نوع المادة<select id="f-kind" name="material_type"><option value="">—</option><option>ورق / كرتون</option><option>فيلم</option><option>منتج نهائي</option><option>غير متأكد</option></select></label>
+      <div class="qty" data-for="quote pattern custom"><label>الكمية<input id="f-qty" name="quantity" inputmode="decimal"></label><label>الوحدة<select id="f-unit" name="unit"><option>ورقة</option><option>كغ</option><option>طن</option><option>متر</option><option>قطعة</option></select></label></div>
+      <label data-for="quote pattern custom">المقاس (mm)<input id="f-size" name="size"></label>
+      <label data-for="quote pattern custom">الوزن (g/m²) أو السماكة (μm)<input id="f-gsm" name="weight_or_thickness"></label>
+      <label data-for="quote pattern sample custom">الاستخدام النهائي<input id="f-use" name="end_use"></label>
+      <label data-for="quote pattern custom">تاريخ التسليم المطلوب<input id="f-date" name="delivery_date" type="date"></label>
+      <label class="check full" data-for="quote pattern custom"><input type="checkbox" id="f-sample" name="sample_needed" value="yes"> أرغب في الحصول على عيّنة</label>
+      <label class="full" data-files-only hidden>مرفق<input id="f-file" name="attachment" type="file"><span class="small">{{file_note}}</span></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-msg full" id="form-msg" aria-live="polite"></p>
+      <button class="btn primary full" type="submit">إرسال</button>
+      <p class="small full" id="form-off" hidden>النموذج الإلكتروني غير مُفعَّل بعد، لذا لا يمكن الإرسال من خلاله.</p>
+    </form>
+    <aside class="direct">
+      <p class="label">التواصل المباشر</p>
+      <p><b>{{legal_name}}</b><br>{{address}}</p>
+      {{contact_direct}}
+    </aside>
+  </div>
+</div>

@@ -474,3 +474,38 @@ form.inquiry label em{justify-self:start}
 .lang-menu li a{display:block;padding:7px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:14px}
 .lang-menu li a:hover{background:#f3f3f1}
 .lang-menu li a[aria-current]{font-weight:700;background:var(--accent,#f5c400)}
+/* right-to-left (Arabic) */
+[dir=rtl] .skip{left:auto;right:-999px}
+[dir=rtl] .skip:focus{right:12px}
+html[dir=rtl]{overflow-x:clip}
+[dir=rtl] .car-track{direction:ltr}
+[dir=rtl] .car-page{direction:rtl}
+.lang-ar,.lang-ar h1,.lang-ar h2,.lang-ar h3,.lang-ar .label,.lang-ar .eyebrow,.lang-ar .btn{font-family:"Noto Sans Arabic",var(--body),sans-serif;letter-spacing:0}
+.lang-ja,.lang-ja h1,.lang-ja h2,.lang-ja h3,.lang-ja .label,.lang-ja .eyebrow{font-family:var(--body),"Noto Sans JP",sans-serif;letter-spacing:0}
+.lang-ko,.lang-ko h1,.lang-ko h2,.lang-ko h3,.lang-ko .label,.lang-ko .eyebrow{font-family:var(--body),"Noto Sans KR",sans-serif;letter-spacing:0}
+.lang-ja,.lang-ko,.lang-ar{line-height:1.8}
+.lang-ja h1,.lang-ja h2,.lang-ko h1,.lang-ko h2,.lang-ar h1,.lang-ar h2{line-height:1.35}
+.lang-ja .label,.lang-ko .label,.lang-ar .label{text-transform:none}
+[dir=rtl] .drop-btn{margin-left:0;margin-right:-6px}
+[dir=rtl] .drop{left:auto;right:-12px}
+[dir=rtl] .ticks li{padding-left:0;padding-right:28px}
+[dir=rtl] .ticks li::before{left:auto;right:2px}
+[dir=rtl] .sublist li{padding-left:0;padding-right:14px}
+[dir=rtl] .sublist li::before{left:auto;right:0}
+[dir=rtl] .count{margin-left:0;margin-right:auto}
+[dir=rtl] .notice{border-left:0;border-right:3px solid var(--accent);border-radius:var(--radius) 0 0 var(--radius)}
+[dir=rtl] .spec th{text-align:right;padding:10px 0 10px 16px}
+[dir=rtl] .plain-list{padding-left:0;padding-right:18px}
+[dir=rtl] .faq summary::after{right:auto;left:4px}
+[dir=rtl] form.inquiry label em{margin-left:0;margin-right:6px}
+[dir=rtl] .hp{left:auto;right:-9999px}
+[dir=rtl] .rtag{left:auto;right:12px}
+[dir=rtl] .cat-nav a.all{margin-right:0;margin-left:6px}
+@media (max-width:860px){[dir=rtl] .logo{margin-right:0;margin-left:auto}}
+[dir=rtl] .faq summary{padding:18px 0 18px 32px}
+.logo{unicode-bidi:isolate;direction:ltr}
+[dir=rtl] .arr,[dir=rtl] .car-btn{display:inline-block;transform:scaleX(-1)}
+[dir=rtl] .bubbles{transform:scaleX(-1)}
+[dir=rtl] .bubbles .bub > *{transform:scaleX(-1)}
+[dir=rtl] .hero::after{background:linear-gradient(270deg,var(--graphite) 0%,rgba(23,24,27,.9) 36%,rgba(23,24,27,.25) 62%,rgba(23,24,27,0) 80%)}
+[dir=rtl] .hero{background:radial-gradient(42% 60% at 22% 46%,rgba(150,160,190,.16) 0%,rgba(150,160,190,.05) 55%,transparent 75%),var(--graphite)}

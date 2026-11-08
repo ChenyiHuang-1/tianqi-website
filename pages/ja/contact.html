@@ -1,0 +1,44 @@
+<!--
+title: お問い合わせ・お見積り依頼 | Tianqi Materials
+desc: 素材のお見積り、柄のお見積り、サンプル、カスタムデザインのご依頼はこちらから。
+-->
+<div class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="{{home}}">{{t_nav_home}}</a> / {{t_nav_contact}}</p>
+  <h1>お問い合わせ</h1>
+  <p>素材のお見積り、柄のお見積り、サンプル請求、カスタム案件をひとつのフォームで承ります。仕様がわからなくても、用途をご記入いただくだけで十分です。</p>
+</div></div>
+<div class="wrap section">
+  <div class="inq">
+    <form class="inquiry" id="inquiry" novalidate data-endpoint="{{form_endpoint}}" data-files="{{form_files}}">
+      <fieldset class="full types"><legend class="label">ご用件</legend>
+        <label><input type="radio" name="inquiry_type" value="quote" checked> 素材のお見積り</label>
+        <label><input type="radio" name="inquiry_type" value="pattern"> 柄のお見積り</label>
+        <label><input type="radio" name="inquiry_type" value="sample"> サンプル請求</label>
+        <label><input type="radio" name="inquiry_type" value="custom"> カスタマイズ</label>
+      </fieldset>
+      <label>お名前 <em>必須</em><input id="f-name" name="name" autocomplete="name" required></label>
+      <label>メールアドレス <em>必須</em><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label class="full">ご要望 <em>必須</em><textarea id="f-msg" name="message" required placeholder="何を製作され、どのように印刷・使用されますか？"></textarea></label>
+      <label>会社名<input id="f-co" name="company" autocomplete="organization"></label>
+      <label>国・地域<input id="f-country" name="country" autocomplete="country-name"></label>
+      <label class="full">製品番号・柄番号<input id="f-codes" name="product_or_pattern" class="code" placeholder="閲覧していたページから自動入力されます（編集可）"></label>
+      <label data-for="quote pattern sample custom">素材の種類<select id="f-kind" name="material_type"><option value="">—</option><option>紙・板紙</option><option>フィルム</option><option>完成品</option><option>わからない</option></select></label>
+      <div class="qty" data-for="quote pattern custom"><label>数量<input id="f-qty" name="quantity" inputmode="decimal"></label><label>単位<select id="f-unit" name="unit"><option>枚</option><option>kg</option><option>トン</option><option>メートル</option><option>個</option></select></label></div>
+      <label data-for="quote pattern custom">サイズ（mm）<input id="f-size" name="size"></label>
+      <label data-for="quote pattern custom">坪量（g/m²）または厚み（μm）<input id="f-gsm" name="weight_or_thickness"></label>
+      <label data-for="quote pattern sample custom">最終用途<input id="f-use" name="end_use"></label>
+      <label data-for="quote pattern custom">希望納期<input id="f-date" name="delivery_date" type="date"></label>
+      <label class="check full" data-for="quote pattern custom"><input type="checkbox" id="f-sample" name="sample_needed" value="yes"> サンプルを希望する</label>
+      <label class="full" data-files-only hidden>添付ファイル<input id="f-file" name="attachment" type="file"><span class="small">{{file_note}}</span></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-msg full" id="form-msg" aria-live="polite"></p>
+      <button class="btn primary full" type="submit">送信</button>
+      <p class="small full" id="form-off" hidden>オンラインフォームはまだ接続されていないため、ここから送信することはできません。</p>
+    </form>
+    <aside class="direct">
+      <p class="label">直接のご連絡先</p>
+      <p><b>{{legal_name}}</b><br>{{address}}</p>
+      {{contact_direct}}
+    </aside>
+  </div>
+</div>

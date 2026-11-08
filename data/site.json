@@ -12,7 +12,12 @@
  },
  "city": {
   "en": "Zhejiang, China",
-  "zh": "中国浙江"
+  "zh": "中国浙江",
+  "ja": "中国浙江省",
+  "fr": "Zhejiang, Chine",
+  "es": "Zhejiang, China",
+  "ko": "중국 저장성",
+  "ar": "تشجيانغ، الصين"
  },
  "email": "tianqi.materials@gmail.com",
  "phone": [
@@ -28,7 +33,12 @@
  },
  "design_fee": {
   "en": "around US$400",
-  "zh": "约人民币 2,000 元"
+  "zh": "约人民币 2,000 元",
+  "ja": "約US$400",
+  "fr": "environ 400 US$",
+  "es": "alrededor de US$400",
+  "ko": "약 US$400",
+  "ar": "حوالي US$400"
  },
  "hero_pattern": "181",
  "featured_patterns": [

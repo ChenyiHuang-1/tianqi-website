@@ -1,31 +1,66 @@
 {
  "nav_home": {
   "en": "Home",
-  "zh": "首页"
+  "zh": "首页",
+  "ja": "ホーム",
+  "fr": "Accueil",
+  "es": "Inicio",
+  "ko": "홈",
+  "ar": "الرئيسية"
  },
  "nav_products": {
   "en": "Products",
-  "zh": "产品"
+  "zh": "产品",
+  "ja": "製品",
+  "fr": "Produits",
+  "es": "Productos",
+  "ko": "제품",
+  "ar": "المنتجات"
  },
  "nav_patterns": {
   "en": "Holographic Patterns",
-  "zh": "光刻纹样图库"
+  "zh": "光刻纹样图库",
+  "ja": "ホログラム柄",
+  "fr": "Motifs holographiques",
+  "es": "Diseños holográficos",
+  "ko": "홀로그램 패턴",
+  "ar": "النقشات الهولوغرافية"
  },
  "nav_custom": {
   "en": "Customisation",
-  "zh": "定制服务"
+  "zh": "定制服务",
+  "ja": "カスタマイズ",
+  "fr": "Personnalisation",
+  "es": "Personalización",
+  "ko": "맞춤 제작",
+  "ar": "التصميم حسب الطلب"
  },
  "nav_about": {
   "en": "About Us",
-  "zh": "关于我们"
+  "zh": "关于我们",
+  "ja": "会社概要",
+  "fr": "À propos",
+  "es": "Quiénes somos",
+  "ko": "회사 소개",
+  "ar": "من نحن"
  },
  "nav_contact": {
   "en": "Contact",
-  "zh": "联系我们"
+  "zh": "联系我们",
+  "ja": "お問い合わせ",
+  "fr": "Contact",
+  "es": "Contacto",
+  "ko": "문의",
+  "ar": "اتصل بنا"
  },
  "quote": {
   "en": "Request a Quote",
-  "zh": "询价"
+  "zh": "询价",
+  "ja": "お見積り依頼",
+  "fr": "Demander un devis",
+  "es": "Solicitar cotización",
+  "ko": "견적 요청",
+  "ar": "اطلب عرض سعر"
  },
  "lang_other": {
   "en": "中文",
@@ -37,414 +72,929 @@
  },
  "menu": {
   "en": "Menu",
-  "zh": "菜单"
+  "zh": "菜单",
+  "ja": "メニュー",
+  "fr": "Menu",
+  "es": "Menú",
+  "ko": "메뉴",
+  "ar": "القائمة"
  },
  "all_products": {
   "en": "All products",
-  "zh": "全部产品"
+  "zh": "全部产品",
+  "ja": "全製品",
+  "fr": "Tous les produits",
+  "es": "Todos los productos",
+  "ko": "전체 제품",
+  "ar": "جميع المنتجات"
  },
  "skip": {
   "en": "Skip to content",
-  "zh": "跳到正文"
+  "zh": "跳到正文",
+  "ja": "本文へスキップ",
+  "fr": "Aller au contenu",
+  "es": "Saltar al contenido",
+  "ko": "본문 바로가기",
+  "ar": "انتقل إلى المحتوى"
  },
  "view_pattern": {
   "en": "View Pattern",
-  "zh": "查看纹样"
+  "zh": "查看纹样",
+  "ja": "柄を見る",
+  "fr": "Voir le motif",
+  "es": "Ver diseño",
+  "ko": "패턴 보기",
+  "ar": "عرض النقشة"
  },
  "view_product": {
   "en": "View details",
-  "zh": "查看详情"
+  "zh": "查看详情",
+  "ja": "詳細を見る",
+  "fr": "Voir le détail",
+  "es": "Ver detalles",
+  "ko": "자세히 보기",
+  "ar": "عرض التفاصيل"
  },
  "request_sample": {
   "en": "Request a Sample",
-  "zh": "申请样品"
+  "zh": "申请样品",
+  "ja": "サンプル請求",
+  "fr": "Demander un échantillon",
+  "es": "Solicitar muestra",
+  "ko": "샘플 요청",
+  "ar": "اطلب عيّنة"
  },
  "browse_patterns": {
   "en": "Browse Holographic Patterns",
-  "zh": "浏览光刻纹样"
+  "zh": "浏览光刻纹样",
+  "ja": "ホログラム柄を見る",
+  "fr": "Parcourir les motifs holographiques",
+  "es": "Ver diseños holográficos",
+  "ko": "홀로그램 패턴 둘러보기",
+  "ar": "تصفّح النقشات الهولوغرافية"
  },
  "customise_pattern": {
   "en": "Customise This Pattern",
-  "zh": "定制此纹样"
+  "zh": "定制此纹样",
+  "ja": "この柄をカスタマイズ",
+  "fr": "Personnaliser ce motif",
+  "es": "Personalizar este diseño",
+  "ko": "이 패턴 맞춤 제작",
+  "ar": "خصّص هذه النقشة"
  },
  "request_custom_quote": {
   "en": "Request a Custom Quote",
-  "zh": "定制询价"
+  "zh": "定制询价",
+  "ja": "カスタム品のお見積り依頼",
+  "fr": "Demander un devis sur mesure",
+  "es": "Solicitar cotización personalizada",
+  "ko": "맞춤 견적 요청",
+  "ar": "اطلب عرض سعر مخصّص"
  },
  "structure": {
   "en": "Material structure",
-  "zh": "材料结构"
+  "zh": "材料结构",
+  "ja": "材料構成",
+  "fr": "Structure du matériau",
+  "es": "Estructura del material",
+  "ko": "소재 구조",
+  "ar": "تركيب المادة"
  },
  "process": {
   "en": "Process",
-  "zh": "加工方式"
+  "zh": "加工方式",
+  "ja": "加工方法",
+  "fr": "Procédé",
+  "es": "Proceso",
+  "ko": "공정",
+  "ar": "طريقة التصنيع"
  },
  "effect": {
   "en": "Visual effect",
-  "zh": "视觉效果"
+  "zh": "视觉效果",
+  "ja": "外観効果",
+  "fr": "Effet visuel",
+  "es": "Efecto visual",
+  "ko": "시각 효과",
+  "ar": "التأثير البصري"
  },
  "specs": {
   "en": "Specifications",
-  "zh": "规格"
+  "zh": "规格",
+  "ja": "仕様",
+  "fr": "Caractéristiques",
+  "es": "Especificaciones",
+  "ko": "사양",
+  "ar": "المواصفات"
  },
  "on_request": {
   "en": "On request",
-  "zh": "请咨询"
+  "zh": "请咨询",
+  "ja": "お問い合わせください",
+  "fr": "Sur demande",
+  "es": "Bajo pedido",
+  "ko": "문의 시 안내",
+  "ar": "عند الطلب"
  },
  "specs_on_request": {
   "en": "Weight, size, supply form, MOQ and lead time are quoted on request.",
-  "zh": "克重、尺寸、供货形态、起订量与交期请询价。"
+  "zh": "克重、尺寸、供货形态、起订量与交期请询价。",
+  "ja": "坪量、サイズ、供給形態、最小ロット、納期はお問い合わせに応じてお見積りします。",
+  "fr": "Grammage, format, conditionnement, MOQ et délai sont indiqués sur devis.",
+  "es": "Gramaje, formato, forma de suministro, pedido mínimo y plazo de entrega se cotizan bajo pedido.",
+  "ko": "평량, 규격, 공급 형태, 최소 주문 수량(MOQ) 및 납기는 문의 시 견적으로 안내해 드립니다.",
+  "ar": "يُحدَّد الوزن والمقاس وشكل التوريد والحد الأدنى للطلب ومدة التسليم في عرض السعر عند الطلب."
  },
  "pending_review": {
   "en": "Details being confirmed. Contact us for the structure and specifications.",
-  "zh": "资料核对中，结构与规格请咨询。"
+  "zh": "资料核对中，结构与规格请咨询。",
+  "ja": "詳細は確認中です。構成と仕様についてはお問い合わせください。",
+  "fr": "Informations en cours de confirmation. Contactez-nous pour connaître la structure et les caractéristiques.",
+  "es": "Detalles en proceso de confirmación. Contáctenos para conocer la estructura y las especificaciones.",
+  "ko": "세부 정보를 확인 중입니다. 구조와 사양은 문의해 주십시오.",
+  "ar": "التفاصيل قيد التأكيد. تواصل معنا لمعرفة التركيب والمواصفات."
  },
  "photo_soon": {
   "en": "Photo coming soon",
-  "zh": "图片待补充"
+  "zh": "图片待补充",
+  "ja": "写真準備中",
+  "fr": "Photo à venir",
+  "es": "Foto próximamente",
+  "ko": "사진 준비 중",
+  "ar": "الصورة قريبًا"
  },
  "pattern": {
   "en": "Pattern",
-  "zh": "纹样"
+  "zh": "纹样",
+  "ja": "柄",
+  "fr": "Motif",
+  "es": "Diseño",
+  "ko": "패턴",
+  "ar": "النقشة"
  },
  "pattern_lib_sub": {
   "en": "Ready-made holographic patterns",
-  "zh": "已设计的光刻纹样"
+  "zh": "已设计的光刻纹样",
+  "ja": "既製ホログラム柄",
+  "fr": "Motifs holographiques prêts à l'emploi",
+  "es": "Diseños holográficos listos para usar",
+  "ko": "기성 홀로그램 패턴",
+  "ar": "نقشات هولوغرافية جاهزة"
  },
  "search_code": {
   "en": "Search by number",
-  "zh": "按编号搜索"
+  "zh": "按编号搜索",
+  "ja": "番号で検索",
+  "fr": "Rechercher par numéro",
+  "es": "Buscar por número",
+  "ko": "번호로 검색",
+  "ar": "ابحث بالرقم"
  },
  "load_more": {
   "en": "Load more",
-  "zh": "加载更多"
+  "zh": "加载更多",
+  "ja": "さらに表示",
+  "fr": "Afficher plus",
+  "es": "Cargar más",
+  "ko": "더 보기",
+  "ar": "عرض المزيد"
  },
  "showing": {
   "en": "patterns",
-  "zh": "款纹样"
+  "zh": "款纹样",
+  "ja": "柄",
+  "fr": "motifs",
+  "es": "diseños",
+  "ko": "패턴",
+  "ar": "نقشة"
  },
  "all": {
   "en": "All",
-  "zh": "全部"
+  "zh": "全部",
+  "ja": "すべて",
+  "fr": "Tous",
+  "es": "Todos",
+  "ko": "전체",
+  "ar": "الكل"
  },
  "available_on": {
   "en": "Available on",
-  "zh": "可用载体"
+  "zh": "可用载体",
+  "ja": "対応素材",
+  "fr": "Disponible sur",
+  "es": "Disponible en",
+  "ko": "적용 가능 소재",
+  "ar": "متوفرة على"
  },
  "carrier_paper": {
   "en": "Patterned holographic paperboard",
-  "zh": "光刻纸与卡纸"
+  "zh": "光刻纸与卡纸",
+  "ja": "柄入りホログラム板紙",
+  "fr": "Carton holographique à motifs",
+  "es": "Cartón holográfico con diseño",
+  "ko": "패턴 홀로그램 판지",
+  "ar": "كرتون هولوغرافي منقوش"
  },
  "carrier_film": {
   "en": "Patterned holographic film",
-  "zh": "光刻纹样膜"
+  "zh": "光刻纹样膜",
+  "ja": "柄入りホログラムフィルム",
+  "fr": "Film holographique à motifs",
+  "es": "Película holográfica con diseño",
+  "ko": "패턴 홀로그램 필름",
+  "ar": "فيلم هولوغرافي منقوش"
  },
  "design_status": {
   "en": "Status",
-  "zh": "状态"
+  "zh": "状态",
+  "ja": "ステータス",
+  "fr": "Statut",
+  "es": "Estado",
+  "ko": "상태",
+  "ar": "الحالة"
  },
  "design_ready": {
   "en": "Design ready. Production and lead time quoted per order.",
-  "zh": "设计已完成，生产与交期按订单报价。"
+  "zh": "设计已完成，生产与交期按订单报价。",
+  "ja": "デザイン完成済み。生産と納期はご注文ごとにお見積りします。",
+  "fr": "Design prêt. Production et délai chiffrés pour chaque commande.",
+  "es": "Diseño terminado. Producción y plazo de entrega cotizados por pedido.",
+  "ko": "디자인 완료. 생산 및 납기는 주문별로 견적을 드립니다.",
+  "ar": "التصميم جاهز. يُحدَّد الإنتاج ومدة التسليم في عرض السعر لكل طلب."
  },
  "angle_note": {
   "en": "Screens, lighting and viewing angle change how the effect looks. The confirmed sample or demo is the final reference.",
-  "zh": "屏幕、光线与观看角度会影响效果，最终以确认的样品或 demo 为准。"
+  "zh": "屏幕、光线与观看角度会影响效果，最终以确认的样品或 demo 为准。",
+  "ja": "画面、照明、見る角度によって効果の見え方は変わります。最終的な基準は、確認済みのサンプルまたはデモです。",
+  "fr": "L'écran, l'éclairage et l'angle de vue modifient le rendu de l'effet. L'échantillon ou la maquette validé(e) fait foi.",
+  "es": "La pantalla, la iluminación y el ángulo de visión cambian la apariencia del efecto. La muestra o demo confirmada es la referencia final.",
+  "ko": "화면, 조명, 보는 각도에 따라 효과가 다르게 보일 수 있습니다. 최종 기준은 확정된 샘플 또는 데모입니다.",
+  "ar": "تؤثر الشاشات والإضاءة وزاوية الرؤية في مظهر التأثير. العيّنة أو النموذج المعتمد هو المرجع النهائي."
  },
  "reserved_note": {
   "en": "This pattern can be used as a background with reserved areas for your artwork or text, or combined with other patterns. Reserved areas are a design arrangement, not cut-outs in the paper.",
-  "zh": "此纹样可作为背景，为您的图案或文字预留区域，也可与其他纹样组合。局部留白是设计排布，不是在纸上挖空。"
+  "zh": "此纹样可作为背景，为您的图案或文字预留区域，也可与其他纹样组合。局部留白是设计排布，不是在纸上挖空。",
+  "ja": "この柄は、お客様のアートワークや文字を配置する空きエリアを設けた背景として使用したり、他の柄と組み合わせたりできます。空きエリアはデザイン上のレイアウトであり、紙を切り抜くものではありません。",
+  "fr": "Ce motif peut servir de fond avec des zones réservées à votre visuel ou à votre texte, ou être combiné à d'autres motifs. Les zones réservées relèvent de la mise en page du design : il ne s'agit pas de découpes dans le papier.",
+  "es": "Este diseño puede usarse como fondo con áreas reservadas para su arte o texto, o combinarse con otros diseños. Las áreas reservadas son una disposición del diseño, no recortes en el papel.",
+  "ko": "이 패턴은 귀사의 아트워크나 문구를 위한 여백 영역을 둔 배경으로 사용하거나 다른 패턴과 조합할 수 있습니다. 여백 영역은 디자인상의 배치이며 종이를 잘라낸 부분이 아닙니다.",
+  "ar": "يمكن استخدام هذه النقشة خلفيةً مع مساحات محجوزة لتصميمك أو نصّك، أو دمجها مع نقشات أخرى. المساحات المحجوزة ترتيب تصميمي، وليست فتحات مقطوعة في الورق."
  },
  "more_views": {
   "en": "More views",
-  "zh": "更多角度"
+  "zh": "更多角度",
+  "ja": "その他の画像",
+  "fr": "Autres vues",
+  "es": "Más vistas",
+  "ko": "다른 이미지",
+  "ar": "صور إضافية"
  },
  "prev": {
   "en": "Previous",
-  "zh": "上一款"
+  "zh": "上一款",
+  "ja": "前へ",
+  "fr": "Précédent",
+  "es": "Anterior",
+  "ko": "이전",
+  "ar": "السابق"
  },
  "next": {
   "en": "Next",
-  "zh": "下一款"
+  "zh": "下一款",
+  "ja": "次へ",
+  "fr": "Suivant",
+  "es": "Siguiente",
+  "ko": "다음",
+  "ar": "التالي"
  },
  "related_patterns": {
   "en": "Patterns for this material",
-  "zh": "适用纹样"
+  "zh": "适用纹样",
+  "ja": "この素材に対応する柄",
+  "fr": "Motifs pour ce matériau",
+  "es": "Diseños para este material",
+  "ko": "이 소재용 패턴",
+  "ar": "نقشات لهذه المادة"
  },
  "related_products": {
   "en": "Materials that carry this pattern",
-  "zh": "可承载此纹样的材料"
+  "zh": "可承载此纹样的材料",
+  "ja": "この柄に対応する素材",
+  "fr": "Matériaux proposés avec ce motif",
+  "es": "Materiales disponibles con este diseño",
+  "ko": "이 패턴을 적용할 수 있는 소재",
+  "ar": "مواد تتوفر عليها هذه النقشة"
  },
  "in_category": {
   "en": "In this category",
-  "zh": "本类产品"
+  "zh": "本类产品",
+  "ja": "このカテゴリーの製品",
+  "fr": "Dans cette catégorie",
+  "es": "En esta categoría",
+  "ko": "이 카테고리의 제품",
+  "ar": "في هذه الفئة"
  },
  "filter_colour": {
   "en": "Colour",
-  "zh": "颜色"
+  "zh": "颜色",
+  "ja": "色",
+  "fr": "Couleur",
+  "es": "Color",
+  "ko": "색상",
+  "ar": "اللون"
  },
  "filter_surface": {
   "en": "Surface",
-  "zh": "表面"
+  "zh": "表面",
+  "ja": "表面",
+  "fr": "Surface",
+  "es": "Superficie",
+  "ko": "표면",
+  "ar": "السطح"
  },
  "filter_effect": {
   "en": "Effect",
-  "zh": "效果"
+  "zh": "效果",
+  "ja": "効果",
+  "fr": "Effet",
+  "es": "Efecto",
+  "ko": "효과",
+  "ar": "التأثير"
  },
  "v_silver": {
   "en": "Silver",
-  "zh": "银色"
+  "zh": "银色",
+  "ja": "シルバー",
+  "fr": "Argent",
+  "es": "Plata",
+  "ko": "은색",
+  "ar": "فضي"
  },
  "v_gold": {
   "en": "Gold",
-  "zh": "金色"
+  "zh": "金色",
+  "ja": "ゴールド",
+  "fr": "Or",
+  "es": "Oro",
+  "ko": "금색",
+  "ar": "ذهبي"
  },
  "v_gloss": {
   "en": "Gloss",
-  "zh": "亮面"
+  "zh": "亮面",
+  "ja": "グロス",
+  "fr": "Brillant",
+  "es": "Brillante",
+  "ko": "유광",
+  "ar": "لامع"
  },
  "v_matte": {
   "en": "Matte",
-  "zh": "亚光"
+  "zh": "亚光",
+  "ja": "マット",
+  "fr": "Mat",
+  "es": "Mate",
+  "ko": "무광",
+  "ar": "مطفي"
  },
  "v_plain": {
   "en": "Metallic",
-  "zh": "金属素面"
+  "zh": "金属素面",
+  "ja": "メタリック",
+  "fr": "Métallisé",
+  "es": "Metálico",
+  "ko": "메탈릭",
+  "ar": "معدني"
  },
  "v_holographic": {
   "en": "Holographic",
-  "zh": "镭射"
+  "zh": "镭射",
+  "ja": "ホログラム",
+  "fr": "Holographique",
+  "es": "Holográfico",
+  "ko": "홀로그램",
+  "ar": "هولوغرافي"
  },
  "v_uv": {
   "en": "Patterned holographic",
-  "zh": "光刻纹样"
+  "zh": "光刻纹样",
+  "ja": "柄入りホログラム",
+  "fr": "Holographique à motifs",
+  "es": "Holográfico con diseño",
+  "ko": "패턴 홀로그램",
+  "ar": "هولوغرافي منقوش"
  },
  "render_caption": {
   "en": "Render for illustration. Photos of real products to follow.",
-  "zh": "效果图，仅供示意，后续更换为实拍产品图。"
+  "zh": "效果图，仅供示意，后续更换为实拍产品图。",
+  "ja": "イメージ用のレンダリングです。実製品の写真は後日掲載予定です。",
+  "fr": "Rendu à titre d'illustration. Photos des produits réels à venir.",
+  "es": "Render ilustrativo. Próximamente fotos de productos reales.",
+  "ko": "참고용 렌더링 이미지입니다. 실제 제품 사진은 추후 게재됩니다.",
+  "ar": "صورة تصوّرية للتوضيح. ستُضاف صور المنتجات الفعلية لاحقًا."
  },
  "render_tag": {
   "en": "Render",
-  "zh": "效果图"
+  "zh": "效果图",
+  "ja": "イメージ",
+  "fr": "Rendu",
+  "es": "Render",
+  "ko": "렌더링",
+  "ar": "تصوّر"
  },
  "custom_quote_note": {
   "en": "Made to your design. Tell us the format, size, quantity and material, and we will quote.",
-  "zh": "按您的设计制作。告诉我们款式、尺寸、数量与材料，我们为您报价。"
+  "zh": "按您的设计制作。告诉我们款式、尺寸、数量与材料，我们为您报价。",
+  "ja": "お客様のデザインに合わせて製作します。形状、サイズ、数量、素材をお知らせいただければお見積りします。",
+  "fr": "Fabriqué selon votre design. Indiquez-nous le type de produit, le format, la quantité et le matériau, et nous établirons un devis.",
+  "es": "Fabricado según su diseño. Indíquenos formato, tamaño, cantidad y material, y le enviaremos una cotización.",
+  "ko": "귀사의 디자인대로 제작합니다. 형태, 규격, 수량, 소재를 알려 주시면 견적을 드립니다.",
+  "ar": "يُصنَّع وفق تصميمك. أخبرنا بالشكل والمقاس والكمية والمادة، وسنرسل لك عرض السعر."
  },
  "uses_materials": {
   "en": "Materials often used",
-  "zh": "常用材料"
+  "zh": "常用材料",
+  "ja": "よく使われる素材",
+  "fr": "Matériaux couramment utilisés",
+  "es": "Materiales habituales",
+  "ko": "주로 사용되는 소재",
+  "ar": "المواد المستخدمة عادةً"
  },
  "footer_products": {
   "en": "Products",
-  "zh": "产品"
+  "zh": "产品",
+  "ja": "製品",
+  "fr": "Produits",
+  "es": "Productos",
+  "ko": "제품",
+  "ar": "المنتجات"
  },
  "footer_company": {
   "en": "Company",
-  "zh": "公司"
+  "zh": "公司",
+  "ja": "会社情報",
+  "fr": "Entreprise",
+  "es": "Empresa",
+  "ko": "회사",
+  "ar": "الشركة"
  },
  "footer_contact": {
   "en": "Contact",
-  "zh": "联系"
+  "zh": "联系",
+  "ja": "お問い合わせ",
+  "fr": "Contact",
+  "es": "Contacto",
+  "ko": "연락처",
+  "ar": "التواصل"
  },
  "rights": {
   "en": "All rights reserved.",
-  "zh": "版权所有。"
+  "zh": "版权所有。",
+  "ja": "All rights reserved.",
+  "fr": "Tous droits réservés.",
+  "es": "Todos los derechos reservados.",
+  "ko": "All rights reserved.",
+  "ar": "جميع الحقوق محفوظة."
  },
  "not_found": {
   "en": "Page not found",
-  "zh": "页面不存在"
+  "zh": "页面不存在",
+  "ja": "ページが見つかりません",
+  "fr": "Page introuvable",
+  "es": "Página no encontrada",
+  "ko": "페이지를 찾을 수 없습니다",
+  "ar": "الصفحة غير موجودة"
  },
  "filter_finish": {
   "en": "Finish",
-  "zh": "光泽"
+  "zh": "光泽",
+  "ja": "仕上げ",
+  "fr": "Finition",
+  "es": "Acabado",
+  "ko": "마감",
+  "ar": "اللمسة النهائية"
  },
  "filter_pattern": {
   "en": "Pattern",
-  "zh": "图案"
+  "zh": "图案",
+  "ja": "柄",
+  "fr": "Motif",
+  "es": "Diseño",
+  "ko": "패턴",
+  "ar": "النقشة"
  },
  "pv_silver": {
   "en": "Silver",
-  "zh": "银色"
+  "zh": "银色",
+  "ja": "シルバー",
+  "fr": "Argent",
+  "es": "Plata",
+  "ko": "실버",
+  "ar": "فضي"
  },
  "pv_pearl": {
   "en": "Pearl",
-  "zh": "珍珠彩"
+  "zh": "珍珠彩",
+  "ja": "パール",
+  "fr": "Nacré",
+  "es": "Perlado",
+  "ko": "펄",
+  "ar": "لؤلؤي"
  },
  "pv_holographic": {
   "en": "Rainbow holographic",
-  "zh": "彩虹镭射"
+  "zh": "彩虹镭射",
+  "ja": "レインボーホログラム",
+  "fr": "Holographique arc-en-ciel",
+  "es": "Holográfico arcoíris",
+  "ko": "레인보우 홀로그램",
+  "ar": "هولوغرافي قزحي"
  },
  "pv_geometric": {
   "en": "Geometric",
-  "zh": "几何"
+  "zh": "几何",
+  "ja": "幾何学",
+  "fr": "Géométrique",
+  "es": "Geométrico",
+  "ko": "기하학",
+  "ar": "هندسي"
  },
  "pv_fluid": {
   "en": "Fluid",
-  "zh": "流体"
+  "zh": "流体",
+  "ja": "流体",
+  "fr": "Fluide",
+  "es": "Fluido",
+  "ko": "플루이드",
+  "ar": "انسيابي"
  },
  "pv_texture": {
   "en": "Texture",
-  "zh": "肌理"
+  "zh": "肌理",
+  "ja": "テクスチャー",
+  "fr": "Texture",
+  "es": "Textura",
+  "ko": "텍스처",
+  "ar": "ملمس"
  },
  "pv_lines": {
   "en": "Lines & beams",
-  "zh": "线条光束"
+  "zh": "线条光束",
+  "ja": "ライン・光線",
+  "fr": "Lignes et faisceaux",
+  "es": "Líneas y haces",
+  "ko": "라인 및 광선",
+  "ar": "خطوط وأشعة"
  },
  "pv_motif": {
   "en": "Motifs",
-  "zh": "主题图案"
+  "zh": "主题图案",
+  "ja": "モチーフ",
+  "fr": "Figuratif",
+  "es": "Motivos",
+  "ko": "모티프",
+  "ar": "زخارف"
  },
  "pv_subtle": {
   "en": "Subtle",
-  "zh": "低调"
+  "zh": "低调",
+  "ja": "控えめ",
+  "fr": "Discret",
+  "es": "Sutil",
+  "ko": "은은함",
+  "ar": "خفيف"
  },
  "pv_medium": {
   "en": "Medium",
-  "zh": "适中"
+  "zh": "适中",
+  "ja": "標準",
+  "fr": "Modéré",
+  "es": "Medio",
+  "ko": "중간",
+  "ar": "متوسط"
  },
  "pv_bold": {
   "en": "Bold",
-  "zh": "强烈"
+  "zh": "强烈",
+  "ja": "大胆",
+  "fr": "Prononcé",
+  "es": "Intenso",
+  "ko": "강렬함",
+  "ar": "قوي"
  },
  "custom_head": {
   "en": "Made to your specification",
-  "zh": "可按需定制"
+  "zh": "可按需定制",
+  "ja": "ご指定の仕様で製作",
+  "fr": "Fabriqué selon votre cahier des charges",
+  "es": "Fabricado según sus especificaciones",
+  "ko": "귀사 사양에 맞춘 제작",
+  "ar": "حسب مواصفاتك"
  },
  "custom_intro": {
   "en": "Tell us what you need and we will match the material, weight and finish.",
-  "zh": "告诉我们您的需求，我们为您匹配材料、克重与工艺。"
+  "zh": "告诉我们您的需求，我们为您匹配材料、克重与工艺。",
+  "ja": "ご要望をお聞かせいただければ、素材、坪量、仕上げを最適に選定します。",
+  "fr": "Indiquez-nous votre besoin : nous adapterons le matériau, le grammage et la finition.",
+  "es": "Indíquenos lo que necesita y ajustaremos el material, el gramaje y el acabado.",
+  "ko": "필요한 사항을 알려 주시면 소재, 평량, 마감을 맞춰 드립니다.",
+  "ar": "أخبرنا بما تحتاجه وسنختار لك المادة والوزن واللمسة النهائية المناسبة."
  },
  "custom_cta": {
   "en": "Discuss a custom order",
-  "zh": "咨询定制"
+  "zh": "咨询定制",
+  "ja": "カスタム注文の相談",
+  "fr": "Discuter d'une commande sur mesure",
+  "es": "Consultar un pedido personalizado",
+  "ko": "맞춤 주문 상담",
+  "ar": "ناقش طلبًا مخصّصًا"
  },
  "brand_name": {
   "en": "Tianqi Materials",
-  "zh": "天琦材料"
+  "zh": "天琦材料",
+  "ja": "Tianqi Materials",
+  "fr": "Tianqi Materials",
+  "es": "Tianqi Materials",
+  "ko": "Tianqi Materials",
+  "ar": "Tianqi Materials"
  },
  "language": {
   "en": "Language",
-  "zh": "语言"
+  "zh": "语言",
+  "ja": "言語",
+  "fr": "Langue",
+  "es": "Idioma",
+  "ko": "언어",
+  "ar": "اللغة"
  },
  "ct_email": {
   "en": "Email",
-  "zh": "Email"
+  "zh": "Email",
+  "ja": "メール",
+  "fr": "E-mail",
+  "es": "Correo electrónico",
+  "ko": "이메일",
+  "ar": "البريد الإلكتروني"
  },
  "ct_tel": {
   "en": "Tel",
-  "zh": "Tel"
+  "zh": "Tel",
+  "ja": "電話",
+  "fr": "Tél.",
+  "es": "Tel.",
+  "ko": "전화",
+  "ar": "الهاتف"
  },
  "certs_label": {
   "en": "certifications",
-  "zh": "资质认证"
+  "zh": "资质认证",
+  "ja": "認証",
+  "fr": "certifications",
+  "es": "certificaciones",
+  "ko": "인증",
+  "ar": "الشهادات"
  },
  "certs_head": {
   "en": "Certifications",
-  "zh": "资质认证"
+  "zh": "资质认证",
+  "ja": "認証・認定",
+  "fr": "Certifications",
+  "es": "Certificaciones",
+  "ko": "인증",
+  "ar": "الشهادات"
  },
  "customers_label": {
   "en": "Customers",
-  "zh": "客户"
+  "zh": "客户",
+  "ja": "取引実績",
+  "fr": "Clients",
+  "es": "Clientes",
+  "ko": "고객사",
+  "ar": "العملاء"
  },
  "similar_patterns": {
   "en": "Similar patterns",
-  "zh": "同类纹样"
+  "zh": "同类纹样",
+  "ja": "類似の柄",
+  "fr": "Motifs similaires",
+  "es": "Diseños similares",
+  "ko": "유사한 패턴",
+  "ar": "نقشات مشابهة"
  },
  "pk_fmt": {
   "en": "{finish} {pattern} Holographic Pattern",
-  "zh": "{finish}{pattern}光刻纹样"
+  "zh": "{finish}{pattern}光刻纹样",
+  "ja": "{finish}・{pattern}ホログラム柄",
+  "fr": "Motif holographique {pattern} {finish}",
+  "es": "Diseño holográfico {pattern} {finish}",
+  "ko": "{finish} {pattern} 홀로그램 패턴",
+  "ar": "نقشة هولوغرافية {pattern} {finish}"
  },
  "pw_silver": {
   "en": "Silver",
-  "zh": "银色"
+  "zh": "银色",
+  "ja": "シルバー",
+  "fr": "argent",
+  "es": "plateado",
+  "ko": "실버",
+  "ar": "فضية"
  },
  "pw_pearl": {
   "en": "Pearl",
-  "zh": "珍珠彩"
+  "zh": "珍珠彩",
+  "ja": "パール",
+  "fr": "nacré",
+  "es": "perlado",
+  "ko": "펄",
+  "ar": "لؤلؤية"
  },
  "pw_holographic": {
   "en": "Rainbow",
-  "zh": "彩虹"
+  "zh": "彩虹",
+  "ja": "レインボー",
+  "fr": "arc-en-ciel",
+  "es": "arcoíris",
+  "ko": "레인보우",
+  "ar": "قزحية"
  },
  "pw_geometric": {
   "en": "Geometric",
-  "zh": "几何"
+  "zh": "几何",
+  "ja": "幾何学",
+  "fr": "géométrique",
+  "es": "geométrico",
+  "ko": "기하학",
+  "ar": "هندسية"
  },
  "pw_fluid": {
   "en": "Fluid",
-  "zh": "流体"
+  "zh": "流体",
+  "ja": "流体",
+  "fr": "fluide",
+  "es": "fluido",
+  "ko": "플루이드",
+  "ar": "انسيابية"
  },
  "pw_texture": {
   "en": "Texture",
-  "zh": "肌理"
+  "zh": "肌理",
+  "ja": "テクスチャー",
+  "fr": "texturé",
+  "es": "de textura",
+  "ko": "텍스처",
+  "ar": "نسيجية"
  },
  "pw_lines": {
   "en": "Light-Beam",
-  "zh": "线条光束"
+  "zh": "线条光束",
+  "ja": "光線",
+  "fr": "à faisceaux lumineux",
+  "es": "de haces de luz",
+  "ko": "광선",
+  "ar": "شعاعية"
  },
  "pw_motif": {
   "en": "Motif",
-  "zh": "主题图案"
+  "zh": "主题图案",
+  "ja": "モチーフ",
+  "fr": "figuratif",
+  "es": "de motivos",
+  "ko": "모티프",
+  "ar": "زخرفية"
  },
  "pe_subtle": {
   "en": "a subtle",
-  "zh": "低调"
+  "zh": "低调",
+  "ja": "控えめな",
+  "fr": "discret",
+  "es": "sutil",
+  "ko": "은은한",
+  "ar": "خفيف"
  },
  "pe_medium": {
   "en": "a medium",
-  "zh": "适中"
+  "zh": "适中",
+  "ja": "ほどよい",
+  "fr": "modéré",
+  "es": "medio",
+  "ko": "중간 강도의",
+  "ar": "متوسط"
  },
  "pe_bold": {
   "en": "a bold",
-  "zh": "强烈"
+  "zh": "强烈",
+  "ja": "大胆な",
+  "fr": "prononcé",
+  "es": "intenso",
+  "ko": "강렬한",
+  "ar": "قوي"
  },
  "pattern_alt_fmt": {
   "en": "{name}, {kind_lower}",
-  "zh": "{name}，{kind}"
+  "zh": "{name}，{kind}",
+  "ja": "{name}、{kind_lower}",
+  "fr": "{name}, {kind_lower}",
+  "es": "{name}, {kind_lower}",
+  "ko": "{name}, {kind_lower}",
+  "ar": "{name}، {kind_lower}"
  },
  "pattern_title_fmt": {
   "en": "Pattern {id}: {kind} | Tianqi Materials",
-  "zh": "纹样 {id}｜{kind}｜天琦材料"
+  "zh": "纹样 {id}｜{kind}｜天琦材料",
+  "ja": "柄 {id}：{kind} | Tianqi Materials",
+  "fr": "Motif {id} : {kind} | Tianqi Materials",
+  "es": "Diseño {id}: {kind} | Tianqi Materials",
+  "ko": "패턴 {id}: {kind} | Tianqi Materials",
+  "ar": "النقشة {id}: {kind} | Tianqi Materials"
  },
  "pattern_title_plain": {
   "en": "Pattern {id} | Holographic Patterns | Tianqi Materials",
-  "zh": "纹样 {id}｜光刻纹样｜天琦材料"
+  "zh": "纹样 {id}｜光刻纹样｜天琦材料",
+  "ja": "柄 {id} | ホログラム柄 | Tianqi Materials",
+  "fr": "Motif {id} | Motifs holographiques | Tianqi Materials",
+  "es": "Diseño {id} | Diseños holográficos | Tianqi Materials",
+  "ko": "패턴 {id} | 홀로그램 패턴 | Tianqi Materials",
+  "ar": "النقشة {id} | النقشات الهولوغرافية | Tianqi Materials"
  },
  "pattern_desc_effect_fmt": {
   "en": "{kind} {id} with {effect} effect. Design ready: request a quote, a sample or a custom version.",
-  "zh": "{kind} {id}，效果{effect}。设计已完成，可询价、申请样品或定制。"
+  "zh": "{kind} {id}，效果{effect}。设计已完成，可询价、申请样品或定制。",
+  "ja": "{kind} {id}。{effect}光の効果です。デザイン完成済み：お見積り、サンプル、カスタム版をご依頼いただけます。",
+  "fr": "{kind} {id}, effet {effect}. Design prêt : demandez un devis, un échantillon ou une version personnalisée.",
+  "es": "{kind} {id} con efecto {effect}. Diseño terminado: solicite una cotización, una muestra o una versión personalizada.",
+  "ko": "{effect} 효과의 {kind} {id}입니다. 디자인 완료: 견적, 샘플 또는 맞춤 버전을 요청하십시오.",
+  "ar": "{kind} رقم {id} بتأثير {effect}. التصميم جاهز: اطلب عرض سعر أو عيّنة أو نسخة مخصّصة."
  },
  "pattern_desc_fmt": {
   "en": "{kind} {id}. Design ready: request a quote, a sample or a custom version.",
-  "zh": "{kind} {id}。设计已完成，可询价、申请样品或定制。"
+  "zh": "{kind} {id}。设计已完成，可询价、申请样品或定制。",
+  "ja": "{kind} {id}。デザイン完成済み：お見積り、サンプル、カスタム版をご依頼いただけます。",
+  "fr": "{kind} {id}. Design prêt : demandez un devis, un échantillon ou une version personnalisée.",
+  "es": "{kind} {id}. Diseño terminado: solicite una cotización, una muestra o una versión personalizada.",
+  "ko": "{kind} {id}입니다. 디자인 완료: 견적, 샘플 또는 맞춤 버전을 요청하십시오.",
+  "ar": "{kind} رقم {id}. التصميم جاهز: اطلب عرض سعر أو عيّنة أو نسخة مخصّصة."
  },
  "pattern_desc_plain": {
   "en": "Holographic pattern {id} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version.",
-  "zh": "光刻纹样 {id}，设计已完成。可询价、申请样品或定制。"
+  "zh": "光刻纹样 {id}，设计已完成。可询价、申请样品或定制。",
+  "ja": "ホログラム板紙・ホログラムフィルム用のホログラム柄 {id}（デザイン完成済み）。お見積り、サンプル、カスタム版をご依頼いただけます。",
+  "fr": "Motif holographique {id} pour carton et film holographiques, design prêt. Demandez un devis, un échantillon ou une version personnalisée.",
+  "es": "Diseño holográfico {id} para cartón holográfico y película holográfica, diseño terminado. Solicite una cotización, una muestra o una versión personalizada.",
+  "ko": "홀로그램 판지 및 필름용 홀로그램 패턴 {id}, 디자인 완료. 견적, 샘플 또는 맞춤 버전을 요청하십시오.",
+  "ar": "النقشة الهولوغرافية رقم {id} للكرتون والفيلم الهولوغرافي، والتصميم جاهز. اطلب عرض سعر أو عيّنة أو نسخة مخصّصة."
  },
  "js_count_one": {
   "en": "{n} pattern",
-  "zh": "共 {n} 款"
+  "zh": "共 {n} 款",
+  "ja": "{n}件",
+  "fr": "{n} motif",
+  "es": "{n} diseño",
+  "ko": "{n}개 패턴",
+  "ar": "{n} نقشة"
  },
  "js_count_many": {
   "en": "{n} patterns",
-  "zh": "共 {n} 款"
+  "zh": "共 {n} 款",
+  "ja": "{n}件",
+  "fr": "{n} motifs",
+  "es": "{n} diseños",
+  "ko": "{n}개 패턴",
+  "ar": "{n} نقشة"
  },
  "js_pattern": {
   "en": "Pattern",
-  "zh": "纹样"
+  "zh": "纹样",
+  "ja": "柄",
+  "fr": "Motif",
+  "es": "Diseño",
+  "ko": "패턴",
+  "ar": "النقشة"
  },
  "js_form_invalid": {
   "en": "Please fill in your name, a valid email and your requirement.",
-  "zh": "请填写联系人、有效邮箱和需求说明。"
+  "zh": "请填写联系人、有效邮箱和需求说明。",
+  "ja": "お名前、有効なメールアドレス、ご要望をご入力ください。",
+  "fr": "Veuillez indiquer votre nom, une adresse e-mail valide et votre besoin.",
+  "es": "Indique su nombre, un correo electrónico válido y su requerimiento.",
+  "ko": "이름, 올바른 이메일 주소, 요청 사항을 입력해 주십시오.",
+  "ar": "يُرجى إدخال اسمك وبريد إلكتروني صحيح ومتطلباتك."
  },
  "js_form_ok": {
   "en": "Thank you. We have received your inquiry and will reply soon.",
-  "zh": "已收到您的需求，我们会尽快回复。"
+  "zh": "已收到您的需求，我们会尽快回复。",
+  "ja": "ありがとうございます。お問い合わせを受け付けました。追ってご連絡いたします。",
+  "fr": "Merci. Nous avons bien reçu votre demande et vous répondrons rapidement.",
+  "es": "Gracias. Hemos recibido su consulta y le responderemos en breve.",
+  "ko": "감사합니다. 문의를 접수했으며 곧 회신 드리겠습니다.",
+  "ar": "شكرًا لك. تلقّينا استفسارك وسنرد عليك قريبًا."
  },
  "js_form_fail": {
   "en": "Your inquiry was not sent. Please try again.",
-  "zh": "提交没有成功，请稍后再试。"
+  "zh": "提交没有成功，请稍后再试。",
+  "ja": "お問い合わせを送信できませんでした。もう一度お試しください。",
+  "fr": "Votre demande n'a pas été envoyée. Veuillez réessayer.",
+  "es": "Su consulta no se ha enviado. Inténtelo de nuevo.",
+  "ko": "문의가 전송되지 않았습니다. 다시 시도해 주십시오.",
+  "ar": "لم يُرسَل استفسارك. يُرجى المحاولة مرة أخرى."
  }
 }

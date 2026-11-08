@@ -1,6 +1,6 @@
 # Tianqi Materials 官网（tianqimaterials.com）
 
-纯静态网站，中英文两套页面。`build.py` 读取 `data/*.json` 和 `pages/` 里的内容，生成可直接发布的 `public/` 文件夹。不需要服务器、数据库或购物车。
+纯静态网站，多语言（英文、中文、法语、西班牙语、日语、韩语、阿拉伯语）。`build.py` 读取 `data/*.json` 和 `pages/` 里的内容，生成可直接发布的 `public/` 文件夹。不需要服务器、数据库或购物车。
 
 ## 目录
 
@@ -11,13 +11,15 @@
 | `data/products.json` | 产品，每款一条，一款只有一个详情页 |
 | `data/patterns.json` | UV 纹样，每个编号一条 |
 | `data/company.json` | 公司数据、证书、设备、研发成果 |
-| `data/i18n.json` | 按钮和界面上的中英文短文字 |
-| `pages/en/`、`pages/zh/` | 首页、产品总览、图库、定制、关于、联系页的正文 |
+| `data/languages.json` | 网站有哪些语言、顺序、语言菜单里显示的名字、网址前缀、文字方向 |
+| `data/i18n.json` | 按钮和界面上的短文字，每种语言一项 |
+| `pages/<语言代码>/` | 首页、产品总览、图库、定制、关于、联系页的正文，每种语言一个文件夹（en、zh、fr、es、ja、ko、ar） |
+| `i18n-work/` | 翻译工具：导出英文文字、检查译文、写回数据文件 |
 | `templates/base.html` | 页头（导航、语言切换、询价按钮）和页脚 |
 | `public/assets/` | 样式、脚本、产品和工厂图片 |
 | `public/img/patterns/` | 由构建脚本生成的纹样图（缩略图和清晰图），不要手动改 |
 
-英文页面在 `/`，中文页面在 `/zh/`，右上角按钮在同一页面的两种语言之间切换。
+英文页面在 `/`，其他语言在 `/zh/`、`/fr/`、`/es/`、`/ja/`、`/ko/`、`/ar/`。右上角的语言菜单会跳到当前页面的对应语言版本。阿拉伯语页面自动从右往左排版。
 
 ## 运行
 
@@ -73,6 +75,12 @@ python -m http.server 8000
 **成品效果图换实拍图**：成品四个子分类（包装盒、卡牌与小卡、明信片、其他纸制文创）目前用的是效果图，放在 `public/assets/img/render/`：`packaging-boxes.webp`、`cards-mini-cards.webp`、`postcards.webp`、`paper-merchandise.webp`。拍好实拍图后，转成 webp（建议 1200×900，横版 4:3），用同样的文件名覆盖即可，页面不用改。然后在 `data/categories.json` 对应子分类里把 `"image_is_render": true` 改成 `false`，图片下方的“效果图，仅供示意”说明就会去掉。首页“我们的材料用在哪里”三张卡片左上角的“效果图/Render”标签写在 `pages/zh/home.html` 和 `pages/en/home.html` 里，换图后删掉 `<span class="rtag">…</span>` 即可。效果图的制作文件在 `source-img/render/`。
 
 **设计费**：`site.json` 的 `design_fee`，中英文分别填写，是两个市场各自的报价，不按汇率换算。
+
+**多语言**：数据文件里每段文字都是 `{"en": "...", "zh": "...", "fr": "...", ...}` 这样的格式，某种语言没填时自动显示英文，所以新增内容可以先只写英文和中文，网站不会出错。
+- 改某种语言的一段文字：直接改 `data/*.json` 里对应语言的值，或 `pages/<语言代码>/` 里的页面。
+- 新增英文内容后补翻译：运行 `python i18n-work/extract.py` 导出所有英文文字到 `i18n-work/source-en.json`；把新增的那几条翻译后写进 `i18n-work/<语言代码>.json`（同样的键）；运行 `python i18n-work/check.py <语言代码>` 检查占位符和格式；再运行 `python i18n-work/merge.py <语言代码>` 写回数据文件。
+- 新增一种语言（如德语 de）：在 `data/languages.json` 加一行（代码、网址前缀、菜单名字、文字方向；需要特殊字体时填 `font`），按上面的方法生成 `i18n-work/de.json` 并合并，再把 `pages/en/` 复制成 `pages/de/` 翻译正文。没翻译完的页面会自动用英文，构建时会提示哪些页面还在用英文。
+- 构建时会检查：除中文和日语以外，其他语言的页面里不能出现汉字（语言菜单里的语言名字除外）。
 
 改完任何内容都要重新运行 `python build.py`，再提交到 GitHub。
 
