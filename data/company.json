@@ -6,7 +6,12 @@
    "value": "16",
    "label": {
     "en": "years in gold and silver paperboard",
-    "zh": "年金银卡纸生产经验"
+    "zh": "年金银卡纸生产经验",
+    "ja": "年の金銀板紙製造実績",
+    "fr": "années d'expérience dans le carton or et argent",
+    "es": "años en cartón oro y plata",
+    "ko": "금은 판지 제조 경력(년)",
+    "ar": "عامًا في صناعة الكرتون الذهبي والفضي"
    },
    "source": "PPT slide 4",
    "confirmed": false
@@ -16,7 +21,12 @@
    "value": "40,000 t",
    "label": {
     "en": "annual capacity",
-    "zh": "年产能"
+    "zh": "年产能",
+    "ja": "年間生産能力",
+    "fr": "capacité annuelle",
+    "es": "capacidad anual",
+    "ko": "연간 생산 능력",
+    "ar": "الطاقة الإنتاجية السنوية"
    },
    "source": "PPT slide 8; confirmed for the site by Hailey 2026-10-10",
    "confirmed": true
@@ -26,7 +36,12 @@
    "value": "100+",
    "label": {
     "en": "coating, metallizing and embossing machines",
-    "zh": "台涂布、镀铝与模压设备"
+    "zh": "台涂布、镀铝与模压设备",
+    "ja": "台の塗工・蒸着・エンボス設備",
+    "fr": "machines d'enduction, de métallisation et d'embossage",
+    "es": "máquinas de recubrimiento, metalizado y gofrado",
+    "ko": "코팅·증착·엠보싱 설비(대)",
+    "ar": "آلة طلاء وتمعدن ونقش"
    },
    "source": "PPT slide 8; confirmed for the site by Hailey 2026-10-10",
    "confirmed": true
@@ -36,7 +51,12 @@
    "value": "27",
    "label": {
     "en": "granted patents",
-    "zh": "项授权专利"
+    "zh": "项授权专利",
+    "ja": "件の取得特許",
+    "fr": "brevets délivrés",
+    "es": "patentes concedidas",
+    "ko": "등록 특허(건)",
+    "ar": "براءة اختراع ممنوحة"
    },
    "source": "PPT slide 24; confirmed for the site by Hailey 2026-10-10",
    "confirmed": true
@@ -50,10 +70,20 @@
    "confirmed": true,
    "detail": {
     "en": "Chain of Custody · SAI Global · valid to 15 Jun 2027",
-    "zh": "产销监管链 · SAI Global · 有效期至 2027.6.15"
+    "zh": "产销监管链 · SAI Global · 有效期至 2027.6.15",
+    "ja": "CoC認証（Chain of Custody）· SAI Global · 2027年6月15日まで有効",
+    "fr": "Chaîne de contrôle · SAI Global · valable jusqu'au 15 juin 2027",
+    "es": "Cadena de custodia · SAI Global · válida hasta el 15 jun 2027",
+    "ko": "CoC(유통 과정) 인증 · SAI Global · 2027년 6월 15일까지 유효",
+    "ar": "سلسلة الحيازة · SAI Global · سارية حتى 15 يونيو 2027"
    },
    "img": "cert-fsc",
-   "short": "FSC"
+   "short": "FSC",
+   "ja": "FSC認証",
+   "fr": "Certification FSC",
+   "es": "Certificación FSC",
+   "ko": "FSC 인증",
+   "ar": "شهادة FSC"
   },
   {
    "en": "ISO 9001:2015 certification",
@@ -62,66 +92,126 @@
    "confirmed": true,
    "detail": {
     "en": "Quality management · WIT Assessment",
-    "zh": "质量管理体系 · 万泰认证"
+    "zh": "质量管理体系 · 万泰认证",
+    "ja": "品質マネジメント · WIT Assessment",
+    "fr": "Management de la qualité · WIT Assessment",
+    "es": "Gestión de la calidad · WIT Assessment",
+    "ko": "품질경영 · WIT Assessment",
+    "ar": "إدارة الجودة · WIT Assessment"
    },
    "img": "cert-iso9001",
-   "short": "ISO 9001"
+   "short": "ISO 9001",
+   "ja": "ISO 9001:2015認証",
+   "fr": "Certification ISO 9001:2015",
+   "es": "Certificación ISO 9001:2015",
+   "ko": "ISO 9001:2015 인증",
+   "ar": "شهادة ISO 9001:2015"
   },
   {
    "en": "Work Safety Standardization, Level 3",
    "zh": "安全生产标准化三级企业",
    "source": "PPT slide 10",
-   "confirmed": false
+   "confirmed": false,
+   "ja": "安全生産標準化 三級",
+   "fr": "Normalisation de la sécurité au travail, niveau 3",
+   "es": "Estandarización de seguridad laboral, nivel 3",
+   "ko": "안전생산 표준화 3급",
+   "ar": "معايير السلامة المهنية، المستوى 3"
   },
   {
    "en": "National High-Tech Enterprise",
    "zh": "国家高新技术企业",
    "source": "PPT slide 10",
-   "confirmed": false
+   "confirmed": false,
+   "ja": "国家ハイテク企業",
+   "fr": "Entreprise nationale de haute technologie",
+   "es": "Empresa Nacional de Alta Tecnología",
+   "ko": "국가 하이테크 기업",
+   "ar": "مؤسسة وطنية للتقنية العالية"
   },
   {
    "en": "Zhejiang Science and Technology SME",
    "zh": "浙江省科技型中小企业",
    "source": "PPT slide 10",
-   "confirmed": false
+   "confirmed": false,
+   "ja": "浙江省科技型中小企業",
+   "fr": "PME scientifique et technologique du Zhejiang",
+   "es": "Pyme de Ciencia y Tecnología de Zhejiang",
+   "ko": "저장성 과학기술형 중소기업",
+   "ar": "منشأة صغيرة ومتوسطة للعلوم والتكنولوجيا في مقاطعة تشجيانغ"
   },
   {
    "en": "Zhejiang Specialised and Innovative SME",
    "zh": "浙江省专精特新中小企业",
    "source": "PPT slide 4, 10",
-   "confirmed": false
+   "confirmed": false,
+   "ja": "浙江省専精特新中小企業",
+   "fr": "PME spécialisée et innovante du Zhejiang",
+   "es": "Pyme Especializada e Innovadora de Zhejiang",
+   "ko": "저장성 전문화·혁신형 중소기업",
+   "ar": "منشأة صغيرة ومتوسطة متخصصة ومبتكرة في مقاطعة تشجيانغ"
   }
  ],
  "equipment": [
   {
    "img": "eq-laser-embossing",
    "en": "Laser embossing",
-   "zh": "镭射模压机"
+   "zh": "镭射模压机",
+   "ja": "レーザーエンボス",
+   "fr": "Embossage laser",
+   "es": "Gofrado láser",
+   "ko": "레이저 엠보싱",
+   "ar": "النقش بالليزر"
   },
   {
    "img": "eq-coater",
    "en": "Coating",
-   "zh": "涂布机"
+   "zh": "涂布机",
+   "ja": "塗工",
+   "fr": "Enduction",
+   "es": "Recubrimiento",
+   "ko": "코팅",
+   "ar": "الطلاء"
   },
   {
    "img": "eq-vacuum-metallizer",
    "en": "Vacuum metallizing",
-   "zh": "真空镀铝机"
+   "zh": "真空镀铝机",
+   "ja": "真空蒸着",
+   "fr": "Métallisation sous vide",
+   "es": "Metalizado al vacío",
+   "ko": "진공 증착",
+   "ar": "التمعدن بالتفريغ"
   },
   {
    "img": "eq-cast-coater",
    "en": "Cast coating",
-   "zh": "铸涂机"
+   "zh": "铸涂机",
+   "ja": "キャストコート",
+   "fr": "Couchage coulé",
+   "es": "Estucado cast",
+   "ko": "캐스트 코팅",
+   "ar": "الطلاء بالصب"
   },
   {
    "img": "eq-laminator",
    "en": "High-speed laminating",
-   "zh": "高速复合机"
+   "zh": "高速复合机",
+   "ja": "高速ラミネート",
+   "fr": "Contrecollage haute vitesse",
+   "es": "Laminado de alta velocidad",
+   "ko": "고속 합지",
+   "ar": "التصفيح عالي السرعة"
   },
   {
    "img": "eq-slitter",
    "en": "Slitting",
-   "zh": "分切机"
+   "zh": "分切机",
+   "ja": "スリット",
+   "fr": "Refendage",
+   "es": "Corte longitudinal",
+   "ko": "슬리팅",
+   "ar": "القطع الطولي"
   }
  ],
  "innovation": {
@@ -129,45 +219,95 @@
   "products": [
    {
     "en": "Eco transfer bright silver board",
-    "zh": "环保型转移亮银卡纸"
+    "zh": "环保型转移亮银卡纸",
+    "ja": "環境配慮型 転写光沢シルバー板紙",
+    "fr": "Carton argent brillant par transfert écologique",
+    "es": "Cartón plata brillante ecológico por transferencia",
+    "ko": "친환경 전사 유광 은색 판지",
+    "ar": "كرتون فضي لامع صديق للبيئة بالنقل"
    },
    {
     "en": "Waterproof, moisture-resistant silver board",
-    "zh": "防水防潮银卡纸"
+    "zh": "防水防潮银卡纸",
+    "ja": "耐水・防湿シルバー板紙",
+    "fr": "Carton argent étanche et résistant à l'humidité",
+    "es": "Cartón plata impermeable y resistente a la humedad",
+    "ko": "방수·방습 은색 판지",
+    "ar": "كرتون فضي مقاوم للماء والرطوبة"
    },
    {
     "en": "Grey-back plain holographic laminated silver board",
-    "zh": "灰底素面镭射复合银卡纸"
+    "zh": "灰底素面镭射复合银卡纸",
+    "ja": "グレーバック無地ホログラム貼り合わせシルバー板紙",
+    "fr": "Carton argent contrecollé holographique uni à dos gris",
+    "es": "Cartón plata laminado holográfico liso con dorso gris",
+    "ko": "회색 이면 무지 홀로그램 합지 은색 판지",
+    "ar": "كرتون فضي مُصفَّح هولوغرافي سادة بظهر رمادي"
    },
    {
     "en": "Waterproof, flame-retardant kraft board",
-    "zh": "防水抗阻燃牛皮卡纸"
+    "zh": "防水抗阻燃牛皮卡纸",
+    "ja": "耐水・難燃クラフト板紙",
+    "fr": "Carton kraft étanche et ignifugé",
+    "es": "Cartón kraft impermeable e ignífugo",
+    "ko": "방수·난연 크라프트 판지",
+    "ar": "كرتون كرافت مقاوم للماء ومثبّط للهب"
    },
    {
     "en": "Water-based coated gold and silver board",
-    "zh": "环保水性涂布金银卡纸"
+    "zh": "环保水性涂布金银卡纸",
+    "ja": "水性塗工金銀板紙",
+    "fr": "Carton or et argent à enduction aqueuse",
+    "es": "Cartón oro y plata con recubrimiento al agua",
+    "ko": "수성 코팅 금은 판지",
+    "ar": "كرتون ذهبي وفضي بطلاء مائي"
    },
    {
     "en": "Anti-static, anti-counterfeit gold and silver board for digital printing",
-    "zh": "高克重抗静电防伪数码印刷用金银卡纸"
+    "zh": "高克重抗静电防伪数码印刷用金银卡纸",
+    "ja": "デジタル印刷用 帯電防止・偽造防止金銀板紙",
+    "fr": "Carton or et argent antistatique et anticontrefaçon pour l'impression numérique",
+    "es": "Cartón oro y plata antiestático y antifalsificación para impresión digital",
+    "ko": "디지털 인쇄용 대전 방지·위조 방지 금은 판지",
+    "ar": "كرتون ذهبي وفضي مضاد للكهرباء الساكنة ومضاد للتزييف للطباعة الرقمية"
    }
   ],
   "technologies": [
    {
     "en": "Holographic anti-counterfeit paperboard printing",
-    "zh": "全息防伪印刷纸板印刷技术"
+    "zh": "全息防伪印刷纸板印刷技术",
+    "ja": "ホログラム偽造防止板紙の印刷技術",
+    "fr": "Impression de carton holographique anticontrefaçon",
+    "es": "Impresión de cartón holográfico antifalsificación",
+    "ko": "홀로그램 위조 방지 판지 인쇄",
+    "ar": "طباعة الكرتون الهولوغرافي المضاد للتزييف"
    },
    {
     "en": "Laser holographic anti-counterfeit film",
-    "zh": "激光镭射防伪膜制备技术"
+    "zh": "激光镭射防伪膜制备技术",
+    "ja": "レーザーホログラム偽造防止フィルム",
+    "fr": "Film holographique laser anticontrefaçon",
+    "es": "Película holográfica láser antifalsificación",
+    "ko": "레이저 홀로그램 위조 방지 필름",
+    "ar": "فيلم هولوغرافي ليزري مضاد للتزييف"
    },
    {
     "en": "Holographic pattern layer coating",
-    "zh": "镭射图案层涂层设计及涂布技术"
+    "zh": "镭射图案层涂层设计及涂布技术",
+    "ja": "ホログラム柄層の塗工技術",
+    "fr": "Enduction de couche à motif holographique",
+    "es": "Recubrimiento de capa con diseño holográfico",
+    "ko": "홀로그램 패턴층 코팅",
+    "ar": "طلاء طبقة النقشة الهولوغرافية"
    },
    {
     "en": "Vacuum metallizing and laminating of gold and silver board",
-    "zh": "金银卡纸真空镀铝/复合技术"
+    "zh": "金银卡纸真空镀铝/复合技术",
+    "ja": "金銀板紙の真空蒸着・貼り合わせ技術",
+    "fr": "Métallisation sous vide et contrecollage de carton or et argent",
+    "es": "Metalizado al vacío y laminado de cartón oro y plata",
+    "ko": "금은 판지 진공 증착 및 합지",
+    "ar": "التمعدن بالتفريغ وتصفيح الكرتون الذهبي والفضي"
    }
   ]
  }

@@ -3,11 +3,21 @@
  "confirmed": true,
  "heading": {
   "en": "Past customers",
-  "zh": "过往客户"
+  "zh": "过往客户",
+  "ja": "主な取引実績",
+  "fr": "Références clients",
+  "es": "Clientes anteriores",
+  "ko": "주요 납품 실적",
+  "ar": "عملاء سابقون"
  },
  "intro": {
   "en": "Brands whose packaging has used materials made by Tianqi.",
-  "zh": "以下品牌的包装曾使用天琦生产的材料。"
+  "zh": "以下品牌的包装曾使用天琦生产的材料。",
+  "ja": "Tianqi製の素材がパッケージに使用されたブランド。",
+  "fr": "Marques dont les emballages ont utilisé des matériaux fabriqués par Tianqi.",
+  "es": "Marcas cuyos envases han utilizado materiales fabricados por Tianqi.",
+  "ko": "Tianqi에서 생산한 소재가 패키지에 사용된 브랜드입니다.",
+  "ar": "علامات تجارية استُخدمت في عبواتها مواد من إنتاج Tianqi."
  },
  "customers": [
   {
