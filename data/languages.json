@@ -1,0 +1,13 @@
+{
+ "_note": "Site languages, in menu order. To add one: add an entry here, add its text to data/i18n.json (and the other data files), and add pages/<code>/. Anything not yet translated falls back to English.",
+ "default": "en",
+ "languages": [
+  {"code": "en", "path": "", "html_lang": "en", "label": "English", "short": "EN", "dir": "ltr", "og_locale": "en_US"},
+  {"code": "zh", "path": "zh", "html_lang": "zh-Hans", "label": "中文", "short": "中文", "dir": "ltr", "og_locale": "zh_CN"},
+  {"code": "fr", "path": "fr", "html_lang": "fr", "label": "Français", "short": "FR", "dir": "ltr", "og_locale": "fr_FR"},
+  {"code": "es", "path": "es", "html_lang": "es", "label": "Español", "short": "ES", "dir": "ltr", "og_locale": "es_ES"},
+  {"code": "ja", "path": "ja", "html_lang": "ja", "label": "日本語", "short": "日本語", "dir": "ltr", "og_locale": "ja_JP", "font": "Noto+Sans+JP:wght@400;500;700"},
+  {"code": "ko", "path": "ko", "html_lang": "ko", "label": "한국어", "short": "한국어", "dir": "ltr", "og_locale": "ko_KR", "font": "Noto+Sans+KR:wght@400;500;700"},
+  {"code": "ar", "path": "ar", "html_lang": "ar", "label": "العربية", "short": "عربي", "dir": "rtl", "og_locale": "ar_AR", "font": "Noto+Sans+Arabic:wght@400;500;700"}
+ ]
+}

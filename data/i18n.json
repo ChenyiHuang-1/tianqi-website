@@ -318,5 +318,133 @@
  "custom_cta": {
   "en": "Discuss a custom order",
   "zh": "咨询定制"
+ },
+ "brand_name": {
+  "en": "Tianqi Materials",
+  "zh": "天琦材料"
+ },
+ "language": {
+  "en": "Language",
+  "zh": "语言"
+ },
+ "ct_email": {
+  "en": "Email",
+  "zh": "Email"
+ },
+ "ct_tel": {
+  "en": "Tel",
+  "zh": "Tel"
+ },
+ "certs_label": {
+  "en": "certifications",
+  "zh": "资质认证"
+ },
+ "certs_head": {
+  "en": "Certifications",
+  "zh": "资质认证"
+ },
+ "customers_label": {
+  "en": "Customers",
+  "zh": "客户"
+ },
+ "similar_patterns": {
+  "en": "Similar patterns",
+  "zh": "同类纹样"
+ },
+ "pk_fmt": {
+  "en": "{finish} {pattern} Holographic Pattern",
+  "zh": "{finish}{pattern}光刻纹样"
+ },
+ "pw_silver": {
+  "en": "Silver",
+  "zh": "银色"
+ },
+ "pw_pearl": {
+  "en": "Pearl",
+  "zh": "珍珠彩"
+ },
+ "pw_holographic": {
+  "en": "Rainbow",
+  "zh": "彩虹"
+ },
+ "pw_geometric": {
+  "en": "Geometric",
+  "zh": "几何"
+ },
+ "pw_fluid": {
+  "en": "Fluid",
+  "zh": "流体"
+ },
+ "pw_texture": {
+  "en": "Texture",
+  "zh": "肌理"
+ },
+ "pw_lines": {
+  "en": "Light-Beam",
+  "zh": "线条光束"
+ },
+ "pw_motif": {
+  "en": "Motif",
+  "zh": "主题图案"
+ },
+ "pe_subtle": {
+  "en": "a subtle",
+  "zh": "低调"
+ },
+ "pe_medium": {
+  "en": "a medium",
+  "zh": "适中"
+ },
+ "pe_bold": {
+  "en": "a bold",
+  "zh": "强烈"
+ },
+ "pattern_alt_fmt": {
+  "en": "{name}, {kind_lower}",
+  "zh": "{name}，{kind}"
+ },
+ "pattern_title_fmt": {
+  "en": "Pattern {id}: {kind} | Tianqi Materials",
+  "zh": "纹样 {id}｜{kind}｜天琦材料"
+ },
+ "pattern_title_plain": {
+  "en": "Pattern {id} | Holographic Patterns | Tianqi Materials",
+  "zh": "纹样 {id}｜光刻纹样｜天琦材料"
+ },
+ "pattern_desc_effect_fmt": {
+  "en": "{kind} {id} with {effect} effect. Design ready: request a quote, a sample or a custom version.",
+  "zh": "{kind} {id}，效果{effect}。设计已完成，可询价、申请样品或定制。"
+ },
+ "pattern_desc_fmt": {
+  "en": "{kind} {id}. Design ready: request a quote, a sample or a custom version.",
+  "zh": "{kind} {id}。设计已完成，可询价、申请样品或定制。"
+ },
+ "pattern_desc_plain": {
+  "en": "Holographic pattern {id} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version.",
+  "zh": "光刻纹样 {id}，设计已完成。可询价、申请样品或定制。"
+ },
+ "js_count_one": {
+  "en": "{n} pattern",
+  "zh": "共 {n} 款"
+ },
+ "js_count_many": {
+  "en": "{n} patterns",
+  "zh": "共 {n} 款"
+ },
+ "js_pattern": {
+  "en": "Pattern",
+  "zh": "纹样"
+ },
+ "js_form_invalid": {
+  "en": "Please fill in your name, a valid email and your requirement.",
+  "zh": "请填写联系人、有效邮箱和需求说明。"
+ },
+ "js_form_ok": {
+  "en": "Thank you. We have received your inquiry and will reply soon.",
+  "zh": "已收到您的需求，我们会尽快回复。"
+ },
+ "js_form_fail": {
+  "en": "Your inquiry was not sent. Please try again.",
+  "zh": "提交没有成功，请稍后再试。"
  }
 }
