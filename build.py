@@ -15,7 +15,6 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 PUB = HERE / "public"
 DATA = HERE / "data"
-LANGS = ("en", "zh")
 THUMB_W, THUMB_H, FULL_W, HERO_W = 360, 480, 1000, 1800
 
 
@@ -23,9 +22,14 @@ def load(name):
     return json.loads((DATA / name).read_text(encoding="utf-8"))
 
 
-SITE, COMPANY, CATS, PRODUCTS, PATTERNS, T, CUSTOMERS = (load(n) for n in
-    ("site.json", "company.json", "categories.json", "products.json", "patterns.json", "i18n.json", "customers.json"))
+SITE, COMPANY, CATS, PRODUCTS, PATTERNS, T, CUSTOMERS, LANG_CFG = (load(n) for n in
+    ("site.json", "company.json", "categories.json", "products.json", "patterns.json", "i18n.json", "customers.json", "languages.json"))
 e = html.escape
+
+# Languages come from data/languages.json; text missing in a language falls back to English.
+LANG = {x["code"]: x for x in LANG_CFG["languages"]}
+LANGS = tuple(LANG)
+DEFAULT = LANG_CFG["default"]
 
 
 def load_posts():
@@ -45,20 +49,26 @@ POSTS = load_posts()
 
 
 def t(key, lang):
-    return T[key][lang]
+    return T[key].get(lang) or T[key][DEFAULT]
 
 
 def L(obj, lang):
-    """Pick the language from a {"en":..,"zh":..} value."""
+    """Pick the language from a {"en":..,"zh":..,...} value, falling back to English."""
     if obj is None:
         return ""
     if isinstance(obj, dict):
-        return obj.get(lang) or obj.get("en", "")
+        return obj.get(lang) or obj.get(DEFAULT, "")
     return str(obj)
 
 
+def tf(key, lang, **kw):
+    """Translated template string with {placeholders} filled."""
+    return t(key, lang).format(**kw)
+
+
 def url(lang, path=""):
-    return ("/zh/" if lang == "zh" else "/") + path
+    p = LANG[lang]["path"]
+    return (f"/{p}/" if p else "/") + path
 
 
 # ------------------------------------------------------------------ images
@@ -170,25 +180,12 @@ def pattern_carousel(slides, lang):
             f'<button type="button" class="car-btn next" aria-label="{t("next", lang)}">&#8594;</button></div></div>')
 
 
-# Words used to describe a pattern from its tags, in titles, descriptions and image text.
-PATTERN_WORDS = {
-    "en": {"silver": "Silver", "pearl": "Pearl", "holographic": "Rainbow", "geometric": "Geometric", "fluid": "Fluid",
-           "texture": "Texture", "lines": "Light-Beam", "motif": "Motif",
-           "subtle": "a subtle", "medium": "a medium", "bold": "a bold"},
-    "zh": {"silver": "银色", "pearl": "珍珠彩", "holographic": "彩虹", "geometric": "几何", "fluid": "流体",
-           "texture": "肌理", "lines": "线条光束", "motif": "主题图案",
-           "subtle": "低调", "medium": "适中", "bold": "强烈"},
-}
-
-
 def pattern_kind(p, lang):
     """'Pearl Texture Holographic Pattern' / '珍珠彩肌理光刻纹样', or '' when the pattern has no tags."""
     tv = p.get("tags_verified") or {}
-    w = PATTERN_WORDS[lang]
-    words = [w[tv[k]] for k in ("finish", "pattern") if tv.get(k) in w]
-    if not words:
+    if not (tv.get("finish") in PATTERN_TAGS["finish"] and tv.get("pattern") in PATTERN_TAGS["pattern"]):
         return ""
-    return " ".join(words) + " Holographic Pattern" if lang == "en" else "".join(words) + "光刻纹样"
+    return tf("pk_fmt", lang, finish=t("pw_" + tv["finish"], lang), pattern=t("pw_" + tv["pattern"], lang))
 
 
 def pattern_alt(p, lang):
@@ -196,7 +193,7 @@ def pattern_alt(p, lang):
     name = f'{t("pattern", lang)} {p["id"]}'
     if not kind:
         return name
-    return f"{name}, {kind.lower()}" if lang == "en" else f"{name}，{kind}"
+    return tf("pattern_alt_fmt", lang, name=name, kind=kind, kind_lower=kind.lower())
 
 
 def similar_patterns(p, n=7):
@@ -227,7 +224,7 @@ def product_card(pr, lang):
     attrs = " ".join(f'data-{k}="{e(v)}"' for k, v in pr.get("attrs", {}).items())
     return (f'<article class="card prod" {attrs}><a class="cimg" href="{href}">{picture(pr["image"], L(pr["name"], lang), lang)}</a>'
             f'<div class="cbody"><h3><a href="{href}">{e(L(pr["name"], lang))}</a></h3><p>{e(L(pr["summary"], lang))}</p>'
-            f'<a class="more-link" href="{href}">{t("view_product", lang)} →</a></div></article>')
+            f'<a class="more-link" href="{href}">{t("view_product", lang)} <span class="arr">→</span></a></div></article>')
 
 
 def public_products(cat=None, sub=None):
@@ -268,19 +265,13 @@ def fill(tpl, vals):
     return re.sub(r"\{\{(\w+)\}\}", lambda m: str(vals[m.group(1)]) if m.group(1) in vals else m.group(0), tpl)
 
 
-def hreflang_links(path, zh=True):
-    base = SITE["site_url"].rstrip("/")
-    links = [("en", base + url("en", path))] + ([("zh-Hans", base + url("zh", path))] if zh else []) + [("x-default", base + url("en", path))]
-    return "\n".join(f'<link rel="alternate" hreflang="{h}" href="{u}">' for h, u in links)
-
-
 def nav_insights(lang, footer=False):
     """Insights is English only for now, so the link shows on English pages only."""
     if lang != "en" or not POSTS:
         return ""
     if footer:
         return f'<a href="{url(lang, "insights/")}">Insights</a>'
-    return f'        <li><a href="{url(lang, "insights/")}" data-nav="insights">Insights</a></li>'
+    return f'<li><a href="{url(lang, "insights/")}" data-nav="insights">Insights</a></li>\n        '
 
 
 def ld_script(data):
@@ -290,7 +281,7 @@ def ld_script(data):
 def organization_ld(lang):
     base = SITE["site_url"].rstrip("/")
     org = {"@context": "https://schema.org", "@type": "Organization", "@id": base + "/#org",
-           "name": SITE["brand"] if lang == "en" else "天琦材料", "legalName": L(SITE["legal_name"], lang),
+           "name": t("brand_name", lang), "legalName": L(SITE["legal_name"], lang),
            "url": base + url(lang), "logo": base + "/assets/img/logo.png",
            "address": {"@type": "PostalAddress", "addressRegion": "Zhejiang", "addressCountry": "CN"}}
     if SITE.get("email"):
@@ -325,7 +316,7 @@ def page_ld(lang, path):
     if not path:
         blocks.append(organization_ld(lang))
         blocks.append({"@context": "https://schema.org", "@type": "WebSite", "url": base + url(lang),
-                       "name": SITE["brand"] if lang == "en" else "天琦材料", "inLanguage": "zh-Hans" if lang == "zh" else "en",
+                       "name": t("brand_name", lang), "inLanguage": LANG[lang]["html_lang"],
                        "publisher": {"@id": base + "/#org"}})
     elif path == "about/":
         blocks.append(organization_ld(lang))
@@ -343,23 +334,34 @@ def page_ld(lang, path):
     return "\n".join(ld_script(b) for b in blocks)
 
 
-def shell(lang, path, section, title, desc, body, og_image=None, zh=True):
-    """zh=False: the page exists in English only (Insights articles), so no Chinese alternate."""
-    other = "zh" if lang == "en" else "en"
-    v = {f"t_{k}": T[k][lang] for k in T}
+def contact_labels(lang):
+    return (("whatsapp", "WhatsApp"), ("email", t("ct_email", lang)), ("phone", t("ct_tel", lang)))
+
+
+def shell(lang, path, section, title, desc, body, og_image=None, en_only=False):
+    """en_only: the page exists in English only (Insights articles), so other languages link to their home page."""
+    v = {f"t_{k}": t(k, lang) for k in T}
+    cur = LANG[lang]
+    base = SITE["site_url"].rstrip("/")
+    hreflang = "".join(f'<link rel="alternate" hreflang="{x["html_lang"]}" href="{base}{url(c, path)}">\n' for c, x in LANG.items()
+                       if not en_only or c == "en")
+    hreflang += f'<link rel="alternate" hreflang="x-default" href="{base}{url(DEFAULT, path)}">'
+    menu = "".join(f'<li><a href="{url(c, path if not en_only or c == "en" else "")}" hreflang="{x["html_lang"]}" lang="{x["html_lang"]}"'
+                   f'{" aria-current=true" if c == lang else ""}>{e(x["label"])}</a></li>' for c, x in LANG.items())
+    lang_menu = (f'<details class="lang-menu"><summary aria-label="{e(t("language", lang))}">'
+                 f'<span class="globe" aria-hidden="true"></span>{e(cur["short"])}</summary><ul>{menu}</ul></details>')
+    font = f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={cur["font"]}&display=swap">' if cur.get("font") else ""
+    js_i18n = json.dumps({k[3:]: t(k, lang) for k in T if k.startswith("js_")}, ensure_ascii=False).replace("</", "<\\/")
     drop = []
     for c in CATS:
         subs = "".join(f'<a href="{url(lang, "products/" + c["id"] + "/")}#{ch["id"]}">{e(L(ch["name"], lang))}</a>'
                        for ch in c["children"] if sub_visible(c, ch))
         drop.append(f'<div class="drop-col"><a class="drop-head" href="{url(lang, "products/" + c["id"] + "/")}">{e(L(c["name"], lang))}</a>{subs}</div>')
-    contact_lines = "".join(f'<span class="ct">{lab}: {contact_link(k)}</span>' for k, lab in
-                            (("whatsapp", "WhatsApp"), ("email", "Email"), ("phone", "Tel")) if SITE.get(k))
-    v.update(asset_v=ASSET_V, lang=lang, html_lang="zh-Hans" if lang == "zh" else "en", other_lang=other, section=section,
-             title=e(title), desc=e(desc), body=body, jsonld=page_ld(lang, path), og_locale="zh_CN" if lang == "zh" else "en_US", year=datetime.date.today().year,
-             canonical=SITE["site_url"].rstrip("/") + url(lang, path),
-             href_en=SITE["site_url"].rstrip("/") + url("en", path), href_zh=SITE["site_url"].rstrip("/") + url("zh", path),
-             href_other=url(other, path), href_en_rel=url("en", path), href_zh_rel=url("zh", path if zh else ""),
-             hreflang=hreflang_links(path, zh), nav_insights=nav_insights(lang), foot_insights=nav_insights(lang, True), og_image=SITE["site_url"].rstrip("/") + (og_image or "/img/hero.webp"),
+    contact_lines = "".join(f'<span class="ct">{lab}: {contact_link(k)}</span>' for k, lab in contact_labels(lang) if SITE.get(k))
+    v.update(asset_v=ASSET_V, lang=lang, html_lang=cur["html_lang"], dir=cur["dir"], section=section,
+             title=e(title), desc=e(desc), body=body, jsonld=page_ld(lang, path), og_locale=cur["og_locale"], year=datetime.date.today().year,
+             canonical=base + url(lang, path), hreflang_links=hreflang, nav_insights=nav_insights(lang), foot_insights=nav_insights(lang, True), lang_menu=lang_menu, lang_font=font, js_i18n=js_i18n,
+             og_image=base + (og_image or "/img/hero.webp"),
              home=url(lang), u_products=url(lang, "products/"), u_patterns=url(lang, "holographic-patterns/"),
              u_custom=url(lang, "customisation/"), u_about=url(lang, "about/"), u_contact=url(lang, "contact/"),
              nav_drop="".join(drop), legal_name=e(L(SITE["legal_name"], lang)), city=e(L(SITE["city"], lang)),
@@ -378,18 +380,22 @@ def relative(page, out):
     return re.sub(r'(\s(?:href|src|data-view)=")/(?!/)', lambda m: m.group(1) + pre, page)
 
 
-def write(lang, path, section, title, desc, body, og_image=None, zh=True):
-    out = PUB / ("zh" if lang == "zh" else "") / path / "index.html"
+def write(lang, path, section, title, desc, body, og_image=None, en_only=False):
+    out = PUB / LANG[lang]["path"] / path / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(relative(shell(lang, path, section, title, desc, body, og_image, zh), out), encoding="utf-8")
+    out.write_text(relative(shell(lang, path, section, title, desc, body, og_image, en_only), out), encoding="utf-8")
     BUILT.append(url(lang, path))
 
 
 def page_body(lang, name, extra):
-    src = (HERE / "pages" / lang / f"{name}.html").read_text(encoding="utf-8")
+    f = HERE / "pages" / lang / f"{name}.html"
+    if not f.exists():
+        print(f"  note: pages/{lang}/{name}.html missing, using English")
+        f = HERE / "pages" / DEFAULT / f"{name}.html"
+    src = f.read_text(encoding="utf-8")
     m = re.match(r"\s*<!--(.*?)-->\s*", src, re.S)
     meta = dict(l.split(":", 1) for l in m.group(1).strip().splitlines())
-    v = {f"t_{k}": T[k][lang] for k in T}
+    v = {f"t_{k}": t(k, lang) for k in T}
     v.update(extra, home=url(lang), u_products=url(lang, "products/"), u_patterns=url(lang, "holographic-patterns/"),
              u_custom=url(lang, "customisation/"), u_about=url(lang, "about/"), u_contact=url(lang, "contact/"),
              design_fee=L(SITE["design_fee"], lang))
@@ -401,13 +407,13 @@ def facts_html(lang, with_certs=False):
     fs = [f for f in COMPANY["facts"] if f["confirmed"]]
     if not fs:
         return ""
-    cells = "".join(f'<div><strong>{e(f["value"])}</strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs)
+    cells = "".join(f'<div><strong><bdi>{e(f["value"])}</bdi></strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs)
     cs = [c for c in COMPANY["certificates"] if c["confirmed"] and c.get("img")] if with_certs else []
     if cs:
         # home factory block: certificates fill the cell next to patents (Hailey 2026-10-16)
         thumbs = "".join(f'<a href="/assets/img/{c["img"]}.webp"><img src="/assets/img/{c["img"]}.webp" alt="{e(L(c, lang))}" loading="lazy"></a>' for c in cs)
         names = " · ".join(e(c["short"]) for c in cs)
-        cells += f'<div class="fact-certs"><div><strong>{names}</strong><span>{"certifications" if lang == "en" else "资质认证"}</span></div><p class="ct-thumbs">{thumbs}</p></div>'
+        cells += f'<div class="fact-certs"><div><strong>{names}</strong><span>{t("certs_label", lang)}</span></div><p class="ct-thumbs">{thumbs}</p></div>'
     return '<div class="facts">' + cells + "</div>"
 
 
@@ -417,7 +423,7 @@ def stats_html(lang):
     if not fs:
         return ""
     return ('<section class="stats"><div class="wrap stats-in">' + "".join(
-        f'<div><strong>{e(f["value"])}</strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs) + "</div></section>")
+        f'<div><strong><bdi>{e(f["value"])}</bdi></strong><span>{e(L(f["label"], lang))}</span></div>' for f in fs) + "</div></section>")
 
 
 # Hero bubbles: x, y (% of hero), size (px), drift (px), duration (s). Fixed so builds are stable.
@@ -488,7 +494,7 @@ def customers_html(lang):
     """Past customers on About: hidden until data/customers.json says confirmed. Each language uses its own logo."""
     if not CUSTOMERS.get("confirmed"):
         return ""
-    label = "Customers" if lang == "en" else "客户"
+    label = t("customers_label", lang)
     items = []
     for c in CUSTOMERS["customers"]:
         name = e(L(c, lang))
@@ -505,7 +511,7 @@ def certs_html(lang):
     cs = [c for c in COMPANY["certificates"] if c["confirmed"]]
     if not cs:
         return ""
-    head = "Certifications" if lang == "en" else "资质认证"
+    head = t("certs_head", lang)
     cells = []
     for c in cs:
         # full certificate scans on both languages (Hailey 2026-10-16: show unedited, like the factory gate photo)
@@ -530,7 +536,7 @@ def category_cards(lang):
         tag = f'<span class="rtag">{t("render_tag", lang)}</span>' if c["image"].startswith("render/") else ""
         out.append(f'<article class="card cat"><a class="cimg" href="{href}">{picture(c["image"], L(c["name"], lang), lang)}{tag}</a>'
                    f'<div class="cbody"><h3><a href="{href}">{e(L(c["name"], lang))}</a></h3><p>{e(L(c["intro"], lang))}</p>'
-                   f'<ul class="sublist">{subs}</ul><a class="more-link" href="{href}">{t("view_product", lang)} →</a></div></article>')
+                   f'<ul class="sublist">{subs}</ul><a class="more-link" href="{href}">{t("view_product", lang)} <span class="arr">→</span></a></div></article>')
     return '<div class="cards three">' + "".join(out) + "</div>"
 
 
@@ -561,7 +567,7 @@ def custom_block(c, lang):
 
 def cat_nav(lang, current):
     """Sticky product directory: back to the overview, or switch category."""
-    links = [f'<a class="all" href="{url(lang, "products/")}">← {t("all_products", lang)}</a>']
+    links = [f'<a class="all" href="{url(lang, "products/")}"><span class="arr">←</span> {t("all_products", lang)}</a>']
     for c in CATS:
         cur = ' aria-current="page"' if c["id"] == current else ""
         links.append(f'<a href="{url(lang, "products/" + c["id"] + "/")}"{cur}>{e(L(c["name"], lang))}</a>')
@@ -657,7 +663,7 @@ def build_pattern(p, i, lang):
     sims = similar_patterns(p)
     similar = ""
     if sims:
-        similar = (f'<section class="section"><div class="sec-head"><h2>{"Similar patterns" if lang == "en" else "同类纹样"}</h2>'
+        similar = (f'<section class="section"><div class="sec-head"><h2>{t("similar_patterns", lang)}</h2>'
                    f'<a class="btn" href="{url(lang, "holographic-patterns/")}">{t("browse_patterns", lang)}</a></div>'
                    f'<ul class="pgrid">{"".join(pattern_card(q, lang) for q in sims)}</ul></section>')
     body = (f'<div class="wrap section"><p class="crumbs dark"><a href="{url(lang)}">{t("nav_home", lang)}</a> / '
@@ -670,25 +676,33 @@ def build_pattern(p, i, lang):
             f'<a class="btn" href="{contact_href(lang, type="sample", pattern=pid)}">{t("request_sample", lang)}</a>'
             f'<a class="btn" href="{contact_href(lang, type="custom", pattern=pid)}">{t("customise_pattern", lang)}</a></div>'
             f'<p class="notice small">{t("reserved_note", lang)}</p><p class="small">{t("angle_note", lang)}</p>'
-            f'<div class="pager"><a href="{url(lang, "holographic-patterns/" + prev["id"] + "/")}">← {t("prev", lang)} {prev["id"]}</a>'
-            f'<a href="{url(lang, "holographic-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} →</a></div></div></div>'
+            f'<div class="pager"><a href="{url(lang, "holographic-patterns/" + prev["id"] + "/")}"><span class="arr">←</span> {t("prev", lang)} {prev["id"]}</a>'
+            f'<a href="{url(lang, "holographic-patterns/" + nxt["id"] + "/")}">{t("next", lang)} {nxt["id"]} <span class="arr">→</span></a></div></div></div>'
             f'{similar}</div>')
     kind = pattern_kind(p, lang)
-    effect = PATTERN_WORDS[lang].get(tags.get("effect"), "")
-    if lang == "en":
-        title = f"Pattern {pid}: {kind} | Tianqi Materials" if kind else f"Pattern {pid} | Holographic Patterns | Tianqi Materials"
-        desc = (f"{kind} {pid}" + (f" with {effect} effect" if effect else "") + ". "
-                "Design ready: request a quote, a sample or a custom version.") if kind else (
-                f"Holographic pattern {pid} for holographic paperboard and film, design ready. Request a quote, a sample or a custom version.")
+    effect = tags.get("effect")
+    if kind:
+        title = tf("pattern_title_fmt", lang, id=pid, kind=kind)
+        desc = tf("pattern_desc_effect_fmt" if effect else "pattern_desc_fmt", lang, id=pid, kind=kind,
+                  effect=t("pe_" + effect, lang) if effect else "")
     else:
-        title = f"纹样 {pid}｜{kind}｜天琦材料" if kind else f"纹样 {pid}｜光刻纹样｜天琦材料"
-        desc = (f"{kind} {pid}" + (f"，效果{effect}" if effect else "") + "。设计已完成，可询价、申请样品或定制。") if kind else (
-                f"光刻纹样 {pid}，设计已完成。可询价、申请样品或定制。")
+        title = tf("pattern_title_plain", lang, id=pid)
+        desc = tf("pattern_desc_plain", lang, id=pid)
     write(lang, f"holographic-patterns/{pid}/", "holographic-patterns", title, desc, body, og_image=vs[0])
 
 
 def fmt_date(d):
     return datetime.date.fromisoformat(d).strftime("%-d %B %Y")
+
+
+INSIGHTS_CSS = ("<style>.prose{max-width:760px;font-size:17px;line-height:1.75}"
+                ".prose h2{font-size:clamp(22px,2.4vw,28px);margin:44px 0 12px}.prose h3{font-size:19px;margin:28px 0 8px}"
+                ".prose p,.prose ul,.prose ol,.prose table{margin:0 0 18px;color:#2b2d31}.prose ul,.prose ol{padding-left:22px}"
+                ".prose li{margin-bottom:6px}.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5}"
+                ".prose th,.prose td{border-bottom:1px solid var(--rule);padding:10px 8px;text-align:left;vertical-align:top}"
+                ".prose th{background:var(--tint)}.prose .lead{font-size:19px;color:var(--ink)}"
+                ".post-cta{margin-top:48px;padding:28px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--tint)}"
+                ".post-cta h2{margin-top:0}@media (max-width:560px){.prose table{display:block;overflow-x:auto}}</style>")
 
 
 def build_insights():
@@ -704,7 +718,7 @@ def build_insights():
             f'<h1>Insights</h1><p>Practical guides on holographic and metallized paperboard, films and patterns for packaging converters, laminators, label printers and distributors.</p></div></div>'
             f'<section class="section wrap"><div class="cards three">{cards}</div></section>')
     write(lang, "insights/", "insights", "Insights | Guides on Holographic & Metallized Paperboard | Tianqi Materials",
-          "Guides for packaging converters and distributors: metallized and holographic paperboard, printing, converting and holographic patterns.", body, zh=False)
+          "Guides for packaging converters and distributors: metallized and holographic paperboard, printing, converting and holographic patterns.", body, en_only=True)
     for i, x in enumerate(POSTS):
         others = [y for y in POSTS if y is not x][:3]
         more = ""
@@ -715,12 +729,12 @@ def build_insights():
                     + "</div></div></section>")
         body = (f'<div class="page-head"><div class="wrap"><p class="crumbs"><a href="{url(lang)}">Home</a> / <a href="{url(lang, "insights/")}">Insights</a></p>'
                 f'<h1>{e(x["title"])}</h1><p>{e(x.get("topic", "Guide"))} · {fmt_date(x["date"])}</p></div></div>'
-                f'<article class="section wrap prose">{x["body"]}'
+                f'{INSIGHTS_CSS}<article class="section wrap prose">{x["body"]}'
                 f'<div class="post-cta"><h2>Talk to our team</h2><p>Tell us your application, structure and quantity, and we will suggest a material and send samples.</p>'
                 f'<div class="btns"><a class="btn primary" href="{url(lang, "contact/")}">Request a quote</a><a class="btn" href="{url(lang, "products/")}">View products</a></div></div></article>'
                 f'{more}')
         write(lang, f"insights/{x['slug']}/", "insights", f'{x["title"]} | Tianqi Materials', x["desc"], body,
-              og_image=img_src(x["image"], "full") or None, zh=False)
+              og_image=img_src(x["image"], "full") or None, en_only=True)
 
 
 PATTERN_TAGS = {"finish": ["silver", "pearl", "holographic"],
@@ -773,8 +787,7 @@ def main():
                       innovation_products="".join(f"<li>{e(L(x, lang))}</li>" for x in COMPANY["innovation"]["products"]),
                       innovation_tech="".join(f"<li>{e(L(x, lang))}</li>" for x in COMPANY["innovation"]["technologies"]),
                       pattern_grid="".join(pattern_card(p, lang) for p in PATTERNS), pattern_filters=pattern_filters(lang),
-                      contact_direct="".join(f"<p>{lab}: <b>{contact_link(k)}</b></p>" for k, lab in
-                                             (("whatsapp", "WhatsApp"), ("email", "Email"), ("phone", "Tel")) if SITE.get(k)),
+                      contact_direct="".join(f"<p>{lab}: <b>{contact_link(k)}</b></p>" for k, lab in contact_labels(lang) if SITE.get(k)),
                       form_endpoint=e(SITE["form_endpoint"]), form_files="1" if SITE["form_accepts_files"] else "",
                       file_note=e(L(SITE["form_file_note"], lang)), address=e(L(SITE["address"], lang) or L(SITE["city"], lang)),
                       legal_name=e(L(SITE["legal_name"], lang)), email_js=e(SITE["email"]))
@@ -799,7 +812,7 @@ def main():
     (PUB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                                      + "".join(f"<url><loc>{base}{u}</loc><lastmod>{today}</lastmod></url>" for u in BUILT) + "</urlset>", encoding="utf-8")
     (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
-    print(f"Built {len(BUILT)} pages ({len(PATTERNS)} patterns, {len(PRODUCTS)} products, 2 languages) into {PUB}")
+    print(f"Built {len(BUILT)} pages ({len(PATTERNS)} patterns, {len(PRODUCTS)} products, {len(LANGS)} languages) into {PUB}")
     version_images()
     check_english()
 
@@ -826,17 +839,21 @@ def version_images():
 
 
 def check_english():
-    """English pages must not contain any Chinese: stop with a list of what was found."""
+    """Pages in languages that do not use Chinese characters (all but zh and ja) must contain none:
+    stop with a list of what was found."""
     found = []
+    skip = {LANG[c]["path"] for c in ("zh", "ja") if c in LANG}
     for f in sorted(PUB.rglob("*.html")):
         rel = f.relative_to(PUB)
-        if rel.parts[0] == "zh":
+        if rel.parts[0] in skip:
             continue
-        for m in CJK.finditer(f.read_text(encoding="utf-8")):
+        # the language menu lists each language in its own script, so it is left out of the check
+        text = re.sub(r'<details class="lang-menu">.*?</details>', "", f.read_text(encoding="utf-8"), flags=re.S)
+        for m in CJK.finditer(text):
             found.append(f"  {rel.as_posix()}: {m.group(0)}")
     if found:
-        sys.exit("Chinese text found on English pages (fix the en text in data/ or pages/en/):\n" + "\n".join(found[:40]))
-    print("English pages checked: no Chinese text.")
+        sys.exit("Chinese text found on non-Chinese pages (fix the text in data/ or pages/<lang>/):\n" + "\n".join(found[:40]))
+    print("Non-Chinese pages checked: no Chinese text.")
 
 
 if __name__ == "__main__":

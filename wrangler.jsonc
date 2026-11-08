@@ -2,6 +2,8 @@
   // Cloudflare Workers static site: serve the built pages in public/
   "name": "tianqi-website",
   "compatibility_date": "2025-09-01",
+  // Needed for preview builds of non-main branches (deploy command: npx wrangler preview)
+  "previews": {},
   "assets": {
     "directory": "./public",
     "html_handling": "auto-trailing-slash",

@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="{{html_lang}}">
+<html lang="{{html_lang}}" dir="{{dir}}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{title}}</title>
 <meta name="description" content="{{desc}}">
 <link rel="canonical" href="{{canonical}}">
-{{hreflang}}
+{{hreflang_links}}
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{desc}}">
 <meta property="og:image" content="{{og_image}}">
@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+{{lang_font}}
 <link rel="stylesheet" href="/assets/css/site.css?v={{asset_v}}">
 </head>
 <body class="lang-{{lang}}" data-section="{{section}}" data-lang="{{lang}}">
@@ -37,12 +38,11 @@
         <li><a href="{{u_patterns}}" data-nav="holographic-patterns">{{t_nav_patterns}}</a></li>
         <li><a href="{{u_custom}}" data-nav="customisation">{{t_nav_custom}}</a></li>
         <li><a href="{{u_about}}" data-nav="about">{{t_nav_about}}</a></li>
-{{nav_insights}}
-        <li><a href="{{u_contact}}" data-nav="contact">{{t_nav_contact}}</a></li>
+        {{nav_insights}}<li><a href="{{u_contact}}" data-nav="contact">{{t_nav_contact}}</a></li>
       </ul>
     </nav>
     <div class="nav-r">
-      <div class="lang-toggle" role="group" aria-label="Language"><a href="{{href_en_rel}}" hreflang="en" lang="en">EN</a><a href="{{href_zh_rel}}" hreflang="zh-Hans" lang="zh-Hans">CN</a></div>
+      {{lang_menu}}
       <a class="btn primary nav-cta" href="{{u_contact}}">{{t_quote}}</a>
       <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">{{t_menu}}</button>
     </div>
@@ -66,6 +66,7 @@ if (location.protocol === "file:") document.querySelectorAll("a[href]").forEach(
   var m = h.match(/^([^?#]*)(.*)$/); if (m[1] === "" || m[1].slice(-1) === "/") a.setAttribute("href", m[1] + "index.html" + m[2]);
 });
 </script>
+<script>window.TQ_I18N = {{js_i18n}};</script>
 <script src="/assets/js/site.js?v={{asset_v}}" defer></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 // Tianqi Materials site script: menu, product dropdown, filters, pattern library, inquiry form.
 (function () {
   var lang = document.body.dataset.lang;
-  var zh = lang === "zh";
+  var T = window.TQ_I18N || {};
+  function tr(k, n) { return (T[k] || "").replace("{n}", n); }
 
   // ---- current section in nav
   var section = document.body.dataset.section;
@@ -74,7 +75,7 @@
         if (ok) n++;
         c.hidden = !ok || n > limit;
       });
-      count.textContent = zh ? ("共 " + n + " 款") : (n + (n === 1 ? " pattern" : " patterns"));
+      count.textContent = tr(n === 1 ? "count_one" : "count_many", n);
       more.hidden = n <= limit;
     }
     document.getElementById("q").addEventListener("input", function (e) { q = e.target.value.replace(/\D/g, ""); limit = size; apply(); });
@@ -101,7 +102,7 @@
   }
   var codes = [];
   if (params.get("product")) codes.push(params.get("product"));
-  if (params.get("pattern")) codes.push((zh ? "纹样 " : "Pattern ") + params.get("pattern"));
+  if (params.get("pattern")) codes.push(T.pattern + " " + params.get("pattern"));
   if (codes.length) document.getElementById("f-codes").value = codes.join(", ");
   function showFields() {
     var t = form.querySelector('input[name="inquiry_type"]:checked').value;
@@ -128,7 +129,7 @@
     var name = (data.get("name") || "").trim(), email = (data.get("email") || "").trim(), need = (data.get("message") || "").trim();
     if (!name || !need || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       msg.classList.add("err");
-      msg.textContent = zh ? "请填写联系人、有效邮箱和需求说明。" : "Please fill in your name, a valid email and your requirement.";
+      msg.textContent = T.form_invalid;
       return;
     }
     if (!endpoint) return;
@@ -145,12 +146,12 @@
       .then(function (j) {
         if (j && j.success === false) throw new Error(j.message || "rejected");
         msg.classList.add("ok");
-        msg.textContent = zh ? "已收到您的需求，我们会尽快回复。" : "Thank you. We have received your inquiry and will reply soon.";
+        msg.textContent = T.form_ok;
         form.reset(); showFields();
       })
       .catch(function () {
         msg.classList.add("err");
-        msg.textContent = zh ? "提交没有成功，请稍后再试。" : "Your inquiry was not sent. Please try again.";
+        msg.textContent = T.form_fail;
       })
       .finally(function () { btn.disabled = false; });
   });
@@ -176,4 +177,12 @@
     if (!still) setInterval(function () { if (!hold && !document.hidden) go(cur + 1); }, 6000);
     mark();
   });
+})();
+
+// ---- language menu: close when clicking elsewhere or pressing Escape
+(function () {
+  var m = document.querySelector(".lang-menu");
+  if (!m) return;
+  document.addEventListener("click", function (e) { if (!m.contains(e.target)) m.removeAttribute("open"); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") m.removeAttribute("open"); });
 })();
