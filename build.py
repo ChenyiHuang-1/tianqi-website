@@ -28,6 +28,22 @@ SITE, COMPANY, CATS, PRODUCTS, PATTERNS, T, CUSTOMERS = (load(n) for n in
 e = html.escape
 
 
+def load_posts():
+    """Insights articles: posts/en/<slug>.html, a comment block of 'key: value' lines, then the article HTML."""
+    posts = []
+    for f in sorted((HERE / "posts/en").glob("*.html")):
+        src = f.read_text(encoding="utf-8")
+        m = re.match(r"\s*<!--(.*?)-->\s*", src, re.S)
+        meta = {k.strip(): v.strip() for k, v in (l.split(":", 1) for l in m.group(1).strip().splitlines())}
+        if meta.get("draft", "").lower() == "yes" and "--drafts" not in sys.argv:
+            continue
+        posts.append(dict(meta, slug=f.stem, body=src[m.end():]))
+    return sorted(posts, key=lambda x: x["date"], reverse=True)
+
+
+POSTS = load_posts()
+
+
 def t(key, lang):
     return T[key][lang]
 
@@ -252,6 +268,21 @@ def fill(tpl, vals):
     return re.sub(r"\{\{(\w+)\}\}", lambda m: str(vals[m.group(1)]) if m.group(1) in vals else m.group(0), tpl)
 
 
+def hreflang_links(path, zh=True):
+    base = SITE["site_url"].rstrip("/")
+    links = [("en", base + url("en", path))] + ([("zh-Hans", base + url("zh", path))] if zh else []) + [("x-default", base + url("en", path))]
+    return "\n".join(f'<link rel="alternate" hreflang="{h}" href="{u}">' for h, u in links)
+
+
+def nav_insights(lang, footer=False):
+    """Insights is English only for now, so the link shows on English pages only."""
+    if lang != "en" or not POSTS:
+        return ""
+    if footer:
+        return f'<a href="{url(lang, "insights/")}">Insights</a>'
+    return f'        <li><a href="{url(lang, "insights/")}" data-nav="insights">Insights</a></li>'
+
+
 def ld_script(data):
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace("</", "<\\/") + "</script>"
 
@@ -276,6 +307,8 @@ def crumb_names(lang, path):
              "customisation": t("nav_custom", lang), "about": t("nav_about", lang), "contact": t("nav_contact", lang)}
     names.update({c["id"]: L(c["name"], lang) for c in CATS})
     names.update({pr["slug"]: L(pr["name"], lang) for pr in PRODUCTS})
+    names["insights"] = "Insights"
+    names.update({x["slug"]: x["title"] for x in POSTS})
     parts = [x for x in path.split("/") if x]
     out = []
     for i, x in enumerate(parts):
@@ -296,6 +329,12 @@ def page_ld(lang, path):
                        "publisher": {"@id": base + "/#org"}})
     elif path == "about/":
         blocks.append(organization_ld(lang))
+    post = next((x for x in POSTS if path == f"insights/{x['slug']}/"), None)
+    if post:
+        blocks.append({"@context": "https://schema.org", "@type": "Article", "headline": post["title"],
+                       "description": post["desc"], "datePublished": post["date"], "inLanguage": "en",
+                       "image": base + img_src(post["image"], "full"), "mainEntityOfPage": base + url("en", path),
+                       "author": {"@id": base + "/#org"}, "publisher": {"@id": base + "/#org"}})
     crumbs = crumb_names(lang, path)
     if crumbs:
         items = [(t("nav_home", lang), base + url(lang))] + [(n, base + url(lang, "/".join(ps) + "/")) for n, ps in crumbs]
@@ -304,7 +343,8 @@ def page_ld(lang, path):
     return "\n".join(ld_script(b) for b in blocks)
 
 
-def shell(lang, path, section, title, desc, body, og_image=None):
+def shell(lang, path, section, title, desc, body, og_image=None, zh=True):
+    """zh=False: the page exists in English only (Insights articles), so no Chinese alternate."""
     other = "zh" if lang == "en" else "en"
     v = {f"t_{k}": T[k][lang] for k in T}
     drop = []
@@ -318,7 +358,8 @@ def shell(lang, path, section, title, desc, body, og_image=None):
              title=e(title), desc=e(desc), body=body, jsonld=page_ld(lang, path), og_locale="zh_CN" if lang == "zh" else "en_US", year=datetime.date.today().year,
              canonical=SITE["site_url"].rstrip("/") + url(lang, path),
              href_en=SITE["site_url"].rstrip("/") + url("en", path), href_zh=SITE["site_url"].rstrip("/") + url("zh", path),
-             href_other=url(other, path), href_en_rel=url("en", path), href_zh_rel=url("zh", path), og_image=SITE["site_url"].rstrip("/") + (og_image or "/img/hero.webp"),
+             href_other=url(other, path), href_en_rel=url("en", path), href_zh_rel=url("zh", path if zh else ""),
+             hreflang=hreflang_links(path, zh), nav_insights=nav_insights(lang), foot_insights=nav_insights(lang, True), og_image=SITE["site_url"].rstrip("/") + (og_image or "/img/hero.webp"),
              home=url(lang), u_products=url(lang, "products/"), u_patterns=url(lang, "holographic-patterns/"),
              u_custom=url(lang, "customisation/"), u_about=url(lang, "about/"), u_contact=url(lang, "contact/"),
              nav_drop="".join(drop), legal_name=e(L(SITE["legal_name"], lang)), city=e(L(SITE["city"], lang)),
@@ -337,10 +378,10 @@ def relative(page, out):
     return re.sub(r'(\s(?:href|src|data-view)=")/(?!/)', lambda m: m.group(1) + pre, page)
 
 
-def write(lang, path, section, title, desc, body, og_image=None):
+def write(lang, path, section, title, desc, body, og_image=None, zh=True):
     out = PUB / ("zh" if lang == "zh" else "") / path / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(relative(shell(lang, path, section, title, desc, body, og_image), out), encoding="utf-8")
+    out.write_text(relative(shell(lang, path, section, title, desc, body, og_image, zh), out), encoding="utf-8")
     BUILT.append(url(lang, path))
 
 
@@ -646,6 +687,42 @@ def build_pattern(p, i, lang):
     write(lang, f"holographic-patterns/{pid}/", "holographic-patterns", title, desc, body, og_image=vs[0])
 
 
+def fmt_date(d):
+    return datetime.date.fromisoformat(d).strftime("%-d %B %Y")
+
+
+def build_insights():
+    if not POSTS:
+        return
+    lang = "en"
+    cards = "".join(
+        f'<article class="card post-card"><a class="cimg" href="{url(lang, "insights/" + x["slug"] + "/")}">{picture(x["image"], x["title"], lang)}</a>'
+        f'<div class="cbody"><p class="label">{x.get("topic", "Guide")} · {fmt_date(x["date"])}</p>'
+        f'<h3><a href="{url(lang, "insights/" + x["slug"] + "/")}">{e(x["title"])}</a></h3><p>{e(x["summary"])}</p>'
+        f'<a class="more-link" href="{url(lang, "insights/" + x["slug"] + "/")}">Read article →</a></div></article>' for x in POSTS)
+    body = (f'<div class="page-head"><div class="wrap"><p class="crumbs"><a href="{url(lang)}">Home</a> / Insights</p>'
+            f'<h1>Insights</h1><p>Practical guides on holographic and metallized paperboard, films and patterns for packaging converters, laminators, label printers and distributors.</p></div></div>'
+            f'<section class="section wrap"><div class="cards three">{cards}</div></section>')
+    write(lang, "insights/", "insights", "Insights | Guides on Holographic & Metallized Paperboard | Tianqi Materials",
+          "Guides for packaging converters and distributors: metallized and holographic paperboard, printing, converting and holographic patterns.", body, zh=False)
+    for i, x in enumerate(POSTS):
+        others = [y for y in POSTS if y is not x][:3]
+        more = ""
+        if others:
+            more = (f'<section class="section band-tint"><div class="wrap"><div class="sec-head"><h2>More insights</h2></div><div class="cards three">'
+                    + "".join(f'<article class="card post-card"><a class="cimg" href="{url(lang, "insights/" + y["slug"] + "/")}">{picture(y["image"], y["title"], lang)}</a>'
+                              f'<div class="cbody"><h3><a href="{url(lang, "insights/" + y["slug"] + "/")}">{e(y["title"])}</a></h3></div></article>' for y in others)
+                    + "</div></div></section>")
+        body = (f'<div class="page-head"><div class="wrap"><p class="crumbs"><a href="{url(lang)}">Home</a> / <a href="{url(lang, "insights/")}">Insights</a></p>'
+                f'<h1>{e(x["title"])}</h1><p>{e(x.get("topic", "Guide"))} · {fmt_date(x["date"])}</p></div></div>'
+                f'<article class="section wrap prose">{x["body"]}'
+                f'<div class="post-cta"><h2>Talk to our team</h2><p>Tell us your application, structure and quantity, and we will suggest a material and send samples.</p>'
+                f'<div class="btns"><a class="btn primary" href="{url(lang, "contact/")}">Request a quote</a><a class="btn" href="{url(lang, "products/")}">View products</a></div></div></article>'
+                f'{more}')
+        write(lang, f"insights/{x['slug']}/", "insights", f'{x["title"]} | Tianqi Materials', x["desc"], body,
+              og_image=img_src(x["image"], "full") or None, zh=False)
+
+
 PATTERN_TAGS = {"finish": ["silver", "pearl", "holographic"],
                 "pattern": ["geometric", "fluid", "texture", "lines", "motif"],
                 "effect": ["subtle", "medium", "bold"]}
@@ -669,6 +746,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", help="folder of pattern photos (101.jpg ...)")
     ap.add_argument("--force", action="store_true", help="rebuild every image")
+    ap.add_argument("--drafts", action="store_true", help="also build Insights articles marked draft: yes (for previews)")
     a = ap.parse_args()
     if a.src:
         src = Path(a.src)
@@ -710,6 +788,7 @@ def main():
             build_product(pr, lang)
         for i, p in enumerate(PATTERNS):
             build_pattern(p, i, lang)
+    build_insights()
 
     nf = (f'<div class="page-head"><div class="wrap"><h1>{t("not_found", "en")}</h1>'
           f'<div class="btns" style="justify-content:center"><a class="btn primary" href="/">Home</a></div></div></div>')

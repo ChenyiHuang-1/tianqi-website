@@ -462,3 +462,17 @@ form.inquiry label em{justify-self:start}
 .facts .fact-certs>div{padding:0;background:none;flex:1 1 0;min-width:0}
 .facts .fact-certs strong{font-size:20px;white-space:nowrap;line-height:1.6}
 @media (max-width:520px){.facts .fact-certs{flex-wrap:wrap;align-items:flex-start}.facts .fact-certs>div{flex-basis:100%}.facts .fact-certs strong{font-size:18px}}
+/* Insights articles */
+.prose{max-width:760px;font-size:17px;line-height:1.75}
+.prose h2{font-size:clamp(22px,2.4vw,28px);margin:44px 0 12px}
+.prose h3{font-size:19px;margin:28px 0 8px}
+.prose p,.prose ul,.prose ol,.prose table{margin:0 0 18px;color:#2b2d31}
+.prose ul,.prose ol{padding-left:22px}
+.prose li{margin-bottom:6px}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5}
+.prose th,.prose td{border-bottom:1px solid var(--rule);padding:10px 8px;text-align:left;vertical-align:top}
+.prose th{background:var(--tint)}
+.prose .lead{font-size:19px;color:var(--ink)}
+.post-cta{margin-top:48px;padding:28px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--tint)}
+.post-cta h2{margin-top:0}
+@media (max-width:560px){.prose table{display:block;overflow-x:auto}}

@@ -6,9 +6,7 @@
 <title>{{title}}</title>
 <meta name="description" content="{{desc}}">
 <link rel="canonical" href="{{canonical}}">
-<link rel="alternate" hreflang="en" href="{{href_en}}">
-<link rel="alternate" hreflang="zh-Hans" href="{{href_zh}}">
-<link rel="alternate" hreflang="x-default" href="{{href_en}}">
+{{hreflang}}
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{desc}}">
 <meta property="og:image" content="{{og_image}}">
@@ -39,6 +37,7 @@
         <li><a href="{{u_patterns}}" data-nav="holographic-patterns">{{t_nav_patterns}}</a></li>
         <li><a href="{{u_custom}}" data-nav="customisation">{{t_nav_custom}}</a></li>
         <li><a href="{{u_about}}" data-nav="about">{{t_nav_about}}</a></li>
+{{nav_insights}}
         <li><a href="{{u_contact}}" data-nav="contact">{{t_nav_contact}}</a></li>
       </ul>
     </nav>
@@ -56,7 +55,7 @@
   <div class="wrap foot-grid">
     <div class="foot-brand"><span class="logo">Tianqi<i>.</i></span><p><b>{{legal_name}}</b><br>{{city}}</p>{{contact_lines}}</div>
     <div><b>{{t_footer_products}}</b>{{footer_cats}}</div>
-    <div><b>{{t_footer_company}}</b><a href="{{u_patterns}}">{{t_nav_patterns}}</a><a href="{{u_custom}}">{{t_nav_custom}}</a><a href="{{u_about}}">{{t_nav_about}}</a><a href="{{u_contact}}">{{t_nav_contact}}</a></div>
+    <div><b>{{t_footer_company}}</b><a href="{{u_patterns}}">{{t_nav_patterns}}</a><a href="{{u_custom}}">{{t_nav_custom}}</a><a href="{{u_about}}">{{t_nav_about}}</a>{{foot_insights}}<a href="{{u_contact}}">{{t_nav_contact}}</a></div>
   </div>
   <p class="wrap small">© {{year}} {{legal_name}}. {{t_rights}}</p>
 </footer>
